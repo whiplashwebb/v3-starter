@@ -32,7 +32,7 @@
 
 					<div
 						v-if="navItems.length > 1"
-						class="navbar-item has-dropdown is-hoverable"
+						class="navbar-item has-dropdown is-hoverable is-active"
 					>
 						<a class="navbar-link is-arrowless">
 							{{ key }}
@@ -134,10 +134,34 @@ export default defineComponent({
 
 	}
 
-	.navbar-item {
-		$h-pad:2.25px;
-		padding-left:$h-pad;
-		padding-right:$h-pad;
+	.navbar-start,
+	.navbar-end {
+		> .navbar-item {
+			$h-pad:2.25px;
+			padding-left:$h-pad;
+			padding-right:$h-pad;
+		}
+	}
+
+	@include from($desktop) {
+		.navbar-dropdown {
+			top:calc(100% - 2px);
+			box-shadow:0 0 15px rgb(132 131 161 / 50%);
+			padding:0;
+
+			.navbar-item {
+				padding:9.2px 21px;
+				min-width:215px;
+
+				&:first-child {
+					padding-top:14px;
+				}
+
+				&:last-child {
+					padding-bottom:14px;
+				}
+			}
+		}
 	}
 }
 </style>
