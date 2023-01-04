@@ -1,9 +1,10 @@
 import { createPinia } from 'pinia';
 import { createApp } from 'vue';
 
+// Bundle must come before app to ensure the correct order
+import './global-styles/global-bundle.scss';
 import App from './App.vue';
 import { addFontawesome, addOruga } from './plugins';
-import './global-styles/global-bundle.scss';
 import router from './router';
 
 const app = createApp(App);
