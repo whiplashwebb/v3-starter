@@ -1,3 +1,5 @@
+export interface StringMap<T> { [key: string]: T }
+
 export interface NavData {
 	app : {
 		orders?: NavItem[];

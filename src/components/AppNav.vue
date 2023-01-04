@@ -5,14 +5,22 @@
 				<img :src="logoUrl">
 			</a>
 
-			<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+			<a
+				role="button"
+				class="navbar-burger"
+				:class="{ 'is-active' : isDrawerActive }"
+				@click="isDrawerActive = !isDrawerActive"
+			>
 				<span aria-hidden="true"></span>
 				<span aria-hidden="true"></span>
 				<span aria-hidden="true"></span>
 			</a>
 		</div>
 
-		<div id="navbarBasicExample" class="navbar-menu">
+		<div
+			class="navbar-menu"
+			:class="{ 'is-active' : isDrawerActive }"
+		>
 			<div class="navbar-start">
 				<template
 					v-for="(navItems, key) in navData.app"
@@ -32,11 +40,20 @@
 
 					<div
 						v-if="navItems.length > 1"
-						class="navbar-item has-dropdown is-hoverable is-active"
+						class="navbar-item has-dropdown"
+						:class="{ 'is-active' : activeKey === key }"
 					>
-						<a class="navbar-link is-arrowless">
+						<a
+							class="navbar-link is-arrowless is-hidden-desktop"
+							@click="toggleNavItem(key)"
+						>
 							{{ key }}
 						</a>
+						<button
+							class="is-hidden-touch button is-dark is-inverted app-nav__button"
+							:class="{ 'is-active' : activeKey === key }"
+							@click="toggleNavItem(key)"
+						>{{ key }}</button>
 
 						<div class="navbar-dropdown ">
 							<a
@@ -49,6 +66,7 @@
 							</a>
 						</div>
 					</div>
+
 				</template>
 
 			</div>
@@ -69,28 +87,7 @@
 	</nav>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-import type { PropType } from 'vue';
-
-import logoUrl from '@/assets/Whiplash-Brandmark-RGB.svg';
-import type { NavData } from '@/types';
-
-export default defineComponent({
-	name: 'AppNav',
-	props: {
-		navData: {
-			type: Object as PropType<NavData>,
-			required: true,
-		},
-	},
-	data() {
-		return {
-			logoUrl,
-		};
-	},
-});
-</script>
+<script lang="ts" src="./AppNav.ts" />
 
 <style lang="scss">
 .app-nav {
@@ -137,9 +134,18 @@ export default defineComponent({
 	.navbar-start,
 	.navbar-end {
 		> .navbar-item {
-			$h-pad:2.25px;
+			$h-pad:1px;
 			padding-left:$h-pad;
 			padding-right:$h-pad;
+
+			&.has-dropdown {
+				padding:.5rem $h-pad;
+
+				.button.is-active {
+					color:$white;
+					background:$some-black;
+				}
+			}
 		}
 	}
 

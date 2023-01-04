@@ -4,6 +4,7 @@ import {
 	Field,
 	Button,
 	Notification,
+	Dropdown,
 } from '@oruga-ui/oruga-next';
 import { bulmaConfig } from '@oruga-ui/theme-bulma';
 import type { Plugin } from 'vue';
@@ -28,5 +29,6 @@ export const addOruga: Plugin = {
 		app.use(Input);
 		app.use(Field);
 		app.use(Button);
+		app.use(Dropdown);
 	},
 };
