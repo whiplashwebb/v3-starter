@@ -14,43 +14,46 @@
 
 		<div id="navbarBasicExample" class="navbar-menu">
 			<div class="navbar-start">
-				<div class="navbar-item">
-					<a class="button is-dark is-inverted app-nav__button">
-						Orders
-					</a>
-				</div>
-				<a class="navbar-item">
-					Home
-				</a>
-
-				<a class="navbar-item">
-					Documentation
-				</a>
-
-				<div class="navbar-item has-dropdown is-hoverable">
-					<a class="navbar-link">
-						More
-					</a>
-
-					<div class="navbar-dropdown">
-						<a class="navbar-item">
-							About
-						</a>
-						<a class="navbar-item">
-							Jobs
-						</a>
-						<a class="navbar-item">
-							Contact
-						</a>
-						<hr class="navbar-divider">
-						<a class="navbar-item">
-							Report an issue
+				<template
+					v-for="(navItems, key) in navData.app"
+					:key="key"
+				>
+					<div
+						v-if="navItems.length === 1"
+						class="navbar-item"
+					>
+						<a
+							class="button is-dark is-inverted app-nav__button"
+							:href="navItems[0].url"
+						>
+							{{ navItems[0].display }}
 						</a>
 					</div>
-				</div>
+
+					<div
+						v-if="navItems.length > 1"
+						class="navbar-item has-dropdown is-hoverable"
+					>
+						<a class="navbar-link is-arrowless">
+							{{ key }}
+						</a>
+
+						<div class="navbar-dropdown ">
+							<a
+								v-for="item in navItems"
+								:key="item.slug"
+								class="navbar-item"
+								:href="item.url"
+							>
+								{{ item.display }}
+							</a>
+						</div>
+					</div>
+				</template>
+
 			</div>
 
-			<div class="navbar-end">
+			<!--			<div class="navbar-end">
 				<div class="navbar-item">
 					<div class="buttons">
 						<a class="button is-primary">
@@ -61,7 +64,7 @@
 						</a>
 					</div>
 				</div>
-			</div>
+			</div>-->
 		</div>
 	</nav>
 </template>
@@ -91,27 +94,38 @@ export default defineComponent({
 
 <style lang="scss">
 .app-nav {
-	background-image: linear-gradient(to right, rgba(230,225,197,0.2), rgba(230,225,197,0.2)),linear-gradient(to right, #fff, #fff);
+	background-image: $navbar-gradient;
 	background-repeat: no-repeat;
 	border-bottom:1px solid $some-grey;
 
 	&__logo-item {
-		margin-left:13.5px;
-		margin-right:1.5px;
+		width:64px;
+		justify-content:center;
+		margin:0 1rem;
+		margin-right:15px;
 
 		img {
 			width:45px;
 			height:auto;
 		}
+
+		&.navbar-item {
+			padding: 0.5rem 0;
+		}
 	}
 
-	&__button {
+	&__button, .navbar-link {
 		text-transform: uppercase;
 		font-size:$size-7;
 		letter-spacing: .64px;
-		padding:1rem;
+
+	}
+
+	&__button {
+		padding:1rem 16px;
 		height:auto;
-		line-height:1.2em;
+		line-height:14.5px;
+		border:none;
 
 		&.is-dark.is-inverted {
 			color:$some-black;
@@ -120,7 +134,10 @@ export default defineComponent({
 
 	}
 
-	.navbar-item .button {
+	.navbar-item {
+		$h-pad:2.25px;
+		padding-left:$h-pad;
+		padding-right:$h-pad;
 	}
 }
 </style>
