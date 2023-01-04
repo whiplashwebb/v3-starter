@@ -1,85 +1,83 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { RouterView } from 'vue-router';
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+	<div class="app">
+		<nav class="app__header navbar" role="navigation" aria-label="main navigation">
+			<div class="navbar-brand">
+				<a class="navbar-item" href="https://bulma.io">
+					<img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+				</a>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+				<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+				</a>
+			</div>
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
+			<div id="navbarBasicExample" class="navbar-menu">
+				<div class="navbar-start">
+					<a class="navbar-item">
+						Home
+					</a>
 
-  <RouterView />
+					<a class="navbar-item">
+						Documentation
+					</a>
+
+					<div class="navbar-item has-dropdown is-hoverable">
+						<a class="navbar-link">
+							More
+						</a>
+
+						<div class="navbar-dropdown">
+							<a class="navbar-item">
+								About
+							</a>
+							<a class="navbar-item">
+								Jobs
+							</a>
+							<a class="navbar-item">
+								Contact
+							</a>
+							<hr class="navbar-divider">
+							<a class="navbar-item">
+								Report an issue
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="navbar-end">
+					<div class="navbar-item">
+						<div class="buttons">
+							<a class="button is-primary">
+								<strong>Sign up</strong>
+							</a>
+							<a class="button is-light">
+								Log in
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<RouterView class="app__view" />
+	</div>
+
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
+<style lang="scss">
+.app {
+	width:100%;
+	min-height:100vh;
+	display:flex;
+	flex-direction:column;
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+	&__view {
+		flex:1 1 auto;
+	}
 }
 </style>
