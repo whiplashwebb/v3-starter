@@ -19,6 +19,48 @@
 		</div>
 		<div class="container">
 			<style-guide-section
+				title="Button Sizes"
+				initially-active
+			>
+				<style-guide-subsection>
+					<div class="buttons">
+						<o-button
+							v-for="size in sizes"
+							:key="`${size}-size`"
+							:size="size"
+							variant="primary"
+						>
+							<span>{{ size || 'default' }}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Min Width">
+					<div class="buttons">
+						<o-button
+							v-for="variant in colorVariants"
+							:key="`${variant}-size-min`"
+							:variant="variant"
+							class="has-min-width"
+						>
+							<span>{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Wide">
+					<div class="buttons">
+						<o-button
+							v-for="size in sizes"
+							:key="`${size}-size-wide`"
+							:size="size"
+							variant="primary"
+							class="is-wide"
+						>
+							<span>{{ size || 'default' }}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+			</style-guide-section>
+			<style-guide-section
 				title="Regular Buttons"
 			>
 				<style-guide-subsection>
@@ -27,8 +69,9 @@
 							v-for="variant in variants"
 							:key="`${variant}-regular`"
 							:variant="variant"
+							class="no-min"
 						>
-							<span class="is-capitalized">{{variant}}</span>
+							<span>{{variant}}</span>
 						</o-button>
 					</div>
 				</style-guide-subsection>
@@ -40,7 +83,7 @@
 							:variant="variant"
 							class="is-hovered"
 						>
-							<span class="is-capitalized">{{variant}}</span>
+							<span>{{variant}}</span>
 						</o-button>
 					</div>
 				</style-guide-subsection>
@@ -52,7 +95,7 @@
 							:variant="variant"
 							class="is-active"
 						>
-							<span class="is-capitalized">{{variant}}</span>
+							<span>{{variant}}</span>
 						</o-button>
 					</div>
 				</style-guide-subsection>
@@ -64,7 +107,7 @@
 							:variant="variant"
 							class="is-focused"
 						>
-							<span class="is-capitalized">{{variant}}</span>
+							<span>{{variant}}</span>
 						</o-button>
 					</div>
 				</style-guide-subsection>
@@ -76,7 +119,7 @@
 							:variant="variant"
 							class="is-loading"
 						>
-							<span class="is-capitalized">{{variant}}</span>
+							<span>{{variant}}</span>
 						</o-button>
 					</div>
 				</style-guide-subsection>
@@ -88,7 +131,7 @@
 							:variant="variant"
 							disabled
 						>
-							<span class="is-capitalized">{{variant}}</span>
+							<span>{{variant}}</span>
 						</o-button>
 					</div>
 				</style-guide-subsection>
@@ -105,7 +148,7 @@
 							:variant="variant"
 							outlined
 						>
-							<span class="is-capitalized">{{variant}}</span>
+							<span>{{variant}}</span>
 						</o-button>
 					</div>
 				</style-guide-subsection>
@@ -118,7 +161,7 @@
 							class="is-hovered"
 							outlined
 						>
-							<span class="is-capitalized">{{variant}}</span>
+							<span>{{variant}}</span>
 						</o-button>
 					</div>
 				</style-guide-subsection>
@@ -131,7 +174,7 @@
 							class="is-active"
 							outlined
 						>
-							<span class="is-capitalized">{{variant}}</span>
+							<span>{{variant}}</span>
 						</o-button>
 					</div>
 				</style-guide-subsection>
@@ -144,7 +187,7 @@
 							class="is-focused"
 							outlined
 						>
-							<span class="is-capitalized">{{variant}}</span>
+							<span>{{variant}}</span>
 						</o-button>
 					</div>
 				</style-guide-subsection>
@@ -157,7 +200,7 @@
 							class="is-loading"
 							outlined
 						>
-							<span class="is-capitalized">{{variant}}</span>
+							<span>{{variant}}</span>
 						</o-button>
 					</div>
 				</style-guide-subsection>
@@ -170,7 +213,7 @@
 							disabled
 							outlined
 						>
-							<span class="is-capitalized">{{variant}}</span>
+							<span>{{variant}}</span>
 						</o-button>
 					</div>
 				</style-guide-subsection>
@@ -186,7 +229,7 @@
 							:variant="variant"
 							class="is-light"
 						>
-							<span class="is-capitalized">{{variant}}</span>
+							<span>{{variant}}</span>
 						</o-button>
 					</div>
 				</style-guide-subsection>
@@ -198,7 +241,7 @@
 							:variant="variant"
 							class="is-hovered is-light"
 						>
-							<span class="is-capitalized">{{variant}}</span>
+							<span>{{variant}}</span>
 						</o-button>
 					</div>
 				</style-guide-subsection>
@@ -210,7 +253,7 @@
 							:variant="variant"
 							class="is-active is-light"
 						>
-							<span class="is-capitalized">{{variant}}</span>
+							<span>{{variant}}</span>
 						</o-button>
 					</div>
 				</style-guide-subsection>
@@ -222,7 +265,7 @@
 							:variant="variant"
 							class="is-focused is-light"
 						>
-							<span class="is-capitalized">{{variant}}</span>
+							<span>{{variant}}</span>
 						</o-button>
 					</div>
 				</style-guide-subsection>
@@ -234,7 +277,7 @@
 							:variant="variant"
 							class="is-loading is-light"
 						>
-							<span class="is-capitalized">{{variant}}</span>
+							<span>{{variant}}</span>
 						</o-button>
 					</div>
 				</style-guide-subsection>
@@ -247,7 +290,7 @@
 							class="is-light"
 							disabled
 						>
-							<span class="is-capitalized">{{variant}}</span>
+							<span>{{variant}}</span>
 						</o-button>
 					</div>
 				</style-guide-subsection>

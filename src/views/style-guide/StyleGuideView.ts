@@ -36,6 +36,12 @@ export default defineComponent({
 			],
 			colorVariants,
 			nonColorVariants,
+			sizes: [
+				'small',
+				'',
+				'medium',
+				'large',
+			],
 			isDark: false,
 		};
 	},
