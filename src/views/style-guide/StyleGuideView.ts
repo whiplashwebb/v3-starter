@@ -3,6 +3,25 @@ import { defineComponent } from 'vue';
 import StyleGuideSection from '@/components/style-guide-section/StyleGuideSection.vue';
 import StyleGuideSubsection from '@/components/style-guide-subsection/StyleGuideSubsection.vue';
 
+const colorVariants = [
+	'primary',
+	'link',
+	'success',
+	'info',
+	'warning',
+	'danger',
+];
+
+const nonColorVariants = [
+	'default',
+	'white',
+	'light',
+	'dark',
+	'black',
+	'text',
+	'ghost',
+];
+
 export default defineComponent({
 	name: 'StyleGuideView',
 	components: {
@@ -12,20 +31,11 @@ export default defineComponent({
 	data() {
 		return {
 			variants: [
-				'default',
-				'primary',
-				'link',
-				'success',
-				'info',
-				'warning',
-				'danger',
-				'white',
-				'light',
-				'dark',
-				'black',
-				'text',
-				'ghost',
+				...colorVariants,
+				...nonColorVariants,
 			],
+			colorVariants,
+			nonColorVariants,
 		};
 	},
 });

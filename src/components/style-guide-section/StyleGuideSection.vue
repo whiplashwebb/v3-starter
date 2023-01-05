@@ -1,13 +1,13 @@
 <template>
-	<div class="style-guide-section section">
-		<o-collapse :open="active">
+	<div class="style-guide-section">
+		<o-collapse v-model:open="active">
 			<template #trigger>
-				<div class="style-guide-section__header">
+				<div class="style-guide-section__header section">
 					<h2 class="style-guide-section__title title is-2">{{ title }}</h2>
 					<o-icon :icon="active ? 'caret-up' : 'caret-down'" />
 				</div>
 			</template>
-			<div class="style-guide-section__body">
+			<div class="style-guide-section__body section">
 				<slot />
 			</div>
 		</o-collapse>
@@ -29,11 +29,21 @@ export default defineComponent({
 			default: () => false,
 		},
 	},
+	data() {
+		return {
+			active: false,
+		};
+	},
+	mounted() {
+		this.active = this.initiallyActive;
+	},
 });
 </script>
 
 <style lang="scss">
 .style-guide-section {
+	$sgs-border:1px solid $border;
+
 	&__header {
 		display:flex;
 		flex-direction: row;
@@ -42,13 +52,16 @@ export default defineComponent({
 	}
 
 	&__title {
-		margin-left:.5rem;
 		flex:1 1 auto;
+		margin:0 !important;
 	}
 
 	&__body {
-		padding-top:2rem;
-		border-top:1px solid $border;
+		border-top:$sgs-border;
+	}
+
+	@at-root & + & {
+		border-top:$sgs-border;
 	}
 }
 </style>
