@@ -7,6 +7,7 @@ import {
 	Dropdown,
 	Collapse,
 	Icon,
+	Switch,
 } from '@oruga-ui/oruga-next';
 import { bulmaConfig } from '@oruga-ui/theme-bulma';
 import type { Plugin } from 'vue';
@@ -34,5 +35,6 @@ export const addOruga: Plugin = {
 		app.use(Dropdown);
 		app.use(Collapse);
 		app.use(Icon);
+		app.use(Switch);
 	},
 };

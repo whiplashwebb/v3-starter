@@ -1,10 +1,18 @@
 <template>
-	<div>
+	<div
+		class="style-guide"
+		:class="{ 'is-dark': isDark }"
+	>
 		<div class="hero is-primary">
 			<div class="hero-body">
 				<div class="container">
 					<div class="section">
 						<h1 class="title is-1">Style Guide</h1>
+						<div>
+							<o-field>
+								<o-switch variant="dark" v-model="isDark"> Dark Mode </o-switch>
+							</o-field>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -52,7 +60,7 @@
 					<div class="buttons">
 						<o-button
 							v-for="variant in variants"
-							:key="`${variant}-regular-active`"
+							:key="`${variant}-regular-focused`"
 							:variant="variant"
 							class="is-focused"
 						>
@@ -79,6 +87,88 @@
 							:key="`${variant}-regular-disabled`"
 							:variant="variant"
 							disabled
+						>
+							<span class="is-capitalized">{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+			</style-guide-section>
+			<style-guide-section
+				title="Outlined Buttons"
+				initially-active
+			>
+				<style-guide-subsection>
+					<div class="buttons">
+						<o-button
+							v-for="variant in variants"
+							:key="`${variant}-outlined`"
+							:variant="variant"
+							outlined
+						>
+							<span class="is-capitalized">{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Hover">
+					<div class="buttons">
+						<o-button
+							v-for="variant in variants"
+							:key="`${variant}-outlined-hover`"
+							:variant="variant"
+							class="is-hovered"
+							outlined
+						>
+							<span class="is-capitalized">{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Active">
+					<div class="buttons">
+						<o-button
+							v-for="variant in variants"
+							:key="`${variant}-outlined-active`"
+							:variant="variant"
+							class="is-active"
+							outlined
+						>
+							<span class="is-capitalized">{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Focused">
+					<div class="buttons">
+						<o-button
+							v-for="variant in variants"
+							:key="`${variant}-outlined-focused`"
+							:variant="variant"
+							class="is-focused"
+							outlined
+						>
+							<span class="is-capitalized">{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Loading">
+					<div class="buttons">
+						<o-button
+							v-for="variant in variants"
+							:key="`${variant}-outlined-loading`"
+							:variant="variant"
+							class="is-loading"
+							outlined
+						>
+							<span class="is-capitalized">{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Disabled">
+					<div class="buttons">
+						<o-button
+							v-for="variant in variants"
+							:key="`${variant}-outlined-disabled`"
+							:variant="variant"
+							disabled
+							outlined
 						>
 							<span class="is-capitalized">{{variant}}</span>
 						</o-button>
@@ -128,7 +218,7 @@
 					<div class="buttons">
 						<o-button
 							v-for="variant in colorVariants"
-							:key="`${variant}-light-active`"
+							:key="`${variant}-light-focused`"
 							:variant="variant"
 							class="is-focused is-light"
 						>
@@ -165,5 +255,18 @@
 		</div>
 	</div>
 </template>
+
+<style lang="scss">
+.style-guide {
+	&.is-dark {
+		background:$dark;
+		color:$text-invert;
+
+		.title, .subtitle {
+			color:$text-invert;
+		}
+	}
+}
+</style>
 
 <script lang="ts" src="./StyleGuideView.ts" />
