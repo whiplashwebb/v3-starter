@@ -7,12 +7,21 @@ $button-size-normal:13px;
 	height:auto;
 	line-height:1.23em;
 
+	&.is-small {
+		$button-padding-vertical-small:.25rem;
+		padding-top:$button-padding-vertical-small;
+		padding-bottom:$button-padding-vertical-small;
+		font-size:12px;
+	}
+
 	&.has-min-width {
 		min-width: 11.9375rem;
 	}
 
 	&.is-wide {
-		padding:$button-padding-vertical ($button-padding-horizontal * 2.5);
+		$button-padding-horizontal-wide:$button-padding-horizontal * 2.5;
+		padding-left:$button-padding-horizontal-wide;
+		padding-right:$button-padding-horizontal-wide;
 	}
 
 	&.is-primary {
@@ -90,9 +99,15 @@ $button-size-normal:13px;
 			&.is-hovered,
 			&:focus,
 			&.is-focused {
-				background-color: $color;
-				border-color: $color;
-				color: $color-invert;
+				background-color: transparent;
+				border-color: $hover-bg;
+				color: $hover-bg;
+			}
+
+			&:active,
+			&.is-active {
+				border-color: $black;
+				color: $black;
 			}
 
 			&.is-loading {

@@ -5,7 +5,7 @@ import StyleGuideSubsection from '@/components/style-guide-subsection/StyleGuide
 
 const colorVariants = [
 	'primary',
-	'link',
+	// 'link',
 	'success',
 	'info',
 	'warning',
@@ -19,7 +19,7 @@ const nonColorVariants = [
 	'dark',
 	'black',
 	'text',
-	'ghost',
+	// 'ghost',
 ];
 
 export default defineComponent({

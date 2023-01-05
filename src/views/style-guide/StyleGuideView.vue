@@ -19,48 +19,6 @@
 		</div>
 		<div class="container">
 			<style-guide-section
-				title="Button Sizes"
-				initially-active
-			>
-				<style-guide-subsection>
-					<div class="buttons">
-						<o-button
-							v-for="size in sizes"
-							:key="`${size}-size`"
-							:size="size"
-							variant="primary"
-						>
-							<span>{{ size || 'default' }}</span>
-						</o-button>
-					</div>
-				</style-guide-subsection>
-				<style-guide-subsection title="Min Width">
-					<div class="buttons">
-						<o-button
-							v-for="variant in colorVariants"
-							:key="`${variant}-size-min`"
-							:variant="variant"
-							class="has-min-width"
-						>
-							<span>{{variant}}</span>
-						</o-button>
-					</div>
-				</style-guide-subsection>
-				<style-guide-subsection title="Wide">
-					<div class="buttons">
-						<o-button
-							v-for="size in sizes"
-							:key="`${size}-size-wide`"
-							:size="size"
-							variant="primary"
-							class="is-wide"
-						>
-							<span>{{ size || 'default' }}</span>
-						</o-button>
-					</div>
-				</style-guide-subsection>
-			</style-guide-section>
-			<style-guide-section
 				title="Regular Buttons"
 			>
 				<style-guide-subsection>
@@ -132,6 +90,68 @@
 							disabled
 						>
 							<span>{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+			</style-guide-section>
+			<style-guide-section
+				title="Button Sizes"
+				initially-active
+			>
+				<style-guide-subsection>
+					<div class="buttons">
+						<o-button
+							v-for="size in sizes"
+							:key="`${size}-size`"
+							:size="size"
+							variant="primary"
+							outlined
+						>
+							<span>{{ size || 'default' }}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Min Width">
+					<div class="buttons">
+						<div class="buttons">
+							<o-button
+								v-for="size in sizes"
+								:key="`${size}-size-min`"
+								:size="size"
+								variant="primary"
+								class="has-min-width"
+								outlined
+							>
+								<span>{{ size || 'default' }}</span>
+							</o-button>
+						</div>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Wide">
+					<div class="buttons">
+						<o-button
+							v-for="size in sizes"
+							:key="`${size}-size-wide`"
+							:size="size"
+							variant="primary"
+							class="is-wide"
+							outlined
+						>
+							<span>{{ size || 'default' }}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Container Width">
+					<div class="buttons limit-width">
+						<o-button
+							v-for="size in sizes"
+							:key="`${size}-size-full`"
+							:size="size"
+							variant="primary"
+							class="is-fullwidth"
+							outlined
+						>
+							<span>{{ size || 'default' }}</span>
 						</o-button>
 					</div>
 				</style-guide-subsection>
@@ -212,6 +232,87 @@
 							:variant="variant"
 							disabled
 							outlined
+						>
+							<span>{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+			</style-guide-section>
+			<style-guide-section
+				title="Inverted Buttons"
+			>
+				<style-guide-subsection>
+					<div class="buttons">
+						<o-button
+							v-for="variant in variants"
+							:key="`${variant}-inverted`"
+							:variant="variant"
+							inverted
+						>
+							<span>{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Hover">
+					<div class="buttons">
+						<o-button
+							v-for="variant in variants"
+							:key="`${variant}-inverted-hover`"
+							:variant="variant"
+							class="is-hovered"
+							inverted
+						>
+							<span>{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Active">
+					<div class="buttons">
+						<o-button
+							v-for="variant in variants"
+							:key="`${variant}-inverted-active`"
+							:variant="variant"
+							class="is-active"
+							inverted
+						>
+							<span>{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Focused">
+					<div class="buttons">
+						<o-button
+							v-for="variant in variants"
+							:key="`${variant}-inverted-focused`"
+							:variant="variant"
+							class="is-focused"
+							inverted
+						>
+							<span>{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Loading">
+					<div class="buttons">
+						<o-button
+							v-for="variant in variants"
+							:key="`${variant}-inverted-loading`"
+							:variant="variant"
+							class="is-loading"
+							inverted
+						>
+							<span>{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Disabled">
+					<div class="buttons">
+						<o-button
+							v-for="variant in variants"
+							:key="`${variant}-inverted-disabled`"
+							:variant="variant"
+							disabled
+							inverted
 						>
 							<span>{{variant}}</span>
 						</o-button>
@@ -308,6 +409,10 @@
 		.title, .subtitle {
 			color:$text-invert;
 		}
+	}
+
+	.limit-width {
+		max-width:500px;
 	}
 }
 </style>
