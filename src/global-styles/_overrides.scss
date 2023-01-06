@@ -1,11 +1,23 @@
 $button-size-normal:13px;
 
+.label {
+	font-size:$label-size;
+
+	&:not(:last-child) {
+		margin-bottom: 1em
+	}
+}
+
+.help {
+	color:$label-grey;
+}
+
 .button {
 	text-transform: uppercase;
 	font-size:13px;
 	letter-spacing: 0.098em;
 	height:auto;
-	line-height:1.23em;
+	line-height:$normal-line-height;
 
 	&.is-small {
 		$button-padding-vertical-small:.25rem;

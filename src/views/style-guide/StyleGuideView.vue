@@ -18,6 +18,46 @@
 			</div>
 		</div>
 		<div class="container">
+			<style-guide-section title="Inputs">
+				<o-field
+					label="Standard Input"
+					message="This is the optional help text for the standard input"
+				>
+					<o-input
+						placeholder="Enter input..."
+					/>
+				</o-field>
+				<o-field
+					label="Error Input"
+					variant="danger"
+					message="This is the optional help text for the standard input"
+				>
+					<o-input
+						placeholder="Enter input..."
+					/>
+				</o-field>
+
+				<div class="field">
+					<o-checkbox v-model="checks[0]">
+						Checked
+					</o-checkbox>
+				</div>
+				<div class="field">
+					<o-checkbox v-model="checks[1]">
+						Unchecked
+					</o-checkbox>
+				</div>
+				<div class="field">
+					<o-checkbox v-model="checks[2]" disabled>
+						Checked and Disabled
+					</o-checkbox>
+				</div>
+				<div class="field">
+					<o-checkbox v-model="checks[3]" disabled>
+						Unchecked and Disabled
+					</o-checkbox>
+				</div>
+			</style-guide-section>
 			<style-guide-section
 				title="Regular Buttons"
 			>

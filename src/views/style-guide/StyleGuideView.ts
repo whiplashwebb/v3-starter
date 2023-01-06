@@ -43,6 +43,12 @@ export default defineComponent({
 				'large',
 			],
 			isDark: false,
+			checks: [
+				true,
+				false,
+				true,
+				false,
+			],
 		};
 	},
 });
