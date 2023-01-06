@@ -18,7 +18,10 @@
 			</div>
 		</div>
 		<div class="container">
-			<style-guide-section title="Inputs">
+			<style-guide-section
+				title="Inputs"
+				initially-active
+			>
 				<o-field
 					label="Standard Input"
 					message="This is the optional help text for the standard input"
@@ -56,6 +59,17 @@
 					<o-checkbox v-model="checks[3]" disabled>
 						Unchecked and Disabled
 					</o-checkbox>
+				</div>
+				<div class="block">
+					<o-radio v-model="radio" name="name" native-value="Foo">
+						Foo
+					</o-radio>
+					<o-radio v-model="radio" name="name" native-value="Bar">
+						Bar
+					</o-radio>
+					<o-radio v-model="radio" name="name" native-value="Fiz" disabled>
+						Fiz
+					</o-radio>
 				</div>
 			</style-guide-section>
 			<style-guide-section
@@ -136,7 +150,6 @@
 			</style-guide-section>
 			<style-guide-section
 				title="Button Sizes"
-				initially-active
 			>
 				<style-guide-subsection>
 					<div class="buttons">
@@ -198,7 +211,6 @@
 			</style-guide-section>
 			<style-guide-section
 				title="Outlined Buttons"
-				initially-active
 			>
 				<style-guide-subsection>
 					<div class="buttons">

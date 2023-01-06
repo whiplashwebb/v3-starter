@@ -1,7 +1,7 @@
-$button-size-normal:13px;
+$button-size-normal: 13px;
 
 .label {
-	font-size:$label-size;
+	font-size: $label-size;
 
 	&:not(:last-child) {
 		margin-bottom: 1em
@@ -9,21 +9,43 @@ $button-size-normal:13px;
 }
 
 .help {
-	color:$label-grey;
+	color: $label-grey;
+	margin: 5px;
+}
+
+.input,
+.textarea {
+	@each $name, $pair in $textarea-colors {
+		$color: nth($pair, 1);
+		&.is-#{$name} {
+			background-color:rgba($color, .09);
+		}
+	}
+}
+
+.b-checkbox.checkbox {
+	&.is-disabled {
+		opacity: 1;
+
+		.check {
+			background-color:$disabled-grey;
+			border-color:$disabled-grey;
+		}
+	}
 }
 
 .button {
 	text-transform: uppercase;
-	font-size:13px;
+	font-size: 13px;
 	letter-spacing: 0.098em;
-	height:auto;
-	line-height:$normal-line-height;
+	height: auto;
+	line-height: $normal-line-height;
 
 	&.is-small {
-		$button-padding-vertical-small:.25rem;
-		padding-top:$button-padding-vertical-small;
-		padding-bottom:$button-padding-vertical-small;
-		font-size:12px;
+		$button-padding-vertical-small: .25rem;
+		padding-top: $button-padding-vertical-small;
+		padding-bottom: $button-padding-vertical-small;
+		font-size: 12px;
 	}
 
 	&.has-min-width {
@@ -31,16 +53,16 @@ $button-size-normal:13px;
 	}
 
 	&.is-wide {
-		$button-padding-horizontal-wide:$button-padding-horizontal * 2.5;
-		padding-left:$button-padding-horizontal-wide;
-		padding-right:$button-padding-horizontal-wide;
+		$button-padding-horizontal-wide: $button-padding-horizontal * 2.5;
+		padding-left: $button-padding-horizontal-wide;
+		padding-right: $button-padding-horizontal-wide;
 	}
 
 	&.is-primary {
 		$color: $primary;
 		$color-invert: findColorInvert($color);
-		$hover-bg:$some-black;
-		$hover-text:$text-invert;
+		$hover-bg: $some-black;
+		$hover-text: $text-invert;
 
 		background-color: $color;
 		border-color: transparent;
@@ -74,7 +96,7 @@ $button-size-normal:13px;
 		fieldset[disabled] & {
 			background-color: transparent;
 			border-color: $disabled-grey;
-			color:$disabled-grey;
+			color: $disabled-grey;
 			box-shadow: none;
 		}
 

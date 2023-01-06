@@ -49,6 +49,7 @@ export default defineComponent({
 				true,
 				false,
 			],
+			radio: 'Foo',
 		};
 	},
 });
