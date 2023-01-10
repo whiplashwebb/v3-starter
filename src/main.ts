@@ -1,14 +1,17 @@
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import { createPinia } from 'pinia';
+import { createApp } from 'vue';
 
-import App from './App.vue'
-import router from './router'
+// Bundle must come before app to ensure the correct order
+import './global-styles/global-bundle.scss';
+import App from './App.vue';
+import { addFontawesome, addOruga } from './plugins';
+import router from './router';
 
-import './assets/main.css'
+const app = createApp(App);
 
-const app = createApp(App)
+app.use(createPinia());
+app.use(router);
+app.use(addOruga);
+app.use(addFontawesome);
 
-app.use(createPinia())
-app.use(router)
-
-app.mount('#app')
+app.mount('#app');
