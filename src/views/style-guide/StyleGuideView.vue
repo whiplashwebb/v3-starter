@@ -22,55 +22,90 @@
 				title="Inputs"
 				initially-active
 			>
-				<o-field
-					label="Standard Input"
-					message="This is the optional help text for the standard input"
-				>
-					<o-input
-						placeholder="Enter input..."
-					/>
-				</o-field>
-				<o-field
-					label="Error Input"
-					variant="danger"
-					message="This is the optional help text for the standard input"
-				>
-					<o-input
-						placeholder="Enter input..."
-					/>
-				</o-field>
+				<style-guide-subsection>
+					<o-field
+						label="Standard Input"
+						message="This is the optional help text for the standard input"
+					>
+						<o-input
+							v-model="exampleInput"
+						/>
+					</o-field>
+					<o-field
+						label="Standard Input Placeholder"
+						message="This is the optional help text for the standard input"
+					>
+						<o-input
+							placeholder="Enter input..."
+						/>
+					</o-field>
+					<o-field
+						label="Error Input"
+						variant="danger"
+						message="This is the optional help text for the standard input"
+					>
+						<o-input
+							v-model="exampleInput"
+						/>
+					</o-field>
+				</style-guide-subsection>
 
-				<div class="field">
-					<o-checkbox v-model="checks[0]">
-						Checked
-					</o-checkbox>
-				</div>
-				<div class="field">
-					<o-checkbox v-model="checks[1]">
-						Unchecked
-					</o-checkbox>
-				</div>
-				<div class="field">
-					<o-checkbox v-model="checks[2]" disabled>
-						Checked and Disabled
-					</o-checkbox>
-				</div>
-				<div class="field">
-					<o-checkbox v-model="checks[3]" disabled>
-						Unchecked and Disabled
-					</o-checkbox>
-				</div>
-				<div class="block">
-					<o-radio v-model="radio" name="name" native-value="Foo">
-						Foo
-					</o-radio>
-					<o-radio v-model="radio" name="name" native-value="Bar">
-						Bar
-					</o-radio>
-					<o-radio v-model="radio" name="name" native-value="Fiz" disabled>
-						Fiz
-					</o-radio>
-				</div>
+				<style-guide-subsection title="Switches">
+
+					<o-field>
+						<o-switch v-model="switches[0]">On</o-switch>
+					</o-field>
+
+					<o-field>
+						<o-switch>Off</o-switch>
+					</o-field>
+
+					<o-field>
+						<o-switch v-model="switches[1]" disabled>On Disabled</o-switch>
+					</o-field>
+
+					<o-field>
+						<o-switch disabled>Off Disabled</o-switch>
+					</o-field>
+
+				</style-guide-subsection>
+
+				<style-guide-subsection title="Checkboxes">
+					<div class="field">
+						<o-checkbox v-model="checks[0]">
+							Checked
+						</o-checkbox>
+					</div>
+					<div class="field">
+						<o-checkbox v-model="checks[1]">
+							Unchecked
+						</o-checkbox>
+					</div>
+					<div class="field">
+						<o-checkbox v-model="checks[2]" disabled>
+							Checked and Disabled
+						</o-checkbox>
+					</div>
+					<div class="field">
+						<o-checkbox v-model="checks[3]" disabled>
+							Unchecked and Disabled
+						</o-checkbox>
+					</div>
+				</style-guide-subsection>
+
+				<style-guide-subsection title="Radios">
+					<div class="block">
+						<o-radio v-model="radio" name="name" native-value="Foo">
+							Foo
+						</o-radio>
+						<o-radio v-model="radio" name="name" native-value="Bar">
+							Bar
+						</o-radio>
+						<o-radio v-model="radio" name="name" native-value="Fiz" disabled>
+							Fiz
+						</o-radio>
+					</div>
+				</style-guide-subsection>
 			</style-guide-section>
 			<style-guide-section
 				title="Regular Buttons"

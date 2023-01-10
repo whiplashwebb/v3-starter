@@ -49,7 +49,12 @@ export default defineComponent({
 				true,
 				false,
 			],
+			switches: [
+				true,
+				true,
+			],
 			radio: 'Foo',
+			exampleInput: 'Example input',
 		};
 	},
 });
