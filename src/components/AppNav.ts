@@ -2,14 +2,13 @@ import { defineComponent } from 'vue';
 import type { PropType } from 'vue';
 
 import logoUrl from '@/assets/Whiplash-Brandmark-RGB.svg';
-import type {NavData, StringMap} from '@/types';
+import type { NavData } from '@/types';
 
 export default defineComponent({
 	name: 'AppNav',
 	props: {
 		navData: {
 			type: Object as PropType<NavData>,
-			required: true,
 		},
 	},
 	data() {
