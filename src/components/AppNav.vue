@@ -1,7 +1,7 @@
 <template>
 	<nav class="app-nav navbar" role="navigation" aria-label="main navigation">
 		<div class="navbar-brand">
-			<a class="navbar-item app-nav__logo-item" href="https://bulma.io">
+			<a class="navbar-item app-nav__logo-item" href="/">
 				<img :src="logoUrl">
 			</a>
 
@@ -21,7 +21,10 @@
 			class="navbar-menu"
 			:class="{ 'is-active' : isDrawerActive }"
 		>
-			<div class="navbar-start">
+			<div
+				v-if="navData"
+				class="navbar-start"
+			>
 				<template
 					v-for="(navItems, key) in navData.app"
 					:key="key"
