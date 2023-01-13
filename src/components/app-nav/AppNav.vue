@@ -1,7 +1,7 @@
 <template>
 	<nav class="app-nav navbar" role="navigation" aria-label="main navigation">
 		<div class="navbar-brand">
-			<a class="navbar-item app-nav__logo-item" href="/">
+			<a class="navbar-item app-nav__logo-item" href="/public">
 				<img :src="logoUrl">
 			</a>
 

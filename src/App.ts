@@ -1,7 +1,8 @@
 import { defineComponent } from 'vue';
 import { RouterView } from 'vue-router';
 
-import AppNav from '@/components/AppNav.vue';
+import AppNav from '@/components/app-nav/AppNav.vue';
+import MobileNav from '@/components/mobile-nav/MobileNav.vue';
 import { navMock } from '@/constants';
 import { useUserStore } from '@/stores/user';
 
@@ -11,6 +12,7 @@ export default defineComponent({
 	components: {
 		RouterView,
 		AppNav,
+		MobileNav,
 	},
 	setup() {
 		return {
@@ -20,6 +22,8 @@ export default defineComponent({
 	data() {
 		return {
 			navData: navMock,
+			userDrawerActive: false,
+			mainDrawerActive: false,
 		};
 	},
 	mounted() {

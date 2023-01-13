@@ -4,8 +4,13 @@
 		class="app"
 	>
 		<app-nav
-			class="app_header"
+			class="app_header is-hidden-touch"
 			:nav-data="userStore.navData"
+		/>
+		<mobile-nav
+			class="app_mobile-nav is-hidden-desktop"
+			v-model:user-active="userDrawerActive"
+			v-model:main-active="mainDrawerActive"
 		/>
 		<RouterView class="app__view" />
 	</div>
