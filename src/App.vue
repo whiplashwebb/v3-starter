@@ -13,6 +13,17 @@
 			v-model:main-active="mainDrawerActive"
 		/>
 		<RouterView class="app__view" />
+		<nav-drawer
+			:active="mainDrawerActive"
+		>
+			Main Nav Drawer
+		</nav-drawer>
+		<nav-drawer
+			:active="userDrawerActive"
+			right
+		>
+			User Nav Drawer
+		</nav-drawer>
 	</div>
 	<o-loading
 		v-else

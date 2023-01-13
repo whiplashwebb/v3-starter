@@ -5,7 +5,7 @@
 			@click="toggleMain"
 		>
 			<o-icon
-				:icon="mainActive ? 'xmark' : 'bars'"
+				:icon="tmpMainActive ? 'xmark' : 'bars'"
 				size="large"
 			/>
 		</a>
@@ -17,8 +17,8 @@
 			@click="toggleUser"
 		>
 			<o-icon
-				:icon="userActive ? 'xmark' : 'user-circle'"
-				:pack="userActive ? 'fas' : 'far'"
+				:icon="tmpUserActive ? 'xmark' : 'user-circle'"
+				:pack="tmpUserActive ? 'fas' : 'far'"
 				size="large"
 			/>
 		</a>
@@ -31,7 +31,7 @@
 .mobile-nav {
 	display:flex;
 	flex-direction: row;
-	align-items: center;
+	align-items: stretch;
 	justify-content: space-between;
 
 	&__item {
@@ -44,13 +44,14 @@
 
 		&:hover {
 			color:$black;
+			background-color:rgba(0,0,0,0.025);
 		}
 	}
 
 	&__logo-item {
-		width:45px;
-
 		img {
+			width:45px;
+			height:auto;
 			display:block;
 		}
 	}

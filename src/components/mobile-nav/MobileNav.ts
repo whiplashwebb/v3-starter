@@ -23,12 +23,32 @@ export default defineComponent({
 			logoUrl,
 		};
 	},
+	computed: {
+		tmpMainActive: {
+			get() {
+				return this.mainActive;
+			},
+			set(value: boolean) {
+				this.$emit('update:mainActive', value);
+			},
+		},
+		tmpUserActive: {
+			get() {
+				return this.userActive;
+			},
+			set(value: boolean) {
+				this.$emit('update:userActive', value);
+			},
+		},
+	},
 	methods: {
 		toggleMain() {
-			this.$emit('update:mainActive', !this.mainActive);
+			if (this.tmpUserActive && !this.tmpMainActive) this.tmpUserActive = false;
+			this.tmpMainActive = !this.tmpMainActive;
 		},
 		toggleUser() {
-			this.$emit('update:userActive', !this.userActive);
+			if (this.tmpMainActive && !this.tmpUserActive) this.tmpMainActive = false;
+			this.tmpUserActive = !this.tmpUserActive;
 		},
 	},
 });

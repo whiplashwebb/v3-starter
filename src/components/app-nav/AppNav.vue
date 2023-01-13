@@ -155,7 +155,7 @@
 	@include from($desktop) {
 		.navbar-dropdown {
 			top:calc(100% - 2px);
-			box-shadow:0 0 15px rgb(132 131 161 / 50%);
+			box-shadow:$wl-box-shadow;
 			padding:0;
 
 			.navbar-item {

@@ -57,5 +57,8 @@ export const useUserStore = defineStore('user',  {
 					.catch(reject);
 			});
 		},
+		logout() {
+
+		},
 	},
 });

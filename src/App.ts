@@ -3,6 +3,7 @@ import { RouterView } from 'vue-router';
 
 import AppNav from '@/components/app-nav/AppNav.vue';
 import MobileNav from '@/components/mobile-nav/MobileNav.vue';
+import NavDrawer from '@/components/nav-drawer/NavDrawer.vue';
 import { navMock } from '@/constants';
 import { useUserStore } from '@/stores/user';
 
@@ -13,6 +14,7 @@ export default defineComponent({
 		RouterView,
 		AppNav,
 		MobileNav,
+		NavDrawer,
 	},
 	setup() {
 		return {
