@@ -41,12 +41,13 @@ export default defineComponent({
 	$trans-dur:.25s;
 	$trans-ease:ease-in-out;
 	position:fixed;
-	top:0;
-	bottom:0;
+	height:calc(100vh - $navbar-height);
 	background:$white;
-	padding-top:$navbar-height;
+	top:$navbar-height;
 	min-width:20rem;
+	width:20rem;
 	box-shadow: $wl-box-shadow;
+	overflow-y:auto;
 
 	&.is-left {
 		left:$inactive-x;
