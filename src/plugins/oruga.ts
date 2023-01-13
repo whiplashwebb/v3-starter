@@ -10,6 +10,7 @@ import {
 	Switch,
 	Checkbox,
 	Radio,
+	Loading,
 } from '@oruga-ui/oruga-next';
 import { bulmaConfig } from '@oruga-ui/theme-bulma';
 import type { Plugin } from 'vue';
@@ -41,5 +42,6 @@ export const addOruga: Plugin = {
 		app.use(Switch);
 		app.use(Checkbox);
 		app.use(Radio);
+		app.use(Loading);
 	},
 };

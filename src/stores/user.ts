@@ -11,6 +11,7 @@ export const useUserStore = defineStore('user',  {
 			token: import.meta.env.VITE_OVERRIDE_TOKEN || Cookies.get(AUTH_COOKIE_NAME) || undefined,
 			baseUrl: import.meta.env.VITE_API_ROOT || 'no-base-url-found',
 			navData: null as null | NavData,
+			initComplete: false,
 		};
 	},
 	getters: {
@@ -50,6 +51,7 @@ export const useUserStore = defineStore('user',  {
 					this.loadNav(),
 				])
 					.then(() => {
+						this.initComplete = true;
 						resolve();
 					})
 					.catch(reject);

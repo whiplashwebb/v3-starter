@@ -1,12 +1,19 @@
 <template>
-	<div class="app">
+	<div
+		v-if="userStore.initComplete"
+		class="app"
+	>
 		<app-nav
 			class="app_header"
 			:nav-data="userStore.navData"
 		/>
 		<RouterView class="app__view" />
 	</div>
-
+	<o-loading
+		v-else
+		active
+		full-page
+	/>
 </template>
 
 <script lang="ts" src="./App.ts" />

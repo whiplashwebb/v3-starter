@@ -5,7 +5,7 @@ import {
 	faExclamationCircle,
 	faTimes,
 	faCaretUp,
-	faCaretDown,
+	faCaretDown, faCircleNotch,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import type { Plugin } from 'vue';
@@ -19,6 +19,7 @@ export const addFontawesome: Plugin = {
 			faTimes,
 			faCaretUp,
 			faCaretDown,
+			faCircleNotch,
 		);
 
 		app.component('VueFontawesome', FontAwesomeIcon);
