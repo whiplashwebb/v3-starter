@@ -8,7 +8,7 @@ import type { NavData } from '@/types';
 export const useUserStore = defineStore('user',  {
 	state: () => {
 		return {
-			token: import.meta.env.VITE_OVERRIDE_TOKEN || Cookies.get(AUTH_COOKIE_NAME) || 'no-token-found',
+			token: import.meta.env.VITE_OVERRIDE_TOKEN || Cookies.get(AUTH_COOKIE_NAME) || undefined,
 			baseUrl: import.meta.env.VITE_API_ROOT || 'no-base-url-found',
 			navData: null as null | NavData,
 		};
