@@ -1,30 +1,11 @@
 <template>
-	<div
+	<full-layout
 		v-if="userStore.initComplete"
+		:nav-data="userStore.navData"
 		class="app"
 	>
-		<app-nav
-			class="app_header is-hidden-touch"
-			:nav-data="userStore.navData"
-		/>
-		<mobile-nav
-			class="app_mobile-nav is-hidden-desktop"
-			v-model:user-active="userDrawerActive"
-			v-model:main-active="mainDrawerActive"
-		/>
 		<RouterView class="app__view" />
-		<nav-drawer
-			:active="mainDrawerActive"
-		>
-			Main Nav Drawer
-		</nav-drawer>
-		<nav-drawer
-			:active="userDrawerActive"
-			right
-		>
-			User Nav Drawer
-		</nav-drawer>
-	</div>
+	</full-layout>
 	<o-loading
 		v-else
 		active
