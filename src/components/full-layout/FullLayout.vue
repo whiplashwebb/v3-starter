@@ -13,7 +13,7 @@
 		<nav-drawer
 			:active="mainDrawerActive"
 		>
-			Main Nav Drawer
+			<nav-menu :nav-data="navData" />
 		</nav-drawer>
 		<nav-drawer
 			:active="userDrawerActive"

@@ -4,6 +4,7 @@ import type { PropType } from 'vue';
 import AppNav from '@/components/app-nav/AppNav.vue';
 import MobileNav from '@/components/mobile-nav/MobileNav.vue';
 import NavDrawer from '@/components/nav-drawer/NavDrawer.vue';
+import NavMenu from '@/components/NavMenu/NavMenu.vue';
 import type { NavData } from '@/types';
 
 export default defineComponent({
@@ -17,12 +18,13 @@ export default defineComponent({
 	data() {
 		return {
 			userDrawerActive: false,
-			mainDrawerActive: false,
+			mainDrawerActive: true,
 		};
 	},
 	components: {
 		AppNav,
 		MobileNav,
 		NavDrawer,
+		NavMenu,
 	},
 });
