@@ -1,4 +1,5 @@
 import type { APIV21EntitiesUser } from '@whiplashmerch/whiplash-api-client-private';
+import type { APIV21EntitiesCustomer, APIV21EntitiesWarehouse } from '@whiplashmerch/whiplash-api-client-private';
 import { defineComponent } from 'vue';
 import type { PropType } from 'vue';
 
@@ -20,6 +21,14 @@ export default defineComponent({
 		currentUser: {
 			type: Object as PropType<APIV21EntitiesUser>,
 			required: true,
+		},
+		currentCustomer: {
+			type: Object as PropType<APIV21EntitiesCustomer | null>,
+			default: () => null,
+		},
+		currentWarehouse: {
+			type: Object as PropType<APIV21EntitiesWarehouse | null>,
+			default: () => null,
 		},
 	},
 	data() {

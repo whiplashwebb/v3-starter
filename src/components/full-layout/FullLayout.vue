@@ -24,6 +24,8 @@
 			<user-accordion
 				:nav-data="navData"
 				:current-user="currentUser"
+				:current-warehouse="currentWarehouse"
+				:current-customer="currentCustomer"
 			/>
 		</nav-drawer>
 	</div>

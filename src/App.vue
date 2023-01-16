@@ -3,6 +3,8 @@
 		v-if="userStore.initComplete"
 		:nav-data="userStore.navData"
 		:current-user="userStore.currentUser"
+		:current-warehouse="userStore.currentWarehouse"
+		:current-customer="userStore.currentCustomer"
 		class="app"
 	>
 		<RouterView class="app__view" />
