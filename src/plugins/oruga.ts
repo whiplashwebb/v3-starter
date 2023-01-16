@@ -12,6 +12,7 @@ import {
 	Radio,
 	Loading,
 	Menu,
+	Select,
 } from '@oruga-ui/oruga-next';
 import { bulmaConfig } from '@oruga-ui/theme-bulma';
 import type { Plugin } from 'vue';
@@ -45,5 +46,6 @@ export const addOruga: Plugin = {
 		app.use(Radio);
 		app.use(Loading);
 		app.use(Menu);
+		app.use(Select);
 	},
 };

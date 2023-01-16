@@ -2,6 +2,7 @@
 	<full-layout
 		v-if="userStore.initComplete"
 		:nav-data="userStore.navData"
+		:current-user="userStore.currentUser"
 		class="app"
 	>
 		<RouterView class="app__view" />

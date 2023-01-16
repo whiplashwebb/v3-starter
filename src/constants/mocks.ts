@@ -1,3 +1,5 @@
+import type { APIV21EntitiesUser } from '@whiplashmerch/whiplash-api-client-private';
+
 import type { NavData } from '@/types';
 
 export const navMock: NavData = {
@@ -344,4 +346,18 @@ export const navMock: NavData = {
 			url: 'https://app-qa.getwhiplash.com/warehouses',
 		},
 	],
+};
+
+export const userMock: APIV21EntitiesUser = {
+	id: 12345,
+	email: 'testy@mcgee.com',
+	sign_in_count: 3,
+	created_at: '2022-11-30T17:06:18.000-05:00',
+	first_name: 'Testy',
+	last_name: 'McGee',
+	full_name: 'Testy McGee',
+	role: 'admin',
+	locale: 'es',
+	warehouse_id: 32,
+	active: true,
 };

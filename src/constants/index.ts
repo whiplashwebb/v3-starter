@@ -1,2 +1,2 @@
-export * from './nav';
+export * from './mocks';
 export * from './general';
