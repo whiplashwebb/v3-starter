@@ -4,9 +4,10 @@ import type { PropType } from 'vue';
 
 import AppNav from '@/components/app-nav/AppNav.vue';
 import MobileNav from '@/components/mobile-nav/MobileNav.vue';
+import MobileSearch from '@/components/mobile-search/MobileSearch.vue';
 import NavDrawer from '@/components/nav-drawer/NavDrawer.vue';
 import NavMenu from '@/components/NavMenu/NavMenu.vue';
-import { labeledSearchTypes, searchTypes } from '@/constants';
+import UserAccordion from '@/components/user-accordion/UserAccordion.vue';
 import type { NavData } from '@/types';
 
 export default defineComponent({
@@ -23,11 +24,8 @@ export default defineComponent({
 	},
 	data() {
 		return {
-			userDrawerActive: false,
-			mainDrawerActive: true,
-			labeledSearchTypes,
-			searchType: searchTypes.orders,
-			searchText: '',
+			userDrawerActive: true,
+			mainDrawerActive: false,
 		};
 	},
 	components: {
@@ -35,5 +33,7 @@ export default defineComponent({
 		MobileNav,
 		NavDrawer,
 		NavMenu,
+		MobileSearch,
+		UserAccordion,
 	},
 });

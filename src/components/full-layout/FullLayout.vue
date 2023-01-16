@@ -13,35 +13,7 @@
 		<nav-drawer
 			:active="mainDrawerActive"
 		>
-			<form>
-				<o-field>
-					<o-input
-						v-model="searchText"
-						placeholder="Search Whiplash"
-						size="small"
-					/>
-				</o-field>
-				<o-field>
-					<o-select
-						v-model="searchType"
-						size="small"
-						expanded
-					>
-						<option
-							v-for="[value, label] in labeledSearchTypes"
-							:value="value"
-						>
-							{{label}}
-						</option>
-					</o-select>
-					<o-button
-						variant="primary"
-						size="small"
-					>
-						Search
-					</o-button>
-				</o-field>
-			</form>
+			<mobile-search />
 			<hr>
 			<nav-menu :nav-data="navData" />
 		</nav-drawer>
@@ -49,7 +21,10 @@
 			:active="userDrawerActive"
 			right
 		>
-			User Nav Drawer
+			<user-accordion
+				:nav-data="navData"
+				:current-user="currentUser"
+			/>
 		</nav-drawer>
 	</div>
 </template>
