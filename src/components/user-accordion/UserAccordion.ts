@@ -33,9 +33,10 @@ export default defineComponent({
 	},
 	data() {
 		return {
-			activeSection: userSections.user,
+			activeSection: userSections.customer,
 			userSections,
 			animation: 'slide',
+			customerSearchText: '',
 		};
 	},
 	methods: {

@@ -17,7 +17,29 @@
 					/>
 				</div>
 			</template>
-			fooooo
+			<div class="user-accordion__body">
+				<o-menu>
+					<o-menu-list>
+						<o-menu-item
+							label="Log Out"
+							icon="xmark"
+						/>
+						<o-menu-item
+							label="Change Language"
+							icon="globe"
+						/>
+						<o-menu-item label="Dashboard" />
+						<template v-if="navData.info">
+							<o-menu-item
+								v-for="item in navData.info"
+								:key="item.slug"
+								:href="item.url"
+								:label="item.display"
+							/>
+						</template>
+					</o-menu-list>
+				</o-menu>
+			</div>
 		</o-collapse>
 		<o-collapse
 			:animation="animation"
@@ -36,7 +58,40 @@
 					/>
 				</div>
 			</template>
-			bar
+
+			<div class="user-accordion__body">
+				<form class="user-accordion__customer-search">
+					<o-field
+						label="Change Active Customer"
+					>
+						<o-autocomplete
+							size="small"
+							placeholder="Type customer name"
+						/>
+					</o-field>
+				</form>
+
+				<hr>
+
+				<o-menu v-if="navData.customer">
+					<o-menu-list>
+						<o-menu-item
+							label="Unset Customer"
+							icon="xmark"
+						/>
+						<o-menu-item
+							label="View All Customers"
+							icon="users-rectangle"
+						/>
+						<o-menu-item
+							v-for="item in navData.customer"
+							:key="item.slug"
+							:href="item.url"
+							:label="item.display"
+						/>
+					</o-menu-list>
+				</o-menu>
+			</div>
 		</o-collapse>
 		<o-collapse
 			:animation="animation"
@@ -55,7 +110,10 @@
 					/>
 				</div>
 			</template>
-			fiz
+
+			<div class="user-accordion__body">
+				fiz
+			</div>
 		</o-collapse>
 	</div>
 </template>
@@ -71,6 +129,7 @@
 		align-items: center;
 		font-size:$size-7;
 		text-transform: uppercase;
+		padding:.75rem 0;
 
 		&__title {
 			font-weight:$weight-bold;
@@ -78,6 +137,32 @@
 
 		&__role {
 			color:$info;
+		}
+	}
+
+	&__body {
+		border-top:1px solid $border;
+		padding-bottom:1.5rem;
+	}
+
+	&__customer-search {
+		padding-top:.75rem;
+	}
+
+	.o-clps + .o-clps {
+		border-top:1px solid $border;
+	}
+
+	.menu-list {
+		a {
+			display:flex;
+			flex-direction:row;
+			justify-content: space-between;
+			align-items: center;
+
+			.icon {
+				order:10;
+			}
 		}
 	}
 }

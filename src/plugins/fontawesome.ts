@@ -6,7 +6,17 @@ import {
 	faExclamationCircle,
 	faTimes,
 	faCaretUp,
-	faCaretDown, faCircleNotch, faBars, faXmark, faPlus, faMinus, faChevronDown, faChevronUp,
+	faCaretDown,
+	faCircleNotch,
+	faBars,
+	faXmark,
+	faPlus,
+	faMinus,
+	faChevronDown,
+	faChevronUp,
+	faGlobe,
+	faUsersRectangle,
+	faArrowRightFromBracket,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import type { Plugin } from 'vue';
@@ -28,6 +38,9 @@ export const addFontawesome: Plugin = {
 			faMinus,
 			faChevronDown,
 			faChevronUp,
+			faGlobe,
+			faUsersRectangle,
+			faArrowRightFromBracket,
 		);
 
 		app.component('VueFontawesome', FontAwesomeIcon);
