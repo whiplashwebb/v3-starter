@@ -17,29 +17,11 @@
 					/>
 				</div>
 			</template>
-			<div class="user-accordion__body">
-				<o-menu>
-					<o-menu-list>
-						<o-menu-item
-							label="Log Out"
-							icon="arrow-right-from-bracket"
-						/>
-						<o-menu-item
-							label="Change Language"
-							icon="globe"
-						/>
-						<o-menu-item label="Dashboard" />
-						<template v-if="navData.info">
-							<o-menu-item
-								v-for="item in navData.info"
-								:key="item.slug"
-								:href="item.url"
-								:label="item.display"
-							/>
-						</template>
-					</o-menu-list>
-				</o-menu>
-			</div>
+			<user-menu
+				class="user-accordion__body"
+				:current-user="currentUser"
+				:nav-data="navData"
+			/>
 		</o-collapse>
 		<o-collapse
 			:animation="animation"
@@ -59,42 +41,11 @@
 				</div>
 			</template>
 
-			<div class="user-accordion__body">
-				<form class="user-accordion__customer-search">
-					<o-field
-						label="Change Active Customer"
-					>
-						<o-autocomplete
-							size="small"
-							placeholder="Type customer name"
-						/>
-					</o-field>
-				</form>
-
-				<hr>
-
-				<o-menu>
-					<o-menu-list>
-						<o-menu-item
-							v-if="currentCustomer"
-							label="Unset Customer"
-							icon="arrow-right-from-bracket"
-						/>
-						<o-menu-item
-							label="View All Customers"
-							icon="users-rectangle"
-						/>
-						<template v-if="navData.customer">
-							<o-menu-item
-								v-for="item in navData.customer"
-								:key="item.slug"
-								:href="item.url"
-								:label="item.display"
-							/>
-						</template>
-					</o-menu-list>
-				</o-menu>
-			</div>
+			<customer-menu
+				class="user-accordion__body"
+				:nav-data="navData"
+				:current-customer="currentCustomer"
+			/>
 		</o-collapse>
 		<o-collapse
 			:animation="animation"
@@ -114,39 +65,11 @@
 				</div>
 			</template>
 
-			<div class="user-accordion__body">
-				<form class="user-accordion__customer-search">
-					<o-field
-						label="Change Active Warehouse"
-					>
-						<o-autocomplete
-							size="small"
-							placeholder="Type warehouse name"
-						/>
-					</o-field>
-				</form>
-
-				<hr>
-
-				<o-menu>
-					<o-menu-list>
-						<o-menu-item
-							v-if="currentWarehouse"
-							label="Unset Warehouse"
-							icon="arrow-right-from-bracket"
-						/>
-						<o-menu-item
-							label="View All Warehouses"
-							icon="warehouse"
-						/>
-						<o-menu-item
-							v-if="currentWarehouse"
-							:label="`Edit ${currentWarehouse.name}`"
-						/>
-
-					</o-menu-list>
-				</o-menu>
-			</div>
+			<warehouse-menu
+				class="user-accordion__body"
+				:nav-data="navData"
+				:current-warehouse="currentWarehouse"
+			/>
 		</o-collapse>
 	</div>
 </template>
@@ -175,11 +98,7 @@
 
 	&__body {
 		border-top:1px solid $border;
-		padding-bottom:1.5rem;
-	}
-
-	&__customer-search {
-		padding-top:.75rem;
+		padding:.75rem 0 1.5rem;
 	}
 
 	.o-clps + .o-clps {

@@ -3,6 +3,9 @@ import type { APIV21EntitiesCustomer, APIV21EntitiesWarehouse } from '@whiplashm
 import { defineComponent } from 'vue';
 import type { PropType } from 'vue';
 
+import CustomerMenu from '@/components/customer-menu/CustomerMenu.vue';
+import UserMenu from '@/components/user-menu/UserMenu.vue';
+import WarehouseMenu from '@/components/warhouse-menu/WarehouseMenu.vue';
 import type { NavData } from '@/types';
 
 enum userSections {
@@ -13,6 +16,11 @@ enum userSections {
 
 export default defineComponent({
 	name: 'UserAccordion',
+	components: {
+		UserMenu,
+		CustomerMenu,
+		WarehouseMenu,
+	},
 	props: {
 		navData: {
 			type: Object as PropType<NavData>,

@@ -24,7 +24,7 @@
 				variant="primary"
 				size="small"
 			>
-				Search
+				Go
 			</o-button>
 		</o-field>
 	</form>
