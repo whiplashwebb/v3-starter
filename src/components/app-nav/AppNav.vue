@@ -94,9 +94,8 @@
 
 <style lang="scss">
 .app-nav {
-	background-image: $navbar-gradient;
-	background-repeat: no-repeat;
-	border-bottom:1px solid $some-grey;
+	background-color:$cream;
+	border-bottom:1px solid $grey-lighter;
 
 	&__logo-item {
 		width:64px;
@@ -115,9 +114,8 @@
 	}
 
 	&__icon-item {
+		// Make the item a square so we can accurately draw a circle inside it, then use negative margins to control the spacing.
 		width:$navbar-height;
-		padding-left:.5rem;
-		padding-right:.5rem;
 		display:flex;
 		flex-direction: row;
 		justify-content: center;
@@ -134,6 +132,10 @@
 			background-color:$white;
 			width:100% - ($offset * 2);
 			height:100% - ($offset * 2);
+		}
+
+		& + & {
+			margin-left:-.5rem;
 		}
 	}
 

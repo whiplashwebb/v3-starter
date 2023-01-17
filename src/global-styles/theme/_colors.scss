@@ -1,18 +1,54 @@
-$some-grey:#D6D8DB;
-$some-black:#1B1F1F;
-$some-green:#2E8250;
-$text-blue:#2F9EC6;
-$background-blue:#EAF5F9;
-$disabled-grey:#BBBBBB;
-$label-grey:#808091;
-$light-green:#7DBC46;
-$satanic-grey: #666666;
+// Original from bulma
 
-$primary:$some-green;
-$danger:#D93446;
-$success:#7DBC46;
-$warning:#FF5D29;
-$info:#2F9EC6;
+$black:        hsl(0, 0%, 4%);
+$black-bis:    hsl(0, 0%, 7%);
+$black-ter:    hsl(0, 0%, 14%);
 
+$grey-darker:  hsl(0, 0%, 21%);
+$grey-dark:    hsl(0, 0%, 29%);
+$grey:         hsl(0, 0%, 48%);
+$grey-light:   hsl(0, 0%, 71%);
+$grey-lighter: hsl(0, 0%, 86%);
+$grey-lightest: hsl(0, 0%, 93%);
 
-$navbar-gradient:linear-gradient(to right, rgba(230,225,197,0.2), rgba(230,225,197,0.2)),linear-gradient(to right, #fff, #fff);
+$white-ter:    hsl(0, 0%, 96%);
+$white-bis:    hsl(0, 0%, 98%);
+$white:        hsl(0, 0%, 100%);
+
+// Overrides
+
+$black-ter: #1b1f1f;
+
+$grey-dark:#4D5454;
+$grey:#808091;
+$grey-light:#BBBBBB;
+$grey-lighter:#D6D8DB;
+
+$blue:#2F9EC6;
+$blue-light:#EAF5F9;
+$orange:#FF5D29;
+$red:#D93446;
+
+$green:#2E8250;
+$green-light:#7DBC46;
+
+// New colors
+
+$cream:#F9F9F2;
+
+// Semantic colors
+
+$primary:$green;
+
+$danger:$red;
+$success:$green-light;
+$warning:$orange;
+$info:$blue;
+
+$light: $white-ter;
+$dark: $grey-darker;
+
+// New semantic colors
+
+$text-blue:$blue;
+$background-blue:$blue-light;
