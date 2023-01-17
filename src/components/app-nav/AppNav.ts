@@ -37,6 +37,8 @@ export default defineComponent({
 			activeKey: null as string | null,
 			customerKey: 'customer',
 			warehouseKey: 'warehouse',
+			searchKey: 'search',
+			userKey: 'user',
 		};
 	},
 	methods: {

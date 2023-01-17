@@ -1,13 +1,13 @@
 .app-nav {
+	$group-spacing:1rem;
+
 	background-color:$cream;
 	border-bottom:1px solid $grey-lighter;
 
 	&__logo-item {
 		width:64px;
 		justify-content:center;
-		// margin:0 1rem;
-		margin-left:1rem;
-		//margin-right:10px;
+		margin-left:$group-spacing;
 
 		img {
 			width:45px;
@@ -26,7 +26,6 @@
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
-		margin-right:.5rem;
 	}
 
 	&__icon-item {
@@ -73,6 +72,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: stretch;
+		margin-left:$group-spacing;
 
 		&__header {
 			background-color:$blue-light;
@@ -156,8 +156,8 @@
 	.navbar-start {
 		flex:2 0 auto;
 		max-width:700px;
-		margin-left:1rem;
 		justify-content: space-between;
+		margin:0 $group-spacing;
 
 		.navbar-item,
 		.navbar-link {

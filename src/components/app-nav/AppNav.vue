@@ -55,14 +55,25 @@
 
 			<div class="navbar-end">
 				<div class="app-nav__icon-items">
-					<a class="navbar-item app-nav__icon-item">
-						<div class="app-nav__icon-wrap">
+					<div
+						class="navbar-item has-dropdown app-nav__icon-item"
+						:class="{ 'is-active' : activeKey === searchKey }"
+					>
+						<a
+							class="navbar-link is-arrowless app-nav__icon-wrap"
+							:class="{ 'is-active' : activeKey === searchKey }"
+							@click="toggleNavItem(searchKey)"
+						>
 							<o-icon
 								class="app-nav__icon"
 								icon="magnifying-glass"
 							/>
+						</a>
+
+						<div class="navbar-dropdown ">
+							search stuff
 						</div>
-					</a>
+					</div>
 					<a class="navbar-item app-nav__icon-item">
 						<div class="app-nav__icon-wrap">
 							<o-icon
@@ -71,15 +82,26 @@
 							/>
 						</div>
 					</a>
-					<a class="navbar-item app-nav__icon-item">
-						<div class="app-nav__icon-wrap">
+					<div
+						class="navbar-item has-dropdown app-nav__icon-item"
+						:class="{ 'is-active' : activeKey === userKey }"
+					>
+						<a
+							class="navbar-link is-arrowless app-nav__icon-wrap"
+							:class="{ 'is-active' : activeKey === userKey }"
+							@click="toggleNavItem(userKey)"
+						>
 							<o-icon
 								class="app-nav__icon app-nav__icon--user"
 								icon="user-circle"
 								pack="far"
 							/>
+						</a>
+
+						<div class="navbar-dropdown ">
+							search stuff
 						</div>
-					</a>
+					</div>
 				</div>
 				<div class="app-nav-status">
 					<div class="app-nav-status__header">
