@@ -4,17 +4,6 @@
 			<a class="navbar-item app-nav__logo-item" href="/public">
 				<img :src="logoUrl">
 			</a>
-
-			<a
-				role="button"
-				class="navbar-burger"
-				:class="{ 'is-active' : isDrawerActive }"
-				@click="isDrawerActive = !isDrawerActive"
-			>
-				<span aria-hidden="true"></span>
-				<span aria-hidden="true"></span>
-				<span aria-hidden="true"></span>
-			</a>
 		</div>
 
 		<div
@@ -29,17 +18,13 @@
 					v-for="(navItems, key) in navData.app"
 					:key="key"
 				>
-					<div
+					<a
 						v-if="navItems.length === 1"
 						class="navbar-item"
+						:href="navItems[0].url"
 					>
-						<a
-							class="button is-dark is-inverted app-nav__button"
-							:href="navItems[0].url"
-						>
-							{{ navItems[0].display }}
-						</a>
-					</div>
+						{{ navItems[0].display }}
+					</a>
 
 					<div
 						v-if="navItems.length > 1"
@@ -47,16 +32,10 @@
 						:class="{ 'is-active' : activeKey === key }"
 					>
 						<a
-							class="navbar-link is-arrowless is-hidden-desktop"
-							@click="toggleNavItem(key)"
-						>
-							{{ key }}
-						</a>
-						<button
-							class="is-hidden-touch button is-dark is-inverted app-nav__button"
+							class="navbar-link"
 							:class="{ 'is-active' : activeKey === key }"
 							@click="toggleNavItem(key)"
-						>{{ key }}</button>
+						>{{ key }}</a>
 
 						<div class="navbar-dropdown ">
 							<a
@@ -74,7 +53,7 @@
 
 			</div>
 
-			<!--			<div class="navbar-end">
+			<div class="navbar-end">
 				<div class="navbar-item">
 					<div class="buttons">
 						<a class="button is-primary">
@@ -85,7 +64,7 @@
 						</a>
 					</div>
 				</div>
-			</div>-->
+			</div>
 		</div>
 	</nav>
 </template>
@@ -102,7 +81,7 @@
 		width:64px;
 		justify-content:center;
 		margin:0 1rem;
-		margin-right:15px;
+		margin-right:20px;
 
 		img {
 			width:45px;
@@ -114,63 +93,10 @@
 		}
 	}
 
-	&__button, .navbar-link {
+	.navbar-item, .navbar-link {
 		text-transform: uppercase;
 		font-size:$size-7;
 		letter-spacing: .64px;
-
-	}
-
-	&__button {
-		padding:1rem 16px;
-		height:auto;
-		line-height:14.5px;
-		border:none;
-
-		&.is-dark.is-inverted {
-			color:$some-black;
-			background-color:transparent;
-		}
-
-	}
-
-	.navbar-start,
-	.navbar-end {
-		> .navbar-item {
-			$h-pad:1px;
-			padding-left:$h-pad;
-			padding-right:$h-pad;
-
-			&.has-dropdown {
-				padding:.5rem $h-pad;
-
-				.button.is-active {
-					color:$white;
-					background:$some-black;
-				}
-			}
-		}
-	}
-
-	@include from($desktop) {
-		.navbar-dropdown {
-			top:calc(100% - 2px);
-			box-shadow:$wl-box-shadow;
-			padding:0;
-
-			.navbar-item {
-				padding:9.2px 21px;
-				min-width:215px;
-
-				&:first-child {
-					padding-top:14px;
-				}
-
-				&:last-child {
-					padding-bottom:14px;
-				}
-			}
-		}
 	}
 }
 </style>
