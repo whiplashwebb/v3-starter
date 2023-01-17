@@ -3,13 +3,16 @@
 		<o-menu>
 			<o-menu-list>
 				<o-menu-item
+					class="is-reversed"
 					label="Log Out"
 					icon="arrow-right-from-bracket"
 				/>
 				<o-menu-item
+					class="is-reversed"
 					label="Change Language"
 					icon="globe"
 				/>
+				<hr>
 				<o-menu-item label="Dashboard" />
 				<template v-if="navData.info">
 					<o-menu-item

@@ -1,7 +1,7 @@
 <template>
 	<nav class="app-nav navbar" role="navigation" aria-label="main navigation">
 		<div class="navbar-brand">
-			<a class="navbar-item app-nav__logo-item" href="/public">
+			<a class="navbar-item app-nav__logo-item" href="/">
 				<img :src="logoUrl">
 			</a>
 		</div>
@@ -71,7 +71,11 @@
 						</a>
 
 						<div class="navbar-dropdown ">
-							search stuff
+							<div
+								class="navbar-item"
+							>
+								<mobile-search />
+							</div>
 						</div>
 					</div>
 					<a class="navbar-item app-nav__icon-item">
@@ -99,7 +103,14 @@
 						</a>
 
 						<div class="navbar-dropdown ">
-							search stuff
+							<div
+								class="navbar-item"
+							>
+								<user-menu
+									:current-user="currentUser"
+									:nav-data="navData"
+								/>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -126,11 +137,14 @@
 							</a>
 
 							<div class="navbar-dropdown is-right">
-								<a
+								<div
 									class="navbar-item"
 								>
-									foo
-								</a>
+									<customer-menu
+										:current-customer="currentCustomer"
+										:nav-data="navData"
+									/>
+								</div>
 							</div>
 						</div>
 
@@ -150,11 +164,14 @@
 							</a>
 
 							<div class="navbar-dropdown is-right">
-								<a
+								<div
 									class="navbar-item"
 								>
-									foo
-								</a>
+									<warehouse-menu
+										:current-warehouse="currentWarehouse"
+										:nav-data="navData"
+									/>
+								</div>
 							</div>
 						</div>
 					</div>

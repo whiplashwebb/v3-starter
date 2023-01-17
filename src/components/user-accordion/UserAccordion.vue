@@ -104,18 +104,5 @@
 	.o-clps + .o-clps {
 		border-top:1px solid $border;
 	}
-
-	.menu-list {
-		a {
-			display:flex;
-			flex-direction:row;
-			justify-content: space-between;
-			align-items: center;
-
-			.icon {
-				order:10;
-			}
-		}
-	}
 }
 </style>

@@ -13,9 +13,12 @@ $weight-medium: 500;
 $weight-semibold: 600;
 $weight-bold: 700;
 
-$navbar-background-color: #FAF9F3; // Sampled crudely from a gradient
+$navbar-background-color: $cream;
 $navbar-height:4rem;
 $navbar-item-img-max-height:35px;
+$navbar-item-hover-color:$primary;
+$navbar-item-hover-background-color:lighten($navbar-background-color, 2);
+$navbar-dropdown-arrow:$primary;
 $navbar-dropdown-border-top:none;
 $navbar-dropdown-item-hover-background-color:$background-blue;
 $navbar-dropdown-item-hover-color:$text-blue;

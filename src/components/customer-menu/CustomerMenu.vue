@@ -16,11 +16,13 @@
 		<o-menu>
 			<o-menu-list>
 				<o-menu-item
+					class="is-reversed"
 					v-if="currentCustomer"
 					label="Unset Customer"
 					icon="arrow-right-from-bracket"
 				/>
 				<o-menu-item
+					class="is-reversed"
 					label="View All Customers"
 					icon="users-rectangle"
 				/>
