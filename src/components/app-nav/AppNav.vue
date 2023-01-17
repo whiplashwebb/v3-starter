@@ -32,7 +32,7 @@
 						:class="{ 'is-active' : activeKey === key }"
 					>
 						<a
-							class="navbar-link"
+							class="navbar-link is-arrowless"
 							:class="{ 'is-active' : activeKey === key }"
 							@click="toggleNavItem(key)"
 						>{{ key }}</a>
@@ -54,18 +54,6 @@
 			</div>
 
 			<div class="navbar-end">
-<!--				<a class="navbar-item">
-					<o-icon
-						class="app-nav__icon"
-						icon="magnifying-glass"
-					/>
-				</a>
-				<a class="navbar-item">
-					<o-icon
-						class="app-nav__icon"
-						icon="bell"
-					/>
-				</a>-->
 				<a class="navbar-item app-nav__icon-item">
 					<o-icon
 						class="app-nav__icon"
@@ -85,74 +73,66 @@
 						pack="far"
 					/>
 				</a>
+				<div class="app-nav-status">
+					<div class="app-nav-status__header">
+						<div class="app-nav-status__name">{{ currentUser.full_name }}</div>
+						<div class="app-nav-status__role">{{ currentUser.role }}</div>
+					</div>
+					<div class="app-nav-status__body">
+
+						<div
+							class="navbar-item has-dropdown"
+							:class="{ 'is-active' : activeKey === customerKey }"
+						>
+							<a
+								class="navbar-link app-nav-status__dropdown-trigger"
+								:class="{ 'is-active' : activeKey === customerKey }"
+								@click="toggleNavItem(customerKey)"
+							>
+								<div class="app-nav-status__dropdown-label">
+									<div>Customer:</div>
+									<div class="app-nav-status__dropdown-name">{{ currentCustomer.name || 'All' }}</div>
+								</div>
+							</a>
+
+							<div class="navbar-dropdown is-right">
+								<a
+									class="navbar-item"
+								>
+									foo
+								</a>
+							</div>
+						</div>
+
+						<div
+							class="navbar-item has-dropdown"
+							:class="{ 'is-active' : activeKey === warehouseKey }"
+						>
+							<a
+								class="navbar-link app-nav-status__dropdown-trigger"
+								:class="{ 'is-active' : activeKey === warehouseKey }"
+								@click="toggleNavItem(warehouseKey)"
+							>
+								<div class="app-nav-status__dropdown-label">
+									<div>Warehouse:</div>
+									<div class="app-nav-status__dropdown-name">{{ currentWarehouse.name || 'All' }}</div>
+								</div>
+							</a>
+
+							<div class="navbar-dropdown is-right">
+								<a
+									class="navbar-item"
+								>
+									foo
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</nav>
 </template>
 
 <script lang="ts" src="./AppNav.ts" />
-
-<style lang="scss">
-.app-nav {
-	background-color:$cream;
-	border-bottom:1px solid $grey-lighter;
-
-	&__logo-item {
-		width:64px;
-		justify-content:center;
-		margin:0 1rem;
-		margin-right:20px;
-
-		img {
-			width:45px;
-			height:auto;
-		}
-
-		&.navbar-item {
-			padding: 0.5rem 0;
-		}
-	}
-
-	&__icon-item {
-		// Make the item a square so we can accurately draw a circle inside it, then use negative margins to control the spacing.
-		width:$navbar-height;
-		display:flex;
-		flex-direction: row;
-		justify-content: center;
-		align-items: center;
-
-		&::before {
-			$offset:20%;
-			z-index:-1;
-			position:absolute;
-			left:$offset;
-			top:$offset;
-			content:'';
-			border-radius:50%;
-			background-color:$white;
-			width:100% - ($offset * 2);
-			height:100% - ($offset * 2);
-		}
-
-		& + & {
-			margin-left:-.5rem;
-		}
-	}
-
-	&__icon {
-		font-size:20px;
-		position:relative;
-
-		&--user {
-			font-size:28px;
-		}
-	}
-
-	// Maybe turn this into a variant?
-	.navbar-item, .navbar-link {
-		text-transform: uppercase;
-		font-size:$size-7;
-		letter-spacing: .64px;
-	}
-}
-</style>
+<style lang="scss" src="./AppNav.scss" />

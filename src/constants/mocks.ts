@@ -425,7 +425,7 @@ export const warehouseMock: APIV21EntitiesWarehouse = {
 // spec claims allowed_warehouse_ids is a single number but is really an array of numbers. workday_uuid is undocumented in the spec.
 export const customerMock: APIV21EntitiesCustomer = {
 	id: 10658,
-	name: 'Princess Polly',
+	name: 'Princess Polly Princess Polly Princess Polly Princess Polly',
 	created_at: '2020-03-26T16:03:18.000-04:00',
 	active: true,
 	auto_merge_gestation: undefined,

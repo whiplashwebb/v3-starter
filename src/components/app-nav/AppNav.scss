@@ -1,0 +1,163 @@
+.app-nav {
+	background-color:$cream;
+	border-bottom:1px solid $grey-lighter;
+
+	&__logo-item {
+		width:64px;
+		justify-content:center;
+		// margin:0 1rem;
+		margin-left:1rem;
+		// margin-right:20px;
+
+		img {
+			width:45px;
+			height:auto;
+		}
+
+		&.navbar-item {
+			padding: 0.5rem 0;
+		}
+	}
+
+	&__icon-item {
+		// Make the item a square so we can accurately draw a circle inside it, then use negative margins to control the spacing.
+		width:$navbar-height;
+		display:flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+
+		&::before {
+			$offset:20%;
+			z-index:-1;
+			position:absolute;
+			left:$offset;
+			top:$offset;
+			content:'';
+			border-radius:50%;
+			background-color:$white;
+			width:100% - ($offset * 2);
+			height:100% - ($offset * 2);
+		}
+
+		& + & {
+			margin-left:-1rem;
+		}
+	}
+
+	&__icon {
+		font-size:20px;
+		position:relative;
+
+		&--user {
+			font-size:28px;
+		}
+	}
+
+	// Maybe turn this into a variant?
+	.navbar-item, .navbar-link {
+		text-transform: uppercase;
+		font-size:$size-7;
+		letter-spacing: .64px;
+	}
+
+	&-status {
+		// width:150px;
+		flex:1 1 150px;
+		height:$navbar-height;
+		max-width:300px;
+		font-size:$size-7;
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+
+		&__header {
+			background-color:$blue-light;
+			display:flex;
+			flex-direction:row;
+			justify-content: space-between;
+			align-items: center;
+			padding:.25rem;
+
+			> * + * {
+				margin-left:1rem;
+			}
+		}
+
+		&__name {
+			font-weight:$weight-bold;
+		}
+
+		&__role {
+			color:$text-blue;
+			text-transform: uppercase;
+		}
+
+		&__body {
+			$border:2px solid $blue-light;
+			flex:1 0 auto;
+			display:flex;
+			flex-direction:row;
+			justify-content: space-between;
+			align-items: center;
+			background-color:$white;
+			border-left:$border;
+			border-right:$border;
+
+			.navbar-item {
+				width:1%; //
+				flex:1 1 50%;
+			}
+
+			> * + * {
+				border-left:$border;
+			}
+		}
+
+		&__dropdown {
+			// We need a chain of explicit widths to make ellipsis work
+			&-trigger,
+			&-label,
+			&-name {
+				width:100%;
+			}
+
+			&-name {
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				text-transform: none;
+			}
+
+			&-trigger {
+				padding:.25rem;
+
+				&.navbar-link {
+					line-height: 1.3em;
+					font-size:$size-8;
+					font-weight:$weight-bold;
+				}
+			}
+		}
+	}
+
+	.navbar-menu {
+		flex:1 1 auto;
+	}
+
+	.navbar-start,
+	.navbar-end {
+		flex:1 1 auto;
+	}
+
+	.navbar-start {
+		flex:2 1 auto;
+		max-width:700px;
+		overflow:hidden;
+		justify-content: space-between;
+		.navbar-item,
+		.navbar-link {
+			padding:.5rem .25rem;
+		}
+	}
+}

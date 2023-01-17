@@ -3,6 +3,9 @@
 		<app-nav
 			class="full-layout__header is-hidden-touch"
 			:nav-data="navData"
+			:current-user="currentUser"
+			:current-warehouse="currentWarehouse"
+			:current-customer="currentCustomer"
 		/>
 		<mobile-nav
 			class="full-layout__mobile-nav is-hidden-desktop"
