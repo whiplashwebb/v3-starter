@@ -7,7 +7,7 @@
 		justify-content:center;
 		// margin:0 1rem;
 		margin-left:1rem;
-		// margin-right:20px;
+		//margin-right:10px;
 
 		img {
 			width:45px;
@@ -19,30 +19,33 @@
 		}
 	}
 
+	&__icon-items {
+		max-width:135px;
+		flex:1 1 auto;
+		display:flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		margin-right:.5rem;
+	}
+
 	&__icon-item {
-		// Make the item a square so we can accurately draw a circle inside it, then use negative margins to control the spacing.
-		width:$navbar-height;
 		display:flex;
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
+		padding:.2rem;
+	}
 
-		&::before {
-			$offset:20%;
-			z-index:-1;
-			position:absolute;
-			left:$offset;
-			top:$offset;
-			content:'';
-			border-radius:50%;
-			background-color:$white;
-			width:100% - ($offset * 2);
-			height:100% - ($offset * 2);
-		}
-
-		& + & {
-			margin-left:-1rem;
-		}
+	&__icon-wrap {
+		$wrap-size:32px;
+		width:$wrap-size;
+		height:$wrap-size;
+		border-radius:50%;
+		background-color:$white;
+		display:flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	&__icon {
@@ -62,8 +65,8 @@
 	}
 
 	&-status {
-		// width:150px;
-		flex:1 1 150px;
+		width:150px;
+		flex:1 0 auto;
 		height:$navbar-height;
 		max-width:300px;
 		font-size:$size-7;
@@ -151,13 +154,22 @@
 	}
 
 	.navbar-start {
-		flex:2 1 auto;
+		flex:2 0 auto;
 		max-width:700px;
-		overflow:hidden;
+		margin-left:1rem;
 		justify-content: space-between;
+
 		.navbar-item,
 		.navbar-link {
 			padding:.5rem .25rem;
+		}
+
+		.navbar-link:not(.is-arrowless) {
+			padding-right:1.55em;
+
+			&::after {
+				right:.25em;
+			}
 		}
 	}
 }

@@ -32,7 +32,7 @@
 						:class="{ 'is-active' : activeKey === key }"
 					>
 						<a
-							class="navbar-link is-arrowless"
+							class="navbar-link"
 							:class="{ 'is-active' : activeKey === key }"
 							@click="toggleNavItem(key)"
 						>{{ key }}</a>
@@ -54,25 +54,33 @@
 			</div>
 
 			<div class="navbar-end">
-				<a class="navbar-item app-nav__icon-item">
-					<o-icon
-						class="app-nav__icon"
-						icon="magnifying-glass"
-					/>
-				</a>
-				<a class="navbar-item app-nav__icon-item">
-					<o-icon
-						class="app-nav__icon"
-						icon="bell"
-					/>
-				</a>
-				<a class="navbar-item app-nav__icon-item">
-					<o-icon
-						class="app-nav__icon app-nav__icon--user"
-						icon="user-circle"
-						pack="far"
-					/>
-				</a>
+				<div class="app-nav__icon-items">
+					<a class="navbar-item app-nav__icon-item">
+						<div class="app-nav__icon-wrap">
+							<o-icon
+								class="app-nav__icon"
+								icon="magnifying-glass"
+							/>
+						</div>
+					</a>
+					<a class="navbar-item app-nav__icon-item">
+						<div class="app-nav__icon-wrap">
+							<o-icon
+								class="app-nav__icon"
+								icon="bell"
+							/>
+						</div>
+					</a>
+					<a class="navbar-item app-nav__icon-item">
+						<div class="app-nav__icon-wrap">
+							<o-icon
+								class="app-nav__icon app-nav__icon--user"
+								icon="user-circle"
+								pack="far"
+							/>
+						</div>
+					</a>
+				</div>
 				<div class="app-nav-status">
 					<div class="app-nav-status__header">
 						<div class="app-nav-status__name">{{ currentUser.full_name }}</div>
