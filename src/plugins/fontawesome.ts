@@ -16,7 +16,7 @@ import {
 	faChevronUp,
 	faGlobe,
 	faUsersRectangle,
-	faArrowRightFromBracket, faWarehouse,
+	faArrowRightFromBracket, faWarehouse, faMagnifyingGlass, faBell,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import type { Plugin } from 'vue';
@@ -42,6 +42,8 @@ export const addFontawesome: Plugin = {
 			faUsersRectangle,
 			faArrowRightFromBracket,
 			faWarehouse,
+			faMagnifyingGlass,
+			faBell,
 		);
 
 		app.component('VueFontawesome', FontAwesomeIcon);

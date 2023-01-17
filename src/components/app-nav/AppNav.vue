@@ -54,16 +54,37 @@
 			</div>
 
 			<div class="navbar-end">
-				<div class="navbar-item">
-					<div class="buttons">
-						<a class="button is-primary">
-							<strong>Sign up</strong>
-						</a>
-						<a class="button is-light">
-							Log in
-						</a>
-					</div>
-				</div>
+<!--				<a class="navbar-item">
+					<o-icon
+						class="app-nav__icon"
+						icon="magnifying-glass"
+					/>
+				</a>
+				<a class="navbar-item">
+					<o-icon
+						class="app-nav__icon"
+						icon="bell"
+					/>
+				</a>-->
+				<a class="navbar-item app-nav__icon-item">
+					<o-icon
+						class="app-nav__icon"
+						icon="magnifying-glass"
+					/>
+				</a>
+				<a class="navbar-item app-nav__icon-item">
+					<o-icon
+						class="app-nav__icon"
+						icon="bell"
+					/>
+				</a>
+				<a class="navbar-item app-nav__icon-item">
+					<o-icon
+						class="app-nav__icon app-nav__icon--user"
+						icon="user-circle"
+						pack="far"
+					/>
+				</a>
 			</div>
 		</div>
 	</nav>
@@ -93,6 +114,39 @@
 		}
 	}
 
+	&__icon-item {
+		width:$navbar-height;
+		padding-left:.5rem;
+		padding-right:.5rem;
+		display:flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+
+		&::before {
+			$offset:20%;
+			z-index:-1;
+			position:absolute;
+			left:$offset;
+			top:$offset;
+			content:'';
+			border-radius:50%;
+			background-color:$white;
+			width:100% - ($offset * 2);
+			height:100% - ($offset * 2);
+		}
+	}
+
+	&__icon {
+		font-size:20px;
+		position:relative;
+
+		&--user {
+			font-size:28px;
+		}
+	}
+
+	// Maybe turn this into a variant?
 	.navbar-item, .navbar-link {
 		text-transform: uppercase;
 		font-size:$size-7;
