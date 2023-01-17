@@ -22,7 +22,7 @@
 					<o-menu-list>
 						<o-menu-item
 							label="Log Out"
-							icon="xmark"
+							icon="arrow-right-from-bracket"
 						/>
 						<o-menu-item
 							label="Change Language"
@@ -73,22 +73,25 @@
 
 				<hr>
 
-				<o-menu v-if="navData.customer">
+				<o-menu>
 					<o-menu-list>
 						<o-menu-item
+							v-if="currentCustomer"
 							label="Unset Customer"
-							icon="xmark"
+							icon="arrow-right-from-bracket"
 						/>
 						<o-menu-item
 							label="View All Customers"
 							icon="users-rectangle"
 						/>
-						<o-menu-item
-							v-for="item in navData.customer"
-							:key="item.slug"
-							:href="item.url"
-							:label="item.display"
-						/>
+						<template v-if="navData.customer">
+							<o-menu-item
+								v-for="item in navData.customer"
+								:key="item.slug"
+								:href="item.url"
+								:label="item.display"
+							/>
+						</template>
 					</o-menu-list>
 				</o-menu>
 			</div>
@@ -112,7 +115,37 @@
 			</template>
 
 			<div class="user-accordion__body">
-				fiz
+				<form class="user-accordion__customer-search">
+					<o-field
+						label="Change Active Warehouse"
+					>
+						<o-autocomplete
+							size="small"
+							placeholder="Type warehouse name"
+						/>
+					</o-field>
+				</form>
+
+				<hr>
+
+				<o-menu>
+					<o-menu-list>
+						<o-menu-item
+							v-if="currentWarehouse"
+							label="Unset Warehouse"
+							icon="arrow-right-from-bracket"
+						/>
+						<o-menu-item
+							label="View All Warehouses"
+							icon="warehouse"
+						/>
+						<o-menu-item
+							v-if="currentWarehouse"
+							:label="`Edit ${currentWarehouse.name}`"
+						/>
+
+					</o-menu-list>
+				</o-menu>
 			</div>
 		</o-collapse>
 	</div>

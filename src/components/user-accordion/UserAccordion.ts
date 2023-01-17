@@ -33,7 +33,7 @@ export default defineComponent({
 	},
 	data() {
 		return {
-			activeSection: userSections.customer,
+			activeSection: userSections.warehouse,
 			userSections,
 			animation: 'slide',
 			customerSearchText: '',
