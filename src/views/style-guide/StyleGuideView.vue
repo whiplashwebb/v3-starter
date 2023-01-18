@@ -19,8 +19,44 @@
 		</div>
 		<div class="container">
 			<style-guide-section
-				title="Toasts"
+				title="Modals"
 				initially-active
+			>
+				<style-guide-subsection>
+					<div class="buttons">
+						<o-button
+							variant="primary"
+							@click="basicModalOpen = !basicModalOpen"
+						>
+							Basic Modal
+						</o-button>
+						<o-button
+							variant="primary"
+							outlined
+							@click="openModal"
+						>
+							Programmatic Modal
+						</o-button>
+						<o-button
+							variant="info"
+							@click="openPrompt"
+						>
+							Prompt
+						</o-button>
+					</div>
+
+					<o-modal
+						v-model:active="basicModalOpen"
+						scroll="clip"
+					>
+						<style-guide-modal-card />
+					</o-modal>
+
+				</style-guide-subsection>
+
+			</style-guide-section>
+			<style-guide-section
+				title="Toasts"
 			>
 				<style-guide-subsection>
 					<div class="content">

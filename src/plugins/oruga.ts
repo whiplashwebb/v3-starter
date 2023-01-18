@@ -14,6 +14,7 @@ import {
 	Menu,
 	Select,
 	Autocomplete,
+	Modal,
 } from '@oruga-ui/oruga-next';
 import { bulmaConfig } from '@oruga-ui/theme-bulma';
 import type { Plugin } from 'vue';
@@ -35,6 +36,7 @@ export const addOruga: Plugin = {
 		// Global oruga config
 		app.use(Config, overrideConfig);
 		app.use(Notification);
+		app.use(Modal);
 
 		// Add individual components here
 		app.use(Input);
