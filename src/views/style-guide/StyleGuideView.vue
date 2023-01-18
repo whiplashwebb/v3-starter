@@ -19,8 +19,77 @@
 		</div>
 		<div class="container">
 			<style-guide-section
-				title="Inputs"
+				title="Tags"
 				initially-active
+			>
+				<style-guide-subsection>
+					<div class="content">
+						<blockquote>
+							<p>Tags currently don't exist in Oruga, only in Bulma. It's a bit unclear why but I suspect it's because there's so simple a component doesn't really accomplish much. Personally I think this would make sense.<br> <a href="https://bulma.io/documentation/elements/tag/" target="_blank">Bulma Docs</a></p>
+						</blockquote>
+					</div>
+
+				</style-guide-subsection>
+				<style-guide-subsection>
+					<div class="tags">
+						<span
+							v-for="variant in variants"
+							:key="`${variant}-tag-regular`"
+							:class="`tag is-${variant}`"
+						>
+							<span class="is-capitalized">{{ variant }}</span>
+						</span>
+					</div>
+
+				</style-guide-subsection>
+
+				<style-guide-subsection title="Tags with Addons">
+					<div class="field is-grouped is-grouped-multiline">
+						<div
+							class="control"
+							v-for="variant in variants"
+							:key="`${variant}-tag-addon`"
+						>
+							<div class="tags has-addons">
+								<a :class="`tag is-${variant}`">
+									<span class="is-capitalized">{{ variant }}</span>
+								</a>
+								<a class="tag is-delete"></a>
+							</div>
+						</div>
+					</div>
+
+				</style-guide-subsection>
+
+				<style-guide-subsection title="Rounded Tags">
+					<div class="tags">
+						<span
+							v-for="variant in variants"
+							:key="`${variant}-tag-rounded`"
+							:class="`tag is-${variant} is-rounded`"
+						>
+							<span class="is-capitalized">{{ variant }}</span>
+						</span>
+					</div>
+
+				</style-guide-subsection>
+
+				<style-guide-subsection title="Tag Sizes">
+					<div class="tags">
+						<span
+							v-for="size in tagSizes"
+							:key="`${size}-tag-regular`"
+							:class="`tag is-primary is-${size}`"
+						>
+							<span class="is-capitalized">{{ size || 'Default' }}</span>
+						</span>
+					</div>
+
+				</style-guide-subsection>
+
+			</style-guide-section>
+			<style-guide-section
+				title="Inputs"
 			>
 				<style-guide-subsection>
 					<o-field

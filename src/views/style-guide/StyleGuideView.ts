@@ -42,6 +42,11 @@ export default defineComponent({
 				'medium',
 				'large',
 			],
+			tagSizes: [
+				'',
+				'medium',
+				'large',
+			],
 			isDark: false,
 			checks: [
 				true,
