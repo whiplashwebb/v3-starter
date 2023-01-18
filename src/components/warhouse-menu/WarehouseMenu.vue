@@ -6,8 +6,15 @@
 			>
 				<o-autocomplete
 					size="small"
-					placeholder="Type warehouse name"
-				/>
+					:data="results"
+					:loading="isLoading"
+					@typing="getDebouncedResults"
+					@select="option => selected = option"
+				>
+					<template #default="props">
+						{{ props.option.name }}
+					</template>
+				</o-autocomplete>
 			</o-field>
 		</form>
 
@@ -38,3 +45,9 @@
 </template>
 
 <script lang="ts" src="./WarehouseMenu.ts" />
+
+<style lang="scss">
+.warehouse-menu {
+	@include inline-autocomplete;
+}
+</style>
