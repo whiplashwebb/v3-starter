@@ -25,6 +25,7 @@
 					class="is-reversed"
 					label="View All Warehouses"
 					icon="warehouse"
+					:href="allWarehousesUrl"
 				/>
 				<o-menu-item
 					v-if="currentWarehouse"

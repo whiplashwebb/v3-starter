@@ -3,6 +3,7 @@ import { defineComponent } from 'vue';
 import type { PropType } from 'vue';
 
 import type { NavData } from '@/types';
+import { getAllCustomersUrl } from '@/utils';
 
 export default defineComponent({
 	name: 'CustomerMenu',
@@ -14,6 +15,11 @@ export default defineComponent({
 		currentCustomer: {
 			type: Object as PropType<APIV21EntitiesCustomer | null>,
 			default: () => null,
+		},
+	},
+	computed: {
+		allCustomersUrl(): string {
+			return getAllCustomersUrl(this.navData);
 		},
 	},
 });

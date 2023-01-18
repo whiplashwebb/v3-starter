@@ -25,6 +25,7 @@
 					class="is-reversed"
 					label="View All Customers"
 					icon="users-rectangle"
+					:href="allCustomersUrl"
 				/>
 				<template v-if="navData.customer">
 					<o-menu-item
