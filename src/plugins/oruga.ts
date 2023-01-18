@@ -25,7 +25,8 @@ export const overrideConfig = {
 	statusIcon: false,
 	notification: {
 		...bulmaConfig.notification,
-		duration: 5000,
+		duration: 10000,
+		position: 'bottom-right',
 	},
 };
 

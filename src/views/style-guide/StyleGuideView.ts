@@ -2,6 +2,7 @@ import { defineComponent } from 'vue';
 
 import StyleGuideSection from '@/components/style-guide-section/StyleGuideSection.vue';
 import StyleGuideSubsection from '@/components/style-guide-subsection/StyleGuideSubsection.vue';
+import {errorToast, successToast} from "@/utils/notifications";
 
 const colorVariants = [
 	'primary',
@@ -66,5 +67,13 @@ export default defineComponent({
 			radio: 'Foo',
 			exampleInput: 'Example input',
 		};
+	},
+	methods: {
+		popSuccessToast() {
+			successToast('Nice job!');
+		},
+		popErrorToast() {
+			errorToast(new Error('Oh uh! Something went wrong!'));
+		},
 	},
 });

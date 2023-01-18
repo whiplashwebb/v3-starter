@@ -19,8 +19,39 @@
 		</div>
 		<div class="container">
 			<style-guide-section
-				title="Pills"
+				title="Toasts"
 				initially-active
+			>
+				<style-guide-subsection>
+					<div class="content">
+						<blockquote>
+							<p>Toasts are a bit of a moving target in terms of naming. "Toast" is the most common name for this kind of thing, which is why I've opted for this name. Oruga refers to them as "Notifications", which imho is confusing but is technically the most accurate as oruga powers our toasts. Buefy had toasts and snackbars, which were two variations on this theme. Bulma doesn't define this at all as it's very javascript-y.</p>
+							<p>Utility methods are provided for success and error toasts, which default to toasts which will expire after a 10 seconds and can be dismissed by the user. Duration can be configured in the global oruga config. If you need non-dismissable toasts you can use <code>oruga.notification.open()</code> directly.</p>
+						</blockquote>
+					</div>
+
+				</style-guide-subsection>
+				<style-guide-subsection>
+					<div class="buttons">
+						<o-button
+							variant="success"
+							@click="popSuccessToast"
+						>
+							Success Toast
+						</o-button>
+						<o-button
+							variant="danger"
+							@click="popErrorToast"
+						>
+							Error Toast
+						</o-button>
+					</div>
+
+				</style-guide-subsection>
+
+			</style-guide-section>
+			<style-guide-section
+				title="Pills"
 			>
 				<style-guide-subsection>
 					<div class="content">
