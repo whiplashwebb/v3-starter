@@ -49,3 +49,9 @@
 </template>
 
 <script lang="ts" src="./CustomerMenu.ts" />
+
+<style lang="scss">
+.customer-menu {
+	@include inline-autocomplete;
+}
+</style>

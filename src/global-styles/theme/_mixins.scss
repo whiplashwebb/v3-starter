@@ -1,0 +1,12 @@
+@mixin inline-autocomplete {
+	.dropdown-content {
+		position:static;
+		max-height:initial;
+		box-shadow:none;
+		min-width: initial;
+	}
+
+	.dropdown-item {
+		font-size:$size-7;
+	}
+}
