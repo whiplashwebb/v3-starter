@@ -143,6 +143,7 @@
 									<customer-menu
 										:current-customer="currentCustomer"
 										:nav-data="navData"
+										:http-client="httpClient"
 									/>
 								</div>
 							</div>
@@ -170,6 +171,7 @@
 									<warehouse-menu
 										:current-warehouse="currentWarehouse"
 										:nav-data="navData"
+										:http-client="httpClient"
 									/>
 								</div>
 							</div>
@@ -181,5 +183,5 @@
 	</nav>
 </template>
 
-<script lang="ts" src="./AppNav.ts" />
-<style lang="scss" src="./AppNav.scss" />
+<script lang="ts" src="./DesktopNav.ts" />
+<style lang="scss" src="./DesktopNav.scss" />

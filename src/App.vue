@@ -5,6 +5,7 @@
 		:current-user="userStore.currentUser"
 		:current-warehouse="userStore.currentWarehouse"
 		:current-customer="userStore.currentCustomer"
+		:http-client="userStore.httpClient"
 		class="app"
 	>
 		<RouterView class="app__view" />

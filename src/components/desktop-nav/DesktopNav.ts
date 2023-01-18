@@ -3,6 +3,7 @@ import type {
 	APIV21EntitiesUser,
 	APIV21EntitiesWarehouse,
 } from '@whiplashmerch/whiplash-api-client-private';
+import type { HttpClient } from '@whiplashmerch/whiplash-api-client-private';
 import { defineComponent } from 'vue';
 import type { PropType } from 'vue';
 
@@ -15,7 +16,7 @@ import type { NavData } from '@/types';
 
 
 export default defineComponent({
-	name: 'AppNav',
+	name: 'DesktopNav',
 	components: {
 		MobileSearch,
 		UserMenu,
@@ -29,6 +30,10 @@ export default defineComponent({
 		},
 		currentUser: {
 			type: Object as PropType<APIV21EntitiesUser>,
+			required: true,
+		},
+		httpClient: {
+			type: Object as PropType<HttpClient>,
 			required: true,
 		},
 		currentCustomer: {

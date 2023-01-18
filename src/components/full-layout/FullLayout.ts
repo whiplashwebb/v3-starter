@@ -1,12 +1,13 @@
 import type {
 	APIV21EntitiesCustomer,
 	APIV21EntitiesUser,
-	APIV21EntitiesWarehouse
+	APIV21EntitiesWarehouse,
 } from '@whiplashmerch/whiplash-api-client-private';
+import type { HttpClient } from '@whiplashmerch/whiplash-api-client-private';
 import { defineComponent } from 'vue';
 import type { PropType } from 'vue';
 
-import AppNav from '@/components/app-nav/AppNav.vue';
+import DesktopNav from '@/components/desktop-nav/DesktopNav.vue';
 import MobileNav from '@/components/mobile-nav/MobileNav.vue';
 import MobileSearch from '@/components/mobile-search/MobileSearch.vue';
 import NavDrawer from '@/components/nav-drawer/NavDrawer.vue';
@@ -25,6 +26,10 @@ export default defineComponent({
 			type: Object as PropType<APIV21EntitiesUser>,
 			required: true,
 		},
+		httpClient: {
+			type: Object as PropType<HttpClient>,
+			required: true,
+		},
 		currentCustomer: {
 			type: Object as PropType<APIV21EntitiesCustomer | null>,
 			default: () => null,
@@ -41,7 +46,7 @@ export default defineComponent({
 		};
 	},
 	components: {
-		AppNav,
+		DesktopNav,
 		MobileNav,
 		NavDrawer,
 		NavMenu,

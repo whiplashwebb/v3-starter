@@ -1,11 +1,12 @@
 <template>
 	<div class="full-layout">
-		<app-nav
+		<desktop-nav
 			class="full-layout__header is-hidden-touch"
 			:nav-data="navData"
 			:current-user="currentUser"
 			:current-warehouse="currentWarehouse"
 			:current-customer="currentCustomer"
+			:http-client="httpClient"
 		/>
 		<mobile-nav
 			class="full-layout__mobile-nav is-hidden-desktop"
@@ -29,6 +30,7 @@
 				:current-user="currentUser"
 				:current-warehouse="currentWarehouse"
 				:current-customer="currentCustomer"
+				:http-client="httpClient"
 			/>
 		</nav-drawer>
 	</div>

@@ -1,5 +1,6 @@
 import type { APIV21EntitiesUser } from '@whiplashmerch/whiplash-api-client-private';
 import type { APIV21EntitiesCustomer, APIV21EntitiesWarehouse } from '@whiplashmerch/whiplash-api-client-private';
+import type { HttpClient } from '@whiplashmerch/whiplash-api-client-private';
 import { defineComponent } from 'vue';
 import type { PropType } from 'vue';
 
@@ -30,6 +31,10 @@ export default defineComponent({
 			type: Object as PropType<APIV21EntitiesUser>,
 			required: true,
 		},
+		httpClient: {
+			type: Object as PropType<HttpClient>,
+			required: true,
+		},
 		currentCustomer: {
 			type: Object as PropType<APIV21EntitiesCustomer | null>,
 			default: () => null,
@@ -41,7 +46,7 @@ export default defineComponent({
 	},
 	data() {
 		return {
-			activeSection: userSections.warehouse,
+			activeSection: userSections.user,
 			userSections,
 			animation: 'slide',
 			customerSearchText: '',

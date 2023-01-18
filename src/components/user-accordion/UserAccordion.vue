@@ -45,6 +45,7 @@
 				class="user-accordion__body"
 				:nav-data="navData"
 				:current-customer="currentCustomer"
+				:http-client="httpClient"
 			/>
 		</o-collapse>
 		<o-collapse
@@ -69,6 +70,7 @@
 				class="user-accordion__body"
 				:nav-data="navData"
 				:current-warehouse="currentWarehouse"
+				:http-client="httpClient"
 			/>
 		</o-collapse>
 	</div>
