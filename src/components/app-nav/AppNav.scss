@@ -36,7 +36,6 @@
 		padding:.2rem;
 
 		.navbar-dropdown {
-			border-top:2px solid $primary;
 			top:calc(100% + 17px);
 		}
 	}
@@ -177,6 +176,14 @@
 			padding:.5rem .25rem;
 		}
 
+		.navbar-dropdown {
+			.navbar-link,
+			.navbar-item {
+				padding-left:1.5rem;
+				padding-right:1.5rem;
+			}
+		}
+
 		.navbar-link:not(.is-arrowless) {
 			padding-right:1.55em;
 
@@ -199,6 +206,10 @@
 	.user-menu,
 	.warehouse-menu {
 		text-transform: none;
+
+		.label {
+			font-size:$size-7;
+		}
 
 		hr {
 			margin:1rem 0;
