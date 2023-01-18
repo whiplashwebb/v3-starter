@@ -7,7 +7,15 @@
 				<o-autocomplete
 					size="small"
 					placeholder="Type customer name"
-				/>
+					:data="results"
+					:loading="isLoading"
+					@typing="getDebouncedResults"
+					@select="option => selected = option"
+				>
+					<template #default="props">
+						{{ props.option.name }}
+					</template>
+				</o-autocomplete>
 			</o-field>
 		</form>
 

@@ -23,3 +23,8 @@ export interface NavItem {
 	display: string;
 	url: string;
 }
+
+export interface AutocompleteResult {
+	id: number,
+	name: string,
+}
