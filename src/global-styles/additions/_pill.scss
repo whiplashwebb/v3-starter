@@ -27,21 +27,6 @@ $pill-colors: (
 	}
 	&:not(:last-child) {
 		margin-bottom: 1rem;
-	}  // Sizes
-	&.are-small {
-		.pill:not(.is-normal):not(.is-large):not(.is-medium) {
-			font-size: $size-small;
-		}
-	}
-	&.are-medium {
-		.pill:not(.is-normal):not(.is-large):not(.is-small) {
-			font-size: $size-medium;
-		}
-	}
-	&.are-large {
-		.pill:not(.is-normal):not(.is-medium):not(.is-small) {
-			font-size: $size-large;
-		}
 	}
 	&.is-centered {
 		justify-content: center;
@@ -95,9 +80,11 @@ $pill-colors: (
 	}
 	&.is-medium {
 		font-size: $size-medium;
+		border-bottom-width:2px;
 	}
 	&.is-large {
 		font-size: $size-large;
+		border-bottom-width:2px;
 	}
 }
 a.pill {
