@@ -1,8 +1,7 @@
 import { defineComponent } from 'vue';
 import { RouterView } from 'vue-router';
 
-import AppNav from '@/components/AppNav.vue';
-import { navMock } from '@/constants';
+import FullLayout from '@/components/full-layout/FullLayout.vue';
 import { useUserStore } from '@/stores/user';
 
 
@@ -10,16 +9,11 @@ export default defineComponent({
 	name: 'AppView',
 	components: {
 		RouterView,
-		AppNav,
+		FullLayout,
 	},
 	setup() {
 		return {
 			userStore:  useUserStore(),
-		};
-	},
-	data() {
-		return {
-			navData: navMock,
 		};
 	},
 	mounted() {

@@ -17,13 +17,16 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-regular-svg-icons": "^6.2.1",
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
     "@fortawesome/vue-fontawesome": "^3.0.2",
     "@oruga-ui/oruga-next": "^0.5.10",
     "@oruga-ui/theme-bulma": "^0.2.8",
+    "@types/lodash": "^4.14.191",
     "@whiplashmerch/whiplash-api-client-private": "^0.0.3",
     "axios": "^1.2.2",
     "js-cookie": "^3.0.1",
+    "lodash-es": "^4.17.21",
     "pinia": "^2.0.28",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"

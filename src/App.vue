@@ -1,12 +1,20 @@
 <template>
-	<div class="app">
-		<app-nav
-			class="app_header"
-			:nav-data="userStore.navData"
-		/>
+	<full-layout
+		v-if="userStore.initComplete"
+		:nav-data="userStore.navData"
+		:current-user="userStore.currentUser"
+		:current-warehouse="userStore.currentWarehouse"
+		:current-customer="userStore.currentCustomer"
+		:http-client="userStore.httpClient"
+		class="app"
+	>
 		<RouterView class="app__view" />
-	</div>
-
+	</full-layout>
+	<o-loading
+		v-else
+		active
+		full-page
+	/>
 </template>
 
 <script lang="ts" src="./App.ts" />

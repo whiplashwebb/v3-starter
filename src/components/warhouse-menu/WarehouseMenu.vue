@@ -1,0 +1,53 @@
+<template>
+	<div class="warehouse-menu">
+		<form>
+			<o-field
+				label="Change Active Warehouse"
+			>
+				<o-autocomplete
+					size="small"
+					:data="results"
+					:loading="isLoading"
+					@typing="getDebouncedResults"
+					@select="option => selected = option"
+				>
+					<template #default="props">
+						{{ props.option.name }}
+					</template>
+				</o-autocomplete>
+			</o-field>
+		</form>
+
+		<hr>
+
+		<o-menu>
+			<o-menu-list>
+				<o-menu-item
+					v-if="currentWarehouse"
+					label="Unset Warehouse"
+					icon="arrow-right-from-bracket"
+					class="is-reversed"
+				/>
+				<o-menu-item
+					class="is-reversed"
+					label="View All Warehouses"
+					icon="warehouse"
+					:href="allWarehousesUrl"
+				/>
+				<o-menu-item
+					v-if="currentWarehouse"
+					:label="`Edit ${currentWarehouse.name}`"
+				/>
+
+			</o-menu-list>
+		</o-menu>
+	</div>
+</template>
+
+<script lang="ts" src="./WarehouseMenu.ts" />
+
+<style lang="scss">
+.warehouse-menu {
+	@include inline-autocomplete;
+}
+</style>

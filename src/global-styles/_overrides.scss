@@ -9,7 +9,7 @@ $button-size-normal: 13px;
 }
 
 .help {
-	color: $label-grey;
+	color: $grey;
 	margin: 5px;
 }
 
@@ -28,8 +28,8 @@ $button-size-normal: 13px;
 		opacity: 1;
 
 		.check {
-			background-color:$disabled-grey;
-			border-color:$disabled-grey;
+			background-color:$grey-light;
+			border-color:$grey-light;
 		}
 	}
 }
@@ -61,7 +61,7 @@ $button-size-normal: 13px;
 	&.is-primary {
 		$color: $primary;
 		$color-invert: findColorInvert($color);
-		$hover-bg: $some-black;
+		$hover-bg: $black-ter;
 		$hover-text: $text-invert;
 
 		background-color: $color;
@@ -95,8 +95,8 @@ $button-size-normal: 13px;
 		&[disabled],
 		fieldset[disabled] & {
 			background-color: transparent;
-			border-color: $disabled-grey;
-			color: $disabled-grey;
+			border-color: $grey-light;
+			color: $grey-light;
 			box-shadow: none;
 		}
 

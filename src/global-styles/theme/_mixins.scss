@@ -1,0 +1,15 @@
+@mixin inline-autocomplete {
+	.dropdown-content {
+		position:static;
+		max-height:initial;
+		box-shadow:none;
+		min-width: initial;
+	}
+
+	// Media queries distinguish between styles for usage in desktop nav vs mobile nav
+	@include from($desktop) {
+		.dropdown-item {
+			font-size:$size-7;
+		}
+	}
+}
