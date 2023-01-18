@@ -36,7 +36,7 @@ export default defineComponent({
 	},
 	data() {
 		return {
-			userDrawerActive: true,
+			userDrawerActive: false,
 			mainDrawerActive: false,
 		};
 	},

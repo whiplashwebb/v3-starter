@@ -16,7 +16,7 @@
 		<nav-drawer
 			:active="mainDrawerActive"
 		>
-			<mobile-search />
+			<mobile-search :nav-data="navData" />
 			<hr>
 			<nav-menu :nav-data="navData" />
 		</nav-drawer>
