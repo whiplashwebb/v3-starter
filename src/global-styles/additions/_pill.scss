@@ -1,0 +1,107 @@
+$pill-background-color: $blue-light !default;
+$pill-color: $text-blue !default;
+$pill-radius: 0 !default;
+
+$pill-colors: (
+	"primary": ($primary, bulmaLighten($primary, 60%)),
+	"info": ($info, $blue-light),
+	"success": (bulmaDarken($success, 10%), bulmaLighten($success, 46%)),
+	"warning": ($warning, bulmaLighten($warning, 40%)),
+	"danger": ($danger, bulmaLighten($danger, 45%)),
+	"disabled": ($grey, $white-ter),
+);
+
+.pills {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	.pill {
+		margin-bottom: 0.5rem;
+		&:not(:last-child) {
+			@include ltr-property("margin", 0.5rem);
+		}
+	}
+	&:last-child {
+		margin-bottom: -0.5rem;
+	}
+	&:not(:last-child) {
+		margin-bottom: 1rem;
+	}  // Sizes
+	&.are-small {
+		.pill:not(.is-normal):not(.is-large):not(.is-medium) {
+			font-size: $size-small;
+		}
+	}
+	&.are-medium {
+		.pill:not(.is-normal):not(.is-large):not(.is-small) {
+			font-size: $size-medium;
+		}
+	}
+	&.are-large {
+		.pill:not(.is-normal):not(.is-medium):not(.is-small) {
+			font-size: $size-large;
+		}
+	}
+	&.is-centered {
+		justify-content: center;
+		.pill {
+			margin-right: 0.25rem;
+			margin-left: 0.25rem;
+		}
+	}
+	&.is-right {
+		justify-content: flex-end;
+		.pill {
+			&:not(:first-child) {
+				margin-left: 0.5rem;
+			}
+			&:not(:last-child) {
+				margin-right: 0;
+			}
+		}
+	}
+}
+.pill {
+	align-items: center;
+	background-color: $pill-background-color;
+	color: $pill-color;
+	display: inline-flex;
+	font-size: $size-normal;
+	height: 2em;
+	justify-content: center;
+	line-height: 1.5;
+	padding-left: 0.75em;
+	padding-right: 0.75em;
+	white-space: nowrap;
+	border-bottom:1px solid $pill-color;
+
+	// Colors
+	@each $name, $pair in $pill-colors {
+		$color: nth($pair, 1);
+		$color-invert: nth($pair, 2);
+		&.is-#{$name} {
+			background-color: $color-invert;
+			color: $color;
+			border-color: $color;
+		}
+	}
+	// Sizes
+	&.is-small {
+		font-size: $size-small;
+	}
+	&.is-normal {
+		font-size: $size-normal;
+	}
+	&.is-medium {
+		font-size: $size-medium;
+	}
+	&.is-large {
+		font-size: $size-large;
+	}
+}
+a.pill {
+	&:hover {
+		text-decoration: underline;
+	}
+}

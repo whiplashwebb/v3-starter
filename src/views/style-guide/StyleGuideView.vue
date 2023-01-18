@@ -19,13 +19,52 @@
 		</div>
 		<div class="container">
 			<style-guide-section
-				title="Tags"
+				title="Pills"
 				initially-active
 			>
 				<style-guide-subsection>
 					<div class="content">
 						<blockquote>
-							<p>Tags currently don't exist in Oruga, only in Bulma. It's a bit unclear why but I suspect it's because there's so simple a component doesn't really accomplish much. Personally I think this would make sense.<br> <a href="https://bulma.io/documentation/elements/tag/" target="_blank">Bulma Docs</a></p>
+							<p>Pills are a new component that doesn't exist in Bulma or Orgua. It replaces Filter Pills from the legacy design system.</p>
+						</blockquote>
+					</div>
+
+				</style-guide-subsection>
+				<style-guide-subsection>
+					<div class="pills">
+						<span
+							v-for="variant in pillVariants"
+							:key="`${variant}-pill-regular`"
+							:class="`pill is-${variant}`"
+						>
+							<span class="is-capitalized">{{ variant }}</span>
+						</span>
+					</div>
+
+				</style-guide-subsection>
+
+				<style-guide-subsection title="Pill Sizes">
+					<div class="pills">
+						<span
+							v-for="size in sizes"
+							:key="`${size}-pill-regular`"
+							:class="`pill is-primary is-${size}`"
+						>
+							<span class="is-capitalized">{{ size || 'Default' }}</span>
+						</span>
+					</div>
+
+				</style-guide-subsection>
+
+			</style-guide-section>
+			<style-guide-section
+				title="Tags"
+			>
+				<style-guide-subsection>
+					<div class="content">
+						<blockquote>
+							<p>Tags currently don't exist in Oruga, only in Bulma. It's a bit unclear why but I suspect it's because there's so simple a component doesn't really accomplish much. Personally I think this would make sense.<br> Read the <a href="https://bulma.io/documentation/elements/tag/" target="_blank">Bulma Docs</a> to learn more.</p>
+							<p>Tags are the equivalent of context labels in the legacy design system.</p>
 						</blockquote>
 					</div>
 

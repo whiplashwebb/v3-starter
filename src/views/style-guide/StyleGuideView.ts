@@ -13,7 +13,6 @@ const colorVariants = [
 ];
 
 const nonColorVariants = [
-	'default',
 	'white',
 	'light',
 	'dark',
@@ -31,8 +30,14 @@ export default defineComponent({
 	data() {
 		return {
 			variants: [
+				'default',
 				...colorVariants,
 				...nonColorVariants,
+			],
+			pillVariants: [
+				'default',
+				...colorVariants,
+				'disabled',
 			],
 			colorVariants,
 			nonColorVariants,
