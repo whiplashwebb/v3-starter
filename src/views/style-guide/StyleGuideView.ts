@@ -83,6 +83,9 @@ export default defineComponent({
 			],
 			sliderValue: 5,
 			rangeValues: [5, 10],
+			paginationCurrent: 5,
+			paginationTotal: 250,
+			paginationPerPage: 25,
 		};
 	},
 	methods: {

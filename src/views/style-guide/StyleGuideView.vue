@@ -541,6 +541,40 @@
 				</style-guide-subsection>
 
 			</style-guide-section>
+			<style-guide-section title="Pagination" >
+				<style-guide-subsection>
+					<o-pagination
+						v-model:current="paginationCurrent"
+						:total="paginationTotal"
+						:per-page="paginationPerPage"
+					/>
+				</style-guide-subsection>
+				<style-guide-subsection title="Centered Pagination">
+					<o-pagination
+						v-model:current="paginationCurrent"
+						:total="paginationTotal"
+						:per-page="paginationPerPage"
+						order="centered"
+					/>
+				</style-guide-subsection>
+				<style-guide-subsection title="Left Pagination">
+					<o-pagination
+						v-model:current="paginationCurrent"
+						:total="paginationTotal"
+						:per-page="paginationPerPage"
+						order="left"
+					/>
+				</style-guide-subsection>
+				<style-guide-subsection title="Simple Pagination">
+					<o-pagination
+						v-model:current="paginationCurrent"
+						:total="paginationTotal"
+						:per-page="paginationPerPage"
+						simple
+					/>
+				</style-guide-subsection>
+
+			</style-guide-section>
 			<style-guide-section title="Pills">
 				<style-guide-subsection>
 					<div class="content">
