@@ -87,6 +87,26 @@
 				</style-guide-subsection>
 
 			</style-guide-section>
+			<style-guide-section title="Dropdowns">
+				<style-guide-subsection>
+					<o-dropdown v-model="dropdownOpen">
+						<template #trigger="{ active }">
+							<o-button
+								variant="primary"
+								:icon-right="active ? 'caret-up' : 'caret-down'"
+							>
+								Click Me!
+							</o-button>
+						</template>
+
+						<o-dropdown-item>Action</o-dropdown-item>
+						<o-dropdown-item>Another action</o-dropdown-item>
+						<o-dropdown-item>Something else</o-dropdown-item>
+					</o-dropdown>
+
+				</style-guide-subsection>
+
+			</style-guide-section>
 			<style-guide-section title="Buttons">
 				<style-guide-subsection>
 					<div class="buttons">
