@@ -15,3 +15,8 @@ export const labeledSearchTypes = new Map([
 	[searchTypes.customers, 'Customers'],
 	[searchTypes.all, 'All'],
 ]);
+
+export enum layouts {
+	full= 'full',
+	minimal = 'minimal',
+}

@@ -7,6 +7,13 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+		"importsNotUsedAsValues": "error",
+		"lib": [
+			// copied from @vue/tsconfig/tsconfig.web.json and modified to use ES2017
+			"ES2017",
+			"DOM",
+			"DOM.Iterable"
+		]
   }
 }
