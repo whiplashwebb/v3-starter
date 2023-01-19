@@ -29,6 +29,33 @@
 			</div>
 
 
+			<style-guide-section title="Autocomplete">
+				<style-guide-subsection>
+					<o-autocomplete
+						v-model="autocompleteQuery"
+						icon="search"
+						clearable
+						:data="autocompleteResults"
+					>
+						<template #empty>No results found</template>
+					</o-autocomplete>
+
+				</style-guide-subsection>
+
+				<style-guide-subsection title="Inline Results">
+					<o-autocomplete
+						root-class="has-inline-results"
+						v-model="inlineAutocompleteQuery"
+						icon="search"
+						clearable
+						:data="inlineAutocompleteResults"
+					>
+						<template #empty>No results found</template>
+					</o-autocomplete>
+
+				</style-guide-subsection>
+
+			</style-guide-section>
 			<style-guide-section title="Breadcrumbs">
 				<style-guide-subsection>
 					<div class="content">

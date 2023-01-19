@@ -5,6 +5,7 @@
 				label="Change Active Warehouse"
 			>
 				<o-autocomplete
+					root-class="has-inline-results"
 					size="small"
 					:data="results"
 					:loading="isLoading"
@@ -48,6 +49,6 @@
 
 <style lang="scss">
 .warehouse-menu {
-	@include inline-autocomplete;
+	@include nav-autocomplete;
 }
 </style>

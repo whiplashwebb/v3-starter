@@ -146,7 +146,24 @@ export default defineComponent({
 			progressValue: 65,
 			progressMax: 100,
 			adminMenuActive: true,
+			autocompleteQuery: '',
+			inlineAutocompleteQuery: '',
+			autocompleteOptions: ['Antarctic', 'shackleton', 'equipment', 'redoubled', 'surmounted', 'obliterated', 'scientific', 'otherwise', 'experimentation', 'Antarctic', 'biological', 'consciousness', 'cryptical', 'beginning', 'differentiated', 'everything', 'hideously', 'refrained', 'Spontaneously', 'incredible', 'lightened', 'forbidden', 'afternoon', 'mountains', 'thirty-five', 'expedition', 'mountains', 'Miskatonic', 'undulations', 'regularities', 'formations', 'forbidden', 'five-pointed', 'ineluctable', 'provision', 'iridescent', 'Machinery', 'antarctic', 'unbelievable', 'elevation', 'specimens', 'interstitial', 'regularities', 'discovered', 'uninjured', 'Reminiscent', 'explained', 'mountains', 'fantastically', 'destroyed', 'altogether', 'overwrought', 'psychological', 'lightened', 'Survivors', 'rationale', 'illustrated', 'overshadowing', 'transportation', 'crevasse-riven', 'geologists', 'paintings', 'anomalous'],
 		};
+	},
+	computed: {
+		autocompleteResults(): string[] {
+			if (!this.autocompleteQuery) return [];
+			return this.autocompleteOptions
+				.filter(option => option.includes(this.autocompleteQuery))
+				.slice(0, 4);
+		},
+		inlineAutocompleteResults(): string[] {
+			if (!this.inlineAutocompleteQuery) return [];
+			return this.autocompleteOptions
+				.filter(option => option.includes(this.inlineAutocompleteQuery))
+				.slice(0, 4);
+		},
 	},
 	methods: {
 		popSuccessToast() {

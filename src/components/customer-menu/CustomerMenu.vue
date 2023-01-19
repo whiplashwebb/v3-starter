@@ -5,6 +5,7 @@
 				label="Change Active Customer"
 			>
 				<o-autocomplete
+					root-class="has-inline-results"
 					size="small"
 					placeholder="Type customer name"
 					:data="results"
@@ -52,6 +53,6 @@
 
 <style lang="scss">
 .customer-menu {
-	@include inline-autocomplete;
+	@include nav-autocomplete;
 }
 </style>

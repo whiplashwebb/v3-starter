@@ -33,7 +33,7 @@ import {
 	faCheckCircle,
 	faExclamationTriangle,
 	faVideo,
-	faCog, faUser, faMobile, faMoneyBill, faLink,
+	faCog, faUser, faMobile, faMoneyBill, faLink, faTimesCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import type { Plugin } from 'vue';
@@ -79,6 +79,7 @@ export const addFontawesome: Plugin = {
 			faMobile,
 			faMoneyBill,
 			faLink,
+			faTimesCircle,
 		);
 
 		app.component('VueFontawesome', FontAwesomeIcon);
