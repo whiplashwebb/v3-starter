@@ -1,6 +1,8 @@
 <template>
 	<div class="minimal-layout">
-		<slot class="minimal-layout__content" />
+		<div class="minimal-layout__content">
+			<slot />
+		</div>
 	</div>
 </template>
 
