@@ -29,6 +29,13 @@ interface PromptResponse {
 	answer: string;
 }
 
+interface BreadcrumbItem {
+	active?: boolean;
+	label: string;
+	url: string;
+	icon?: string;
+}
+
 export default defineComponent({
 	name: 'StyleGuideView',
 	components: {
@@ -86,6 +93,29 @@ export default defineComponent({
 			paginationCurrent: 5,
 			paginationTotal: 250,
 			paginationPerPage: 25,
+			breadcrumbItems: [
+				{
+					label: 'Home',
+					icon: 'home',
+					url: '#',
+				},
+				{
+					label: 'Documentation',
+					icon: 'book',
+					url: '#',
+				},
+				{
+					label: 'Components',
+					icon: 'puzzle-piece',
+					url: '#',
+				},
+				{
+					label: 'Breadcrumb',
+					icon: 'bread-slice',
+					url: '#',
+					active: true,
+				},
+			] as BreadcrumbItem[],
 		};
 	},
 	methods: {

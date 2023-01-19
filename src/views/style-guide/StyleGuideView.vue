@@ -28,6 +28,38 @@
 				</div>
 			</div>
 
+			<style-guide-section title="Breadcrumbs">
+				<style-guide-subsection>
+					<div class="content">
+						<blockquote>
+							<p>Breadcrumbs exists in Bulma but doesn't exist in Oruga as it doesn't really need js.</p>
+						</blockquote>
+					</div>
+
+				</style-guide-subsection>
+				<style-guide-subsection>
+					<nav class="breadcrumb" aria-label="breadcrumbs">
+						<ul>
+							<li
+								v-for="item in breadcrumbItems"
+								:key="item.label"
+								:class="item.active ? 'is-active' : ''"
+							>
+								<a :href="item.url">
+									<o-icon
+										v-if="item.icon"
+										:icon="item.icon"
+										size="small"
+									/>
+									<span>{{ item.label }}</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+
+				</style-guide-subsection>
+
+			</style-guide-section>
 			<style-guide-section title="Buttons">
 				<style-guide-subsection>
 					<div class="buttons">

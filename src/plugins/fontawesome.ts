@@ -16,7 +16,15 @@ import {
 	faChevronUp,
 	faGlobe,
 	faUsersRectangle,
-	faArrowRightFromBracket, faWarehouse, faMagnifyingGlass, faBell, faCalendar, faAngleLeft, faAngleRight, faClock,
+	faArrowRightFromBracket,
+	faWarehouse,
+	faMagnifyingGlass,
+	faBell,
+	faCalendar,
+	faAngleLeft,
+	faAngleRight,
+	faClock,
+	faHome, faBook, faPuzzlePiece, faBreadSlice,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import type { Plugin } from 'vue';
@@ -48,6 +56,10 @@ export const addFontawesome: Plugin = {
 			faAngleLeft,
 			faAngleRight,
 			faClock,
+			faHome,
+			faBook,
+			faPuzzlePiece,
+			faBreadSlice,
 		);
 
 		app.component('VueFontawesome', FontAwesomeIcon);
