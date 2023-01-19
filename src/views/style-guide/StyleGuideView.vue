@@ -29,38 +29,6 @@
 			</div>
 
 
-			<style-guide-section title="Notifications">
-				<style-guide-subsection>
-					<div class="content">
-						<blockquote>
-							<p>"Notification" is a crap name is you ask me. If you're looking for a fullpage banner to slap on the top of the page you've come to the right place. </p>
-						</blockquote>
-					</div>
-
-				</style-guide-subsection>
-				<style-guide-subsection>
-					<nav class="breadcrumb" aria-label="breadcrumbs">
-						<ul>
-							<li
-								v-for="item in breadcrumbItems"
-								:key="item.label"
-								:class="item.active ? 'is-active' : ''"
-							>
-								<a :href="item.url">
-									<o-icon
-										v-if="item.icon"
-										:icon="item.icon"
-										size="small"
-									/>
-									<span>{{ item.label }}</span>
-								</a>
-							</li>
-						</ul>
-					</nav>
-
-				</style-guide-subsection>
-
-			</style-guide-section>
 			<style-guide-section title="Breadcrumbs">
 				<style-guide-subsection>
 					<div class="content">
@@ -891,6 +859,251 @@
 					</o-field>
 				</style-guide-subsection>
 			</style-guide-section>
+			<style-guide-section title="Tabs">
+				<style-guide-subsection>
+					<o-tabs v-model="activeTab">
+						<o-tab-item
+							:value="tabSections.pictures"
+							label="Pictures"
+						>
+							Lorem ipsum dolor sit amet.
+						</o-tab-item>
+
+						<o-tab-item :value="tabSections.music" label="Music">
+							Lorem <br />
+							ipsum <br />
+							dolor <br />
+							sit <br />
+							amet.
+						</o-tab-item>
+
+						<o-tab-item
+							:value="tabSections.books"
+							label="Books"
+							icon="book"
+						>
+							What light is light, if Silvia be not seen? <br />
+							What joy is joy, if Silvia be not by— <br />
+							Unless it be to think that she is by <br />
+							And feed upon the shadow of perfection? <br />
+							Except I be by Silvia in the night, <br />
+							There is no music in the nightingale.
+						</o-tab-item>
+
+						<o-tab-item :value="tabSections.videos" label="Videos" icon="video" disabled>
+							Nunc nec velit nec libero vestibulum eleifend. Curabitur pulvinar congue
+							luctus. Nullam hendrerit iaculis augue vitae ornare. Maecenas vehicula
+							pulvinar tellus, id sodales felis lobortis eget.
+						</o-tab-item>
+					</o-tabs>
+
+				</style-guide-subsection>
+				<style-guide-subsection title="Boxed">
+					<o-tabs
+						v-model="activeTab"
+						type="boxed"
+					>
+						<o-tab-item
+							:value="tabSections.pictures"
+							label="Pictures"
+						>
+							Lorem ipsum dolor sit amet.
+						</o-tab-item>
+
+						<o-tab-item :value="tabSections.music" label="Music">
+							Lorem <br />
+							ipsum <br />
+							dolor <br />
+							sit <br />
+							amet.
+						</o-tab-item>
+
+						<o-tab-item
+							:value="tabSections.books"
+							label="Books"
+							icon="book"
+						>
+							What light is light, if Silvia be not seen? <br />
+							What joy is joy, if Silvia be not by— <br />
+							Unless it be to think that she is by <br />
+							And feed upon the shadow of perfection? <br />
+							Except I be by Silvia in the night, <br />
+							There is no music in the nightingale.
+						</o-tab-item>
+
+						<o-tab-item :value="tabSections.videos" label="Videos" icon="video" disabled>
+							Nunc nec velit nec libero vestibulum eleifend. Curabitur pulvinar congue
+							luctus. Nullam hendrerit iaculis augue vitae ornare. Maecenas vehicula
+							pulvinar tellus, id sodales felis lobortis eget.
+						</o-tab-item>
+					</o-tabs>
+
+				</style-guide-subsection>
+				<style-guide-subsection title="Toggle">
+					<o-tabs
+						v-model="activeTab"
+						type="toggle"
+					>
+						<o-tab-item
+							:value="tabSections.pictures"
+							label="Pictures"
+						>
+							Lorem ipsum dolor sit amet.
+						</o-tab-item>
+
+						<o-tab-item :value="tabSections.music" label="Music">
+							Lorem <br />
+							ipsum <br />
+							dolor <br />
+							sit <br />
+							amet.
+						</o-tab-item>
+
+						<o-tab-item
+							:value="tabSections.books"
+							label="Books"
+							icon="book"
+						>
+							What light is light, if Silvia be not seen? <br />
+							What joy is joy, if Silvia be not by— <br />
+							Unless it be to think that she is by <br />
+							And feed upon the shadow of perfection? <br />
+							Except I be by Silvia in the night, <br />
+							There is no music in the nightingale.
+						</o-tab-item>
+
+						<o-tab-item :value="tabSections.videos" label="Videos" icon="video" disabled>
+							Nunc nec velit nec libero vestibulum eleifend. Curabitur pulvinar congue
+							luctus. Nullam hendrerit iaculis augue vitae ornare. Maecenas vehicula
+							pulvinar tellus, id sodales felis lobortis eget.
+						</o-tab-item>
+					</o-tabs>
+
+				</style-guide-subsection>
+				<style-guide-subsection title="Vertical">
+					<o-tabs v-model="activeVerticalTab" vertical>
+						<o-tab-item
+							:value="tabSections.pictures"
+							label="Pictures"
+						>
+							Lorem ipsum dolor sit amet.
+						</o-tab-item>
+
+						<o-tab-item :value="tabSections.music" label="Music">
+							Lorem <br />
+							ipsum <br />
+							dolor <br />
+							sit <br />
+							amet.
+						</o-tab-item>
+
+						<o-tab-item
+							:value="tabSections.books"
+							label="Books"
+							icon="book"
+						>
+							What light is light, if Silvia be not seen? <br />
+							What joy is joy, if Silvia be not by— <br />
+							Unless it be to think that she is by <br />
+							And feed upon the shadow of perfection? <br />
+							Except I be by Silvia in the night, <br />
+							There is no music in the nightingale.
+						</o-tab-item>
+
+						<o-tab-item :value="tabSections.videos" label="Videos" icon="video" disabled>
+							Nunc nec velit nec libero vestibulum eleifend. Curabitur pulvinar congue
+							luctus. Nullam hendrerit iaculis augue vitae ornare. Maecenas vehicula
+							pulvinar tellus, id sodales felis lobortis eget.
+						</o-tab-item>
+					</o-tabs>
+
+				</style-guide-subsection>
+				<style-guide-subsection title="Vertical Boxed">
+					<o-tabs
+						v-model="activeVerticalTab"
+						type="boxed"
+						vertical
+					>
+						<o-tab-item
+							:value="tabSections.pictures"
+							label="Pictures"
+						>
+							Lorem ipsum dolor sit amet.
+						</o-tab-item>
+
+						<o-tab-item :value="tabSections.music" label="Music">
+							Lorem <br />
+							ipsum <br />
+							dolor <br />
+							sit <br />
+							amet.
+						</o-tab-item>
+
+						<o-tab-item
+							:value="tabSections.books"
+							label="Books"
+							icon="book"
+						>
+							What light is light, if Silvia be not seen? <br />
+							What joy is joy, if Silvia be not by— <br />
+							Unless it be to think that she is by <br />
+							And feed upon the shadow of perfection? <br />
+							Except I be by Silvia in the night, <br />
+							There is no music in the nightingale.
+						</o-tab-item>
+
+						<o-tab-item :value="tabSections.videos" label="Videos" icon="video" disabled>
+							Nunc nec velit nec libero vestibulum eleifend. Curabitur pulvinar congue
+							luctus. Nullam hendrerit iaculis augue vitae ornare. Maecenas vehicula
+							pulvinar tellus, id sodales felis lobortis eget.
+						</o-tab-item>
+					</o-tabs>
+
+				</style-guide-subsection>
+				<style-guide-subsection title="Vertical Toggle">
+					<o-tabs
+						v-model="activeVerticalTab"
+						type="toggle"
+						vertical
+					>
+						<o-tab-item
+							:value="tabSections.pictures"
+							label="Pictures"
+						>
+							Lorem ipsum dolor sit amet.
+						</o-tab-item>
+
+						<o-tab-item :value="tabSections.music" label="Music">
+							Lorem <br />
+							ipsum <br />
+							dolor <br />
+							sit <br />
+							amet.
+						</o-tab-item>
+
+						<o-tab-item
+							:value="tabSections.books"
+							label="Books"
+							icon="book"
+						>
+							What light is light, if Silvia be not seen? <br />
+							What joy is joy, if Silvia be not by— <br />
+							Unless it be to think that she is by <br />
+							And feed upon the shadow of perfection? <br />
+							Except I be by Silvia in the night, <br />
+							There is no music in the nightingale.
+						</o-tab-item>
+
+						<o-tab-item :value="tabSections.videos" label="Videos" icon="video" disabled>
+							Nunc nec velit nec libero vestibulum eleifend. Curabitur pulvinar congue
+							luctus. Nullam hendrerit iaculis augue vitae ornare. Maecenas vehicula
+							pulvinar tellus, id sodales felis lobortis eget.
+						</o-tab-item>
+					</o-tabs>
+
+				</style-guide-subsection>
+
+			</style-guide-section>
 			<style-guide-section title="Tags">
 				<style-guide-subsection>
 					<div class="content">
@@ -1050,6 +1263,15 @@
 
 	.limit-width {
 		max-width:500px;
+	}
+
+	.b-tabs {
+		&.is-vertical {
+			> .tabs {
+				flex:0 0 auto;
+				min-width:150px;
+			}
+		}
 	}
 }
 </style>
