@@ -776,6 +776,52 @@
 				</style-guide-subsection>
 
 			</style-guide-section>
+			<style-guide-section title="Progress Bars">
+				<style-guide-subsection>
+					<div class="content">
+						<blockquote>
+							<p>Progress Bars are another simple bulma-only component.</p>
+						</blockquote>
+					</div>
+
+				</style-guide-subsection>
+				<style-guide-subsection>
+					<progress
+						v-for="variant in progressVariants"
+						:key="`progress-${variant}`"
+						class="progress"
+						:class="`is-${ variant }`"
+						:value="progressValue"
+						:max="progressMax"
+					>
+						{{ progressValue }}%
+					</progress>
+				</style-guide-subsection>
+				<style-guide-subsection title="Indeterminate (aka Loading)">
+					<progress
+						v-for="variant in progressVariants"
+						:key="`progress-indy-${variant}`"
+						class="progress"
+						:class="`is-${ variant }`"
+						:max="progressMax"
+					>
+						{{ progressValue }}%
+					</progress>
+				</style-guide-subsection>
+				<style-guide-subsection title="Sizes">
+					<progress
+						v-for="size in sizes"
+						:key="`progress-${size}`"
+						class="progress is-primary"
+						:class="`is-${ size }`"
+						:max="progressMax"
+						:value="progressValue"
+					>
+						{{ progressValue }}%
+					</progress>
+				</style-guide-subsection>
+
+			</style-guide-section>
 			<style-guide-section title="Selects">
 				<style-guide-subsection>
 					<o-field
@@ -1243,6 +1289,29 @@
 					>
 						Light <span class="is-capitalized">{{ variant }}</span> Notification : Yacht write little being street mountain-top certainly which after. Raised utter document bowsprit foreign manned summoned storms trapped.
 					</o-notification>
+				</style-guide-subsection>
+
+			</style-guide-section>
+			<style-guide-section title="Tooltips">
+				<style-guide-subsection>
+					<div class="buttons">
+						<o-tooltip
+							v-for="variant in colorVariants"
+							:key="`tooltip-${variant}`"
+							label="I'm the tooltip!"
+							class="mr-4"
+							:active="true"
+							:variant="variant"
+							always
+						>
+							<o-button
+								:variant="variant"
+								outlined
+							>
+								<span class="is-capitalized">{{ variant}}</span> Tooltip &nbsp;</o-button>
+						</o-tooltip>
+					</div>
+
 				</style-guide-subsection>
 
 			</style-guide-section>

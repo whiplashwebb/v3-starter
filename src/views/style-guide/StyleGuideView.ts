@@ -74,6 +74,10 @@ export default defineComponent({
 				...colorVariants,
 				'disabled',
 			],
+			progressVariants: [
+				'default',
+				...colorVariants,
+			],
 			colorVariants,
 			nonColorVariants,
 			sizes: [
@@ -139,6 +143,8 @@ export default defineComponent({
 			tabSections,
 			activeTab: tabSections.pictures,
 			activeVerticalTab: tabSections.pictures,
+			progressValue: 65,
+			progressMax: 100,
 		};
 	},
 	methods: {
