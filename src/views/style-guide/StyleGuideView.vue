@@ -28,6 +28,7 @@
 				</div>
 			</div>
 
+
 			<style-guide-section title="Breadcrumbs">
 				<style-guide-subsection>
 					<div class="content">
@@ -418,6 +419,75 @@
 					</div>
 				</style-guide-subsection>
 			</style-guide-section>
+			<style-guide-section title="Cards" >
+				<style-guide-subsection>
+					<div class="content">
+						<blockquote>
+							<p>Card is another simple, bulma-only component. It's also insanely handy.</p>
+						</blockquote>
+					</div>
+
+				</style-guide-subsection>
+				<style-guide-subsection>
+					<div class="card">
+						<header class="card-header">
+							<p class="card-header-title">
+								Example Card
+							</p>
+							<button class="card-header-icon" aria-label="more options">
+								<o-icon
+									icon="angle-down"
+								/>
+							</button>
+						</header>
+						<div class="card-content">
+							<div class="content" v-html="cardIpsum" />
+						</div>
+						<footer class="card-footer">
+							<a href="#" class="card-footer-item">Save</a>
+							<a href="#" class="card-footer-item">Edit</a>
+							<a href="#" class="card-footer-item">Delete</a>
+						</footer>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="No Header">
+					<div class="card">
+						<div class="card-content">
+							<div class="content" v-html="cardIpsum" />
+						</div>
+						<footer class="card-footer">
+							<a href="#" class="card-footer-item">Save</a>
+							<a href="#" class="card-footer-item">Edit</a>
+							<a href="#" class="card-footer-item">Delete</a>
+						</footer>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="No Footer">
+					<div class="card">
+						<header class="card-header">
+							<p class="card-header-title">
+								Example Card
+							</p>
+							<button class="card-header-icon" aria-label="more options">
+								<o-icon
+									icon="angle-down"
+								/>
+							</button>
+						</header>
+						<div class="card-content">
+							<div class="content" v-html="cardIpsum" />
+						</div>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Content Only">
+					<div class="card">
+						<div class="card-content">
+							<div class="content" v-html="cardIpsum" />
+						</div>
+					</div>
+				</style-guide-subsection>
+
+			</style-guide-section>
 			<style-guide-section title="Inputs">
 				<style-guide-subsection>
 					<o-field
@@ -538,6 +608,24 @@
 					</o-field>
 
 				</style-guide-subsection>
+			</style-guide-section>
+			<style-guide-section title="Loading">
+				<style-guide-subsection>
+					<div class="buttons">
+						<o-button
+							variant="primary"
+							@click="showLoading = true"
+						>Display Loading</o-button>
+					</div>
+
+					<o-loading
+						v-model:active="showLoading"
+						full-page
+						:can-cancel="true"
+					></o-loading>
+
+				</style-guide-subsection>
+
 			</style-guide-section>
 			<style-guide-section title="Modals">
 				<style-guide-subsection>

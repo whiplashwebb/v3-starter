@@ -116,6 +116,8 @@ export default defineComponent({
 					active: true,
 				},
 			] as BreadcrumbItem[],
+			showLoading: true,
+			cardIpsum: '<p>Committed affiliations forty-seven their thrown beneath meanings after altogether. Stars ceaseless encountering questioned heavily others through proved legrasse. Stone knowledge formed fetishism detective averred between, suppose first? Learn syllables carriages sincerity naturally proper prove, resultant cthulhu? Iceland honesty whereupon writhing cease louisiana, worshippers loathsome having! Prisoners notion equally heavy place, disappointed fhtagn rough depression! Exact contours animal captured acre\'s stars peremptorily examined wholesome.</p><p>Substantially victorian familiarity itself angell\'s chorus mentally improvised beneath. Apparently nightmares corroboration regard lived comprising decadents demand lived. Alike forget formula muffled hanging which providence whilst unholy. Whispered oddly luminous their native would whose flame uncle\'s. Shape subtlety dreams having eminently never epochs sinister march. Phrase conceivable survivor under advance authorities dreamed, ancient among? Dunedin became expressing immensely kinship older orgiastic, echoes sprinkling?</p>',
 		};
 	},
 	methods: {

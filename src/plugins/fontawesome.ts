@@ -24,7 +24,7 @@ import {
 	faAngleLeft,
 	faAngleRight,
 	faClock,
-	faHome, faBook, faPuzzlePiece, faBreadSlice,
+	faHome, faBook, faPuzzlePiece, faBreadSlice, faAngleDown,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import type { Plugin } from 'vue';
@@ -60,6 +60,7 @@ export const addFontawesome: Plugin = {
 			faBook,
 			faPuzzlePiece,
 			faBreadSlice,
+			faAngleDown,
 		);
 
 		app.component('VueFontawesome', FontAwesomeIcon);
