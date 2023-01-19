@@ -28,59 +28,365 @@
 				</div>
 			</div>
 
-			<style-guide-section
-				title="Selects"
-				initially-active
-			>
+			<style-guide-section title="Buttons">
 				<style-guide-subsection>
-					<o-field
-						label="Basic Select"
-						message="This is the optional help text for the standard input"
-					>
-						<o-select placeholder="Select a name">
-							<option
-								v-for="(option, index) in selectOptions"
-								:key="`select-basic-${index}`"
-							>
-								{{ option }}
-							</option>
-						</o-select>
-					</o-field>
-					<o-field
-						label="Error Select"
-						variant="danger"
-						message="This is the optional help text for the standard input"
-					>
-						<o-select placeholder="Select a name">
-							<option
-								v-for="(option, index) in selectOptions"
-								:key="`select-error-${index}`"
-							>
-								{{ option }}
-							</option>
-						</o-select>
-					</o-field>
-					<o-field
-						label="Disabled Select"
-						message="This is the optional help text for the standard input"
-					>
-						<o-select
-							placeholder="Select a name"
+					<div class="buttons">
+						<o-button
+							v-for="variant in variants"
+							:key="`${variant}-regular`"
+							:variant="variant"
+							class="no-min"
+						>
+							<span>{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Hover">
+					<div class="buttons">
+						<o-button
+							v-for="variant in variants"
+							:key="`${variant}-regular-hover`"
+							:variant="variant"
+							class="is-hovered"
+						>
+							<span>{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Active">
+					<div class="buttons">
+						<o-button
+							v-for="variant in variants"
+							:key="`${variant}-regular-active`"
+							:variant="variant"
+							class="is-active"
+						>
+							<span>{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Focused">
+					<div class="buttons">
+						<o-button
+							v-for="variant in variants"
+							:key="`${variant}-regular-focused`"
+							:variant="variant"
+							class="is-focused"
+						>
+							<span>{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Loading">
+					<div class="buttons">
+						<o-button
+							v-for="variant in variants"
+							:key="`${variant}-regular-loading`"
+							:variant="variant"
+							class="is-loading"
+						>
+							<span>{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Disabled">
+					<div class="buttons">
+						<o-button
+							v-for="variant in variants"
+							:key="`${variant}-regular-disabled`"
+							:variant="variant"
 							disabled
 						>
-							<option
-								v-for="(option, index) in selectOptions"
-								:key="`select-disabled-${index}`"
+							<span>{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Button Sizes">
+					<div class="buttons">
+						<o-button
+							v-for="size in sizes"
+							:key="`${size}-size`"
+							:size="size"
+							variant="primary"
+							outlined
+						>
+							<span>{{ size || 'default' }}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Min Width">
+					<div class="buttons">
+						<div class="buttons">
+							<o-button
+								v-for="size in sizes"
+								:key="`${size}-size-min`"
+								:size="size"
+								variant="primary"
+								class="has-min-width"
+								outlined
 							>
-								{{ option }}
-							</option>
-						</o-select>
-					</o-field>
+								<span>{{ size || 'default' }}</span>
+							</o-button>
+						</div>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Wide">
+					<div class="buttons">
+						<o-button
+							v-for="size in sizes"
+							:key="`${size}-size-wide`"
+							:size="size"
+							variant="primary"
+							class="is-wide"
+							outlined
+						>
+							<span>{{ size || 'default' }}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Container Width">
+					<div class="buttons limit-width">
+						<o-button
+							v-for="size in sizes"
+							:key="`${size}-size-full`"
+							:size="size"
+							variant="primary"
+							class="is-fullwidth"
+							outlined
+						>
+							<span>{{ size || 'default' }}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Outlined">
+					<div class="buttons">
+						<o-button
+							v-for="variant in variants"
+							:key="`${variant}-outlined`"
+							:variant="variant"
+							outlined
+						>
+							<span>{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Outlined Hover">
+					<div class="buttons">
+						<o-button
+							v-for="variant in variants"
+							:key="`${variant}-outlined-hover`"
+							:variant="variant"
+							class="is-hovered"
+							outlined
+						>
+							<span>{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Outlined Active">
+					<div class="buttons">
+						<o-button
+							v-for="variant in variants"
+							:key="`${variant}-outlined-active`"
+							:variant="variant"
+							class="is-active"
+							outlined
+						>
+							<span>{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Outlined Focused">
+					<div class="buttons">
+						<o-button
+							v-for="variant in variants"
+							:key="`${variant}-outlined-focused`"
+							:variant="variant"
+							class="is-focused"
+							outlined
+						>
+							<span>{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Outlined Loading">
+					<div class="buttons">
+						<o-button
+							v-for="variant in variants"
+							:key="`${variant}-outlined-loading`"
+							:variant="variant"
+							class="is-loading"
+							outlined
+						>
+							<span>{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Outlined Disabled">
+					<div class="buttons">
+						<o-button
+							v-for="variant in variants"
+							:key="`${variant}-outlined-disabled`"
+							:variant="variant"
+							disabled
+							outlined
+						>
+							<span>{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Inverted Buttons">
+					<div class="buttons">
+						<o-button
+							v-for="variant in variants"
+							:key="`${variant}-inverted`"
+							:variant="variant"
+							inverted
+						>
+							<span>{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Inverted Hover">
+					<div class="buttons">
+						<o-button
+							v-for="variant in variants"
+							:key="`${variant}-inverted-hover`"
+							:variant="variant"
+							class="is-hovered"
+							inverted
+						>
+							<span>{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Inverted Active">
+					<div class="buttons">
+						<o-button
+							v-for="variant in variants"
+							:key="`${variant}-inverted-active`"
+							:variant="variant"
+							class="is-active"
+							inverted
+						>
+							<span>{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Inverted Focused">
+					<div class="buttons">
+						<o-button
+							v-for="variant in variants"
+							:key="`${variant}-inverted-focused`"
+							:variant="variant"
+							class="is-focused"
+							inverted
+						>
+							<span>{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Inverted Loading">
+					<div class="buttons">
+						<o-button
+							v-for="variant in variants"
+							:key="`${variant}-inverted-loading`"
+							:variant="variant"
+							class="is-loading"
+							inverted
+						>
+							<span>{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Inverted Disabled">
+					<div class="buttons">
+						<o-button
+							v-for="variant in variants"
+							:key="`${variant}-inverted-disabled`"
+							:variant="variant"
+							disabled
+							inverted
+						>
+							<span>{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Light Buttons">
+					<div class="buttons">
+						<o-button
+							v-for="variant in colorVariants"
+							:key="`${variant}-light`"
+							:variant="variant"
+							class="is-light"
+						>
+							<span>{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Light Hover">
+					<div class="buttons">
+						<o-button
+							v-for="variant in colorVariants"
+							:key="`${variant}-light-hover`"
+							:variant="variant"
+							class="is-hovered is-light"
+						>
+							<span>{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Light Active">
+					<div class="buttons">
+						<o-button
+							v-for="variant in colorVariants"
+							:key="`${variant}-light-active`"
+							:variant="variant"
+							class="is-active is-light"
+						>
+							<span>{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Light Focused">
+					<div class="buttons">
+						<o-button
+							v-for="variant in colorVariants"
+							:key="`${variant}-light-focused`"
+							:variant="variant"
+							class="is-focused is-light"
+						>
+							<span>{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Light Loading">
+					<div class="buttons">
+						<o-button
+							v-for="variant in colorVariants"
+							:key="`${variant}-light-loading`"
+							:variant="variant"
+							class="is-loading is-light"
+						>
+							<span>{{variant}}</span>
+						</o-button>
+					</div>
+				</style-guide-subsection>
+				<style-guide-subsection title="Light Disabled">
+					<div class="buttons">
+						<o-button
+							v-for="variant in colorVariants"
+							:key="`${variant}-light-disabled`"
+							:variant="variant"
+							class="is-light"
+							disabled
+						>
+							<span>{{variant}}</span>
+						</o-button>
+					</div>
 				</style-guide-subsection>
 			</style-guide-section>
-			<style-guide-section
-				title="Inputs"
-			>
+			<style-guide-section title="Inputs">
 				<style-guide-subsection>
 					<o-field
 						label="Standard Input"
@@ -119,9 +425,7 @@
 					</o-field>
 				</style-guide-subsection>
 			</style-guide-section>
-
-
-			<style-guide-section title="Form Misc">
+			<style-guide-section title="Input Misc">
 
 				<style-guide-subsection title="Switches">
 
@@ -203,9 +507,7 @@
 
 				</style-guide-subsection>
 			</style-guide-section>
-			<style-guide-section
-				title="Modals"
-			>
+			<style-guide-section title="Modals">
 				<style-guide-subsection>
 					<div class="buttons">
 						<o-button
@@ -239,40 +541,7 @@
 				</style-guide-subsection>
 
 			</style-guide-section>
-			<style-guide-section
-				title="Toasts"
-			>
-				<style-guide-subsection>
-					<div class="content">
-						<blockquote>
-							<p>Toasts are a bit of a moving target in terms of naming. "Toast" is the most common name for this kind of thing, which is why I've opted for this name. Oruga refers to them as "Notifications", which imho is confusing but is technically the most accurate as oruga powers our toasts. Buefy had toasts and snackbars, which were two variations on this theme. Bulma doesn't define this at all as it's very javascript-y.</p>
-							<p>Utility methods are provided for success and error toasts, which default to toasts which will expire after a 10 seconds and can be dismissed by the user. Duration can be configured in the global oruga config. If you need non-dismissable toasts you can use <code>oruga.notification.open()</code> directly.</p>
-						</blockquote>
-					</div>
-
-				</style-guide-subsection>
-				<style-guide-subsection>
-					<div class="buttons">
-						<o-button
-							variant="success"
-							@click="popSuccessToast"
-						>
-							Success Toast
-						</o-button>
-						<o-button
-							variant="danger"
-							@click="popErrorToast"
-						>
-							Error Toast
-						</o-button>
-					</div>
-
-				</style-guide-subsection>
-
-			</style-guide-section>
-			<style-guide-section
-				title="Pills"
-			>
+			<style-guide-section title="Pills">
 				<style-guide-subsection>
 					<div class="content">
 						<blockquote>
@@ -308,9 +577,90 @@
 				</style-guide-subsection>
 
 			</style-guide-section>
-			<style-guide-section
-				title="Tags"
-			>
+			<style-guide-section title="Selects">
+				<style-guide-subsection>
+					<o-field
+						label="Basic Select"
+						message="This is the optional help text for the standard input"
+					>
+						<o-select placeholder="Select a name">
+							<option
+								v-for="(option, index) in selectOptions"
+								:key="`select-basic-${index}`"
+							>
+								{{ option }}
+							</option>
+						</o-select>
+					</o-field>
+					<o-field
+						label="Error Select"
+						variant="danger"
+						message="This is the optional help text for the standard input"
+					>
+						<o-select placeholder="Select a name">
+							<option
+								v-for="(option, index) in selectOptions"
+								:key="`select-error-${index}`"
+							>
+								{{ option }}
+							</option>
+						</o-select>
+					</o-field>
+					<o-field
+						label="Disabled Select"
+						message="This is the optional help text for the standard input"
+					>
+						<o-select
+							placeholder="Select a name"
+							disabled
+						>
+							<option
+								v-for="(option, index) in selectOptions"
+								:key="`select-disabled-${index}`"
+							>
+								{{ option }}
+							</option>
+						</o-select>
+					</o-field>
+				</style-guide-subsection>
+			</style-guide-section>
+			<style-guide-section title="Sliders">
+				<style-guide-subsection>
+					<o-field label="Default Slider"					>
+						<o-slider
+							v-model="sliderValue"
+						/>
+					</o-field>
+					<o-field
+						v-for="variant in colorVariants"
+						:key="`slider-${variant}`"
+						:label="`${variant} Slider`"
+						label-class="is-capitalized"
+					>
+						<o-slider
+							v-model="sliderValue"
+							:variant="variant"
+						/>
+					</o-field>
+					<o-field label="Disabled Slider"					>
+						<o-slider
+							v-model="sliderValue"
+							disabled
+						/>
+					</o-field>
+				</style-guide-subsection>
+				<style-guide-subsection title="Ranges">
+					<o-field label="Default Range">
+						<o-slider
+							v-model="rangeValues"
+							:min="1"
+							:max="15"
+							:step="0.5"
+						/>
+					</o-field>
+				</style-guide-subsection>
+			</style-guide-section>
+			<style-guide-section title="Tags">
 				<style-guide-subsection>
 					<div class="content">
 						<blockquote>
@@ -378,381 +728,34 @@
 				</style-guide-subsection>
 
 			</style-guide-section>
-			<style-guide-section
-				title="Regular Buttons"
-			>
+			<style-guide-section title="Toasts">
+				<style-guide-subsection>
+					<div class="content">
+						<blockquote>
+							<p>Toasts are a bit of a moving target in terms of naming. "Toast" is the most common name for this kind of thing, which is why I've opted for this name. Oruga refers to them as "Notifications", which imho is confusing but is technically the most accurate as oruga powers our toasts. Buefy had toasts and snackbars, which were two variations on this theme. Bulma doesn't define this at all as it's very javascript-y.</p>
+							<p>Utility methods are provided for success and error toasts, which default to toasts which will expire after a 10 seconds and can be dismissed by the user. Duration can be configured in the global oruga config. If you need non-dismissable toasts you can use <code>oruga.notification.open()</code> directly.</p>
+						</blockquote>
+					</div>
+
+				</style-guide-subsection>
 				<style-guide-subsection>
 					<div class="buttons">
 						<o-button
-							v-for="variant in variants"
-							:key="`${variant}-regular`"
-							:variant="variant"
-							class="no-min"
+							variant="success"
+							@click="popSuccessToast"
 						>
-							<span>{{variant}}</span>
+							Success Toast
 						</o-button>
-					</div>
-				</style-guide-subsection>
-				<style-guide-subsection title="Hover">
-					<div class="buttons">
 						<o-button
-							v-for="variant in variants"
-							:key="`${variant}-regular-hover`"
-							:variant="variant"
-							class="is-hovered"
+							variant="danger"
+							@click="popErrorToast"
 						>
-							<span>{{variant}}</span>
+							Error Toast
 						</o-button>
 					</div>
+
 				</style-guide-subsection>
-				<style-guide-subsection title="Active">
-					<div class="buttons">
-						<o-button
-							v-for="variant in variants"
-							:key="`${variant}-regular-active`"
-							:variant="variant"
-							class="is-active"
-						>
-							<span>{{variant}}</span>
-						</o-button>
-					</div>
-				</style-guide-subsection>
-				<style-guide-subsection title="Focused">
-					<div class="buttons">
-						<o-button
-							v-for="variant in variants"
-							:key="`${variant}-regular-focused`"
-							:variant="variant"
-							class="is-focused"
-						>
-							<span>{{variant}}</span>
-						</o-button>
-					</div>
-				</style-guide-subsection>
-				<style-guide-subsection title="Loading">
-					<div class="buttons">
-						<o-button
-							v-for="variant in variants"
-							:key="`${variant}-regular-loading`"
-							:variant="variant"
-							class="is-loading"
-						>
-							<span>{{variant}}</span>
-						</o-button>
-					</div>
-				</style-guide-subsection>
-				<style-guide-subsection title="Disabled">
-					<div class="buttons">
-						<o-button
-							v-for="variant in variants"
-							:key="`${variant}-regular-disabled`"
-							:variant="variant"
-							disabled
-						>
-							<span>{{variant}}</span>
-						</o-button>
-					</div>
-				</style-guide-subsection>
-			</style-guide-section>
-			<style-guide-section
-				title="Button Sizes"
-			>
-				<style-guide-subsection>
-					<div class="buttons">
-						<o-button
-							v-for="size in sizes"
-							:key="`${size}-size`"
-							:size="size"
-							variant="primary"
-							outlined
-						>
-							<span>{{ size || 'default' }}</span>
-						</o-button>
-					</div>
-				</style-guide-subsection>
-				<style-guide-subsection title="Min Width">
-					<div class="buttons">
-						<div class="buttons">
-							<o-button
-								v-for="size in sizes"
-								:key="`${size}-size-min`"
-								:size="size"
-								variant="primary"
-								class="has-min-width"
-								outlined
-							>
-								<span>{{ size || 'default' }}</span>
-							</o-button>
-						</div>
-					</div>
-				</style-guide-subsection>
-				<style-guide-subsection title="Wide">
-					<div class="buttons">
-						<o-button
-							v-for="size in sizes"
-							:key="`${size}-size-wide`"
-							:size="size"
-							variant="primary"
-							class="is-wide"
-							outlined
-						>
-							<span>{{ size || 'default' }}</span>
-						</o-button>
-					</div>
-				</style-guide-subsection>
-				<style-guide-subsection title="Container Width">
-					<div class="buttons limit-width">
-						<o-button
-							v-for="size in sizes"
-							:key="`${size}-size-full`"
-							:size="size"
-							variant="primary"
-							class="is-fullwidth"
-							outlined
-						>
-							<span>{{ size || 'default' }}</span>
-						</o-button>
-					</div>
-				</style-guide-subsection>
-			</style-guide-section>
-			<style-guide-section
-				title="Outlined Buttons"
-			>
-				<style-guide-subsection>
-					<div class="buttons">
-						<o-button
-							v-for="variant in variants"
-							:key="`${variant}-outlined`"
-							:variant="variant"
-							outlined
-						>
-							<span>{{variant}}</span>
-						</o-button>
-					</div>
-				</style-guide-subsection>
-				<style-guide-subsection title="Hover">
-					<div class="buttons">
-						<o-button
-							v-for="variant in variants"
-							:key="`${variant}-outlined-hover`"
-							:variant="variant"
-							class="is-hovered"
-							outlined
-						>
-							<span>{{variant}}</span>
-						</o-button>
-					</div>
-				</style-guide-subsection>
-				<style-guide-subsection title="Active">
-					<div class="buttons">
-						<o-button
-							v-for="variant in variants"
-							:key="`${variant}-outlined-active`"
-							:variant="variant"
-							class="is-active"
-							outlined
-						>
-							<span>{{variant}}</span>
-						</o-button>
-					</div>
-				</style-guide-subsection>
-				<style-guide-subsection title="Focused">
-					<div class="buttons">
-						<o-button
-							v-for="variant in variants"
-							:key="`${variant}-outlined-focused`"
-							:variant="variant"
-							class="is-focused"
-							outlined
-						>
-							<span>{{variant}}</span>
-						</o-button>
-					</div>
-				</style-guide-subsection>
-				<style-guide-subsection title="Loading">
-					<div class="buttons">
-						<o-button
-							v-for="variant in variants"
-							:key="`${variant}-outlined-loading`"
-							:variant="variant"
-							class="is-loading"
-							outlined
-						>
-							<span>{{variant}}</span>
-						</o-button>
-					</div>
-				</style-guide-subsection>
-				<style-guide-subsection title="Disabled">
-					<div class="buttons">
-						<o-button
-							v-for="variant in variants"
-							:key="`${variant}-outlined-disabled`"
-							:variant="variant"
-							disabled
-							outlined
-						>
-							<span>{{variant}}</span>
-						</o-button>
-					</div>
-				</style-guide-subsection>
-			</style-guide-section>
-			<style-guide-section
-				title="Inverted Buttons"
-			>
-				<style-guide-subsection>
-					<div class="buttons">
-						<o-button
-							v-for="variant in variants"
-							:key="`${variant}-inverted`"
-							:variant="variant"
-							inverted
-						>
-							<span>{{variant}}</span>
-						</o-button>
-					</div>
-				</style-guide-subsection>
-				<style-guide-subsection title="Hover">
-					<div class="buttons">
-						<o-button
-							v-for="variant in variants"
-							:key="`${variant}-inverted-hover`"
-							:variant="variant"
-							class="is-hovered"
-							inverted
-						>
-							<span>{{variant}}</span>
-						</o-button>
-					</div>
-				</style-guide-subsection>
-				<style-guide-subsection title="Active">
-					<div class="buttons">
-						<o-button
-							v-for="variant in variants"
-							:key="`${variant}-inverted-active`"
-							:variant="variant"
-							class="is-active"
-							inverted
-						>
-							<span>{{variant}}</span>
-						</o-button>
-					</div>
-				</style-guide-subsection>
-				<style-guide-subsection title="Focused">
-					<div class="buttons">
-						<o-button
-							v-for="variant in variants"
-							:key="`${variant}-inverted-focused`"
-							:variant="variant"
-							class="is-focused"
-							inverted
-						>
-							<span>{{variant}}</span>
-						</o-button>
-					</div>
-				</style-guide-subsection>
-				<style-guide-subsection title="Loading">
-					<div class="buttons">
-						<o-button
-							v-for="variant in variants"
-							:key="`${variant}-inverted-loading`"
-							:variant="variant"
-							class="is-loading"
-							inverted
-						>
-							<span>{{variant}}</span>
-						</o-button>
-					</div>
-				</style-guide-subsection>
-				<style-guide-subsection title="Disabled">
-					<div class="buttons">
-						<o-button
-							v-for="variant in variants"
-							:key="`${variant}-inverted-disabled`"
-							:variant="variant"
-							disabled
-							inverted
-						>
-							<span>{{variant}}</span>
-						</o-button>
-					</div>
-				</style-guide-subsection>
-			</style-guide-section>
-			<style-guide-section
-				title="Light Buttons"
-			>
-				<style-guide-subsection>
-					<div class="buttons">
-						<o-button
-							v-for="variant in colorVariants"
-							:key="`${variant}-light`"
-							:variant="variant"
-							class="is-light"
-						>
-							<span>{{variant}}</span>
-						</o-button>
-					</div>
-				</style-guide-subsection>
-				<style-guide-subsection title="Hover">
-					<div class="buttons">
-						<o-button
-							v-for="variant in colorVariants"
-							:key="`${variant}-light-hover`"
-							:variant="variant"
-							class="is-hovered is-light"
-						>
-							<span>{{variant}}</span>
-						</o-button>
-					</div>
-				</style-guide-subsection>
-				<style-guide-subsection title="Active">
-					<div class="buttons">
-						<o-button
-							v-for="variant in colorVariants"
-							:key="`${variant}-light-active`"
-							:variant="variant"
-							class="is-active is-light"
-						>
-							<span>{{variant}}</span>
-						</o-button>
-					</div>
-				</style-guide-subsection>
-				<style-guide-subsection title="Focused">
-					<div class="buttons">
-						<o-button
-							v-for="variant in colorVariants"
-							:key="`${variant}-light-focused`"
-							:variant="variant"
-							class="is-focused is-light"
-						>
-							<span>{{variant}}</span>
-						</o-button>
-					</div>
-				</style-guide-subsection>
-				<style-guide-subsection title="Loading">
-					<div class="buttons">
-						<o-button
-							v-for="variant in colorVariants"
-							:key="`${variant}-light-loading`"
-							:variant="variant"
-							class="is-loading is-light"
-						>
-							<span>{{variant}}</span>
-						</o-button>
-					</div>
-				</style-guide-subsection>
-				<style-guide-subsection title="Disabled">
-					<div class="buttons">
-						<o-button
-							v-for="variant in colorVariants"
-							:key="`${variant}-light-disabled`"
-							:variant="variant"
-							class="is-light"
-							disabled
-						>
-							<span>{{variant}}</span>
-						</o-button>
-					</div>
-				</style-guide-subsection>
+
 			</style-guide-section>
 		</div>
 	</div>

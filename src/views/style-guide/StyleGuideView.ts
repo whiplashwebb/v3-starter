@@ -81,6 +81,8 @@ export default defineComponent({
 				'bar',
 				'fiz',
 			],
+			sliderValue: 5,
+			rangeValues: [5, 10],
 		};
 	},
 	methods: {
