@@ -7,13 +7,17 @@ import StyleGuideSection from '@/components/style-guide-section/StyleGuideSectio
 import StyleGuideSubsection from '@/components/style-guide-subsection/StyleGuideSubsection.vue';
 import { errorToast, successToast } from '@/utils/notifications';
 
-const colorVariants = [
-	'primary',
-	// 'link',
+const semanticVariants = [
 	'success',
 	'info',
 	'warning',
 	'danger',
+];
+
+const colorVariants = [
+	'primary',
+	// 'link',
+	...semanticVariants,
 ];
 
 const nonColorVariants = [
@@ -46,10 +50,17 @@ export default defineComponent({
 	},
 	data() {
 		return {
+			semanticVariants,
 			variants: [
 				'default',
 				...colorVariants,
 				...nonColorVariants,
+			],
+			messageVariants: [
+				'default',
+				...colorVariants,
+				'light',
+				'dark',
 			],
 			pillVariants: [
 				'default',

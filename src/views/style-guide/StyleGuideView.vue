@@ -29,6 +29,38 @@
 			</div>
 
 
+			<style-guide-section title="Notifications">
+				<style-guide-subsection>
+					<div class="content">
+						<blockquote>
+							<p>"Notification" is a crap name is you ask me. If you're looking for a fullpage banner to slap on the top of the page you've come to the right place. </p>
+						</blockquote>
+					</div>
+
+				</style-guide-subsection>
+				<style-guide-subsection>
+					<nav class="breadcrumb" aria-label="breadcrumbs">
+						<ul>
+							<li
+								v-for="item in breadcrumbItems"
+								:key="item.label"
+								:class="item.active ? 'is-active' : ''"
+							>
+								<a :href="item.url">
+									<o-icon
+										v-if="item.icon"
+										:icon="item.icon"
+										size="small"
+									/>
+									<span>{{ item.label }}</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+
+				</style-guide-subsection>
+
+			</style-guide-section>
 			<style-guide-section title="Breadcrumbs">
 				<style-guide-subsection>
 					<div class="content">
@@ -627,6 +659,51 @@
 				</style-guide-subsection>
 
 			</style-guide-section>
+			<style-guide-section title="Messages">
+				<style-guide-subsection>
+					<div class="content">
+						<blockquote>
+							<p>Messages are not currently implemented in Oruga. However, it's easy to use the Bulma styles without a component.</p>
+						</blockquote>
+					</div>
+
+				</style-guide-subsection>
+				<style-guide-subsection>
+					<article
+						v-for="variant in messageVariants"
+						:key="`message-${variant}`"
+						class="message"
+						:class="`is-${variant}`"
+					>
+						<div class="message-header">
+							<p class="is-capitalized">{{ variant }} Message</p>
+							<button class="delete" aria-label="delete"></button>
+						</div>
+						<div class="message-body">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+						</div>
+					</article>
+
+				</style-guide-subsection>
+				<style-guide-subsection title="Message Sizes">
+					<article
+						v-for="size in sizes"
+						:key="`message-${size}`"
+						class="message"
+						:class="`is-${size}`"
+					>
+						<div class="message-header">
+							<p class="is-capitalized">{{ size || 'Normal' }} Size Message</p>
+							<button class="delete" aria-label="delete"></button>
+						</div>
+						<div class="message-body">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+						</div>
+					</article>
+
+				</style-guide-subsection>
+
+			</style-guide-section>
 			<style-guide-section title="Modals">
 				<style-guide-subsection>
 					<div class="buttons">
@@ -882,12 +959,13 @@
 				</style-guide-subsection>
 
 			</style-guide-section>
-			<style-guide-section title="Toasts">
+			<style-guide-section title="Toasts & Notifications">
 				<style-guide-subsection>
 					<div class="content">
 						<blockquote>
-							<p>Toasts are a bit of a moving target in terms of naming. "Toast" is the most common name for this kind of thing, which is why I've opted for this name. Oruga refers to them as "Notifications", which imho is confusing but is technically the most accurate as oruga powers our toasts. Buefy had toasts and snackbars, which were two variations on this theme. Bulma doesn't define this at all as it's very javascript-y.</p>
+							<p>Toasts are a bit of a moving target in terms of naming. Here I'm referring to "Small messages that pop up on the edge of the screen to display errors etc.". "Toast" is the most common name for this kind of thing, which is why I've opted for this name. In Oruga you raise a toast by calling `oruga.notification.open()` which displays a notification component in the corner of the screen. However, you can also use notifications as banners, so this can be confusing. Buefy had toasts and snackbars, which were two variations on this theme. Bulma doesn't define this at all as it's very javascript-y. But enough of this naming rabbit hole.</p>
 							<p>Utility methods are provided for success and error toasts, which default to toasts which will expire after a 10 seconds and can be dismissed by the user. Duration can be configured in the global oruga config. If you need non-dismissable toasts you can use <code>oruga.notification.open()</code> directly.</p>
+							<p>As mentioned earlier, you can also use a notification as a banner. If you're looking for a full-page banner at the top of the page to alert the user of something, this is the component for that job.</p>
 						</blockquote>
 					</div>
 
@@ -908,6 +986,50 @@
 						</o-button>
 					</div>
 
+				</style-guide-subsection>
+				<style-guide-subsection title="Banner Variants">
+					<o-notification
+						v-for="variant in messageVariants"
+						:key="`notification-${variant}`"
+						:variant="variant"
+						closable
+					>
+						<span class="is-capitalized">{{ variant }}</span> Notification : Yacht write little being street mountain-top certainly which after. Raised utter document bowsprit foreign manned summoned storms trapped.
+					</o-notification>
+				</style-guide-subsection>
+				<style-guide-subsection title="Light Banner Variants">
+					<o-notification
+						v-for="variant in colorVariants"
+						:key="`notification-${variant}-light`"
+						:variant="variant"
+						class="is-light"
+						closable
+					>
+						Light <span class="is-capitalized">{{ variant }}</span> Notification : Yacht write little being street mountain-top certainly which after. Raised utter document bowsprit foreign manned summoned storms trapped.
+					</o-notification>
+				</style-guide-subsection>
+				<style-guide-subsection title="Semantic Variants with Icons">
+					<o-notification
+						v-for="variant in semanticVariants"
+						:key="`notification-${variant}`"
+						:variant="variant"
+						:type="variant"
+						closable
+					>
+						<span class="is-capitalized">{{ variant }}</span> Notification : Yacht write little being street mountain-top certainly which after. Raised utter document bowsprit foreign manned summoned storms trapped.
+					</o-notification>
+				</style-guide-subsection>
+				<style-guide-subsection title="Light Semantic Variants with Icons">
+					<o-notification
+						v-for="variant in semanticVariants"
+						:key="`notification-${variant}-light`"
+						:variant="variant"
+						class="is-light"
+						:type="variant"
+						closable
+					>
+						Light <span class="is-capitalized">{{ variant }}</span> Notification : Yacht write little being street mountain-top certainly which after. Raised utter document bowsprit foreign manned summoned storms trapped.
+					</o-notification>
 				</style-guide-subsection>
 
 			</style-guide-section>
