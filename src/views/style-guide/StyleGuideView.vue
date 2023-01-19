@@ -22,7 +22,7 @@
 				<div class="content">
 					<blockquote>
 						<p>Welcome to the style guide! This page is intended to give developers using the design system a general idea of what components are available, as well as to give developers working on the system an easy way to see how global changes flow through the system.</p>
-						<p>This page does <strong>not</strong> show every available component or every variant of the components. The system is built on top of <a href="https://oruga.io/documentation/" target="_blank">Oruga</a> and <a href="https://bulma.io/documentation/" target="_blank">Bulma</a>, each of which contain a wealth of components and options. Please have a look at their documentation to learn more about the wider options available.</p>
+						<p>The system is built on top of <a href="https://oruga.io/documentation/" target="_blank">Oruga</a> and <a href="https://bulma.io/documentation/" target="_blank">Bulma</a>, each of which contain a wealth of components and options. This page mostly shows components from Oruga but there are some css-only components represented from Bulma. This page does <strong>not</strong> show every available component or every variant of the components. Please have a look at the Oruga and Bulma documentation to learn more about the wider options available.</p>
 						<p><strong>Pro tip:</strong> At the time of this writing Oruga is still a young framework and it's docs are missing some details. However, it is the successor to <a href="https://buefy.org/documentation" target="_blank">Buefy</a>, a much more established framework with excellent docs. Since most Oruga components have been adapted from Buefy, checking out the Buefy docs can help fill in holes.</p>
 					</blockquote>
 				</div>
