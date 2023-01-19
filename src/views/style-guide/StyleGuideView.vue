@@ -627,6 +627,41 @@
 				</style-guide-subsection>
 
 			</style-guide-section>
+			<style-guide-section title="Menu">
+				<style-guide-subsection>
+					<o-menu>
+						<o-menu-list label="Menu">
+							<o-menu-item icon="info-circle" label="Info"></o-menu-item>
+							<o-menu-item class="is-reversed" icon="info-circle" label="Info (Reversed Icon)"></o-menu-item>
+							<o-menu-item icon="cog">
+								<template #label="props">
+									Administrator
+									<o-icon class="is-pulled-right" :icon="props.expanded ? 'chevron-up' : 'chevron-down'"></o-icon>
+								</template>
+								<o-menu-item icon="user" label="Users"></o-menu-item>
+								<o-menu-item icon="mobile">
+									<template #label>
+										Devices
+									</template>
+								</o-menu-item>
+								<o-menu-item icon="money-bill" label="Payments" disabled></o-menu-item>
+							</o-menu-item>
+							<o-menu-item icon="user" label="My Account">
+								<o-menu-item label="Account data"></o-menu-item>
+								<o-menu-item label="Addresses"></o-menu-item>
+							</o-menu-item>
+						</o-menu-list>
+						<o-menu-list>
+							<o-menu-item label="Documentation" icon="link" tag="a" target="_blank" href="/documentation/"></o-menu-item>
+						</o-menu-list>
+						<o-menu-list label="Actions">
+							<o-menu-item label="Logout"></o-menu-item>
+						</o-menu-list>
+					</o-menu>
+
+				</style-guide-subsection>
+
+			</style-guide-section>
 			<style-guide-section title="Messages">
 				<style-guide-subsection>
 					<div class="content">
@@ -1341,6 +1376,10 @@
 				min-width:150px;
 			}
 		}
+	}
+
+	.menu {
+		max-width:400px;
 	}
 }
 </style>

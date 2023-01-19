@@ -145,6 +145,7 @@ export default defineComponent({
 			activeVerticalTab: tabSections.pictures,
 			progressValue: 65,
 			progressMax: 100,
+			adminMenuActive: true,
 		};
 	},
 	methods: {
