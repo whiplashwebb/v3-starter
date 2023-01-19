@@ -15,6 +15,9 @@ import {
 	Select,
 	Autocomplete,
 	Modal,
+	Datepicker,
+	Timepicker,
+	Datetimepicker,
 } from '@oruga-ui/oruga-next';
 import { bulmaConfig } from '@oruga-ui/theme-bulma';
 import type { Plugin } from 'vue';
@@ -52,5 +55,8 @@ export const addOruga: Plugin = {
 		app.use(Menu);
 		app.use(Select);
 		app.use(Autocomplete);
+		app.use(Datepicker);
+		app.use(Timepicker);
+		app.use(Datetimepicker);
 	},
 };

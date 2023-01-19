@@ -76,6 +76,11 @@ export default defineComponent({
 			radio: 'Foo',
 			exampleInput: 'Example input',
 			basicModalOpen: false,
+			selectOptions: [
+				'foo',
+				'bar',
+				'fiz',
+			],
 		};
 	},
 	methods: {

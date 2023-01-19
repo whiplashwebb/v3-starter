@@ -18,9 +18,193 @@
 			</div>
 		</div>
 		<div class="container">
+			<div class="section">
+				<div class="content">
+					<blockquote>
+						<p>Welcome to the style guide! This page is intended to give developers using the design system a general idea of what components are available, as well as to give developers working on the system an easy way to see how global changes flow through the system.</p>
+						<p>This page does <strong>not</strong> show every available component or every variant of the components. The system is built on top of <a href="https://oruga.io/documentation/" target="_blank">Oruga</a> and <a href="https://bulma.io/documentation/" target="_blank">Bulma</a>, each of which contain a wealth of components and options. Please have a look at their documentation to learn more about the wider options available.</p>
+						<p><strong>Pro tip:</strong> At the time of this writing Oruga is still a young framework and it's docs are missing some details. However, it is the successor to <a href="https://buefy.org/documentation" target="_blank">Buefy</a>, a much more established framework with excellent docs. Since most Oruga components have been adapted from Buefy, checking out the Buefy docs can help fill in holes.</p>
+					</blockquote>
+				</div>
+			</div>
+
+			<style-guide-section
+				title="Selects"
+				initially-active
+			>
+				<style-guide-subsection>
+					<o-field
+						label="Basic Select"
+						message="This is the optional help text for the standard input"
+					>
+						<o-select placeholder="Select a name">
+							<option
+								v-for="(option, index) in selectOptions"
+								:key="`select-basic-${index}`"
+							>
+								{{ option }}
+							</option>
+						</o-select>
+					</o-field>
+					<o-field
+						label="Error Select"
+						variant="danger"
+						message="This is the optional help text for the standard input"
+					>
+						<o-select placeholder="Select a name">
+							<option
+								v-for="(option, index) in selectOptions"
+								:key="`select-error-${index}`"
+							>
+								{{ option }}
+							</option>
+						</o-select>
+					</o-field>
+					<o-field
+						label="Disabled Select"
+						message="This is the optional help text for the standard input"
+					>
+						<o-select
+							placeholder="Select a name"
+							disabled
+						>
+							<option
+								v-for="(option, index) in selectOptions"
+								:key="`select-disabled-${index}`"
+							>
+								{{ option }}
+							</option>
+						</o-select>
+					</o-field>
+				</style-guide-subsection>
+			</style-guide-section>
+			<style-guide-section
+				title="Inputs"
+			>
+				<style-guide-subsection>
+					<o-field
+						label="Standard Input"
+						message="This is the optional help text for the standard input"
+					>
+						<o-input
+							v-model="exampleInput"
+						/>
+					</o-field>
+					<o-field
+						label="Standard Input Placeholder"
+						message="This is the optional help text for the standard input"
+					>
+						<o-input
+							placeholder="Enter input..."
+						/>
+					</o-field>
+					<o-field
+						label="Error Input"
+						variant="danger"
+						message="This is the optional help text for the standard input"
+					>
+						<o-input
+							v-model="exampleInput"
+						/>
+					</o-field>
+					<o-field
+						label="Disabled Input"
+						placeholder="Input disabled"
+						message="This is the optional help text for the standard input"
+					>
+						<o-input
+							v-model="exampleInput"
+							disabled
+						/>
+					</o-field>
+				</style-guide-subsection>
+			</style-guide-section>
+
+
+			<style-guide-section title="Form Misc">
+
+				<style-guide-subsection title="Switches">
+
+					<o-field>
+						<o-switch v-model="switches[0]">On</o-switch>
+					</o-field>
+
+					<o-field>
+						<o-switch>Off</o-switch>
+					</o-field>
+
+					<o-field>
+						<o-switch v-model="switches[1]" disabled>On Disabled</o-switch>
+					</o-field>
+
+					<o-field>
+						<o-switch disabled>Off Disabled</o-switch>
+					</o-field>
+
+				</style-guide-subsection>
+
+				<style-guide-subsection title="Checkboxes">
+					<div class="field">
+						<o-checkbox v-model="checks[0]">
+							Checked
+						</o-checkbox>
+					</div>
+					<div class="field">
+						<o-checkbox v-model="checks[1]">
+							Unchecked
+						</o-checkbox>
+					</div>
+					<div class="field">
+						<o-checkbox v-model="checks[2]" disabled>
+							Checked and Disabled
+						</o-checkbox>
+					</div>
+					<div class="field">
+						<o-checkbox v-model="checks[3]" disabled>
+							Unchecked and Disabled
+						</o-checkbox>
+					</div>
+				</style-guide-subsection>
+
+				<style-guide-subsection title="Radios">
+					<div class="block">
+						<o-radio v-model="radio" name="name" native-value="Foo">
+							Foo
+						</o-radio>
+						<o-radio v-model="radio" name="name" native-value="Bar">
+							Bar
+						</o-radio>
+						<o-radio v-model="radio" name="name" native-value="Fiz" disabled>
+							Fiz
+						</o-radio>
+					</div>
+				</style-guide-subsection>
+
+				<style-guide-subsection title="Data/Time Pickers">
+					<o-field label="Select a date">
+						<o-datepicker
+							placeholder="Click to select..."
+							icon="calendar"
+							trap-focus
+						/>
+					</o-field>
+					<o-field label="Select time">
+						<o-timepicker
+							placeholder="Click to select..."
+							icon="clock"
+						/>
+					</o-field>
+					<o-field label="Select datetime">
+						<o-datetimepicker
+							placeholder="Click to select..."
+							icon="calendar"
+						/>
+					</o-field>
+
+				</style-guide-subsection>
+			</style-guide-section>
 			<style-guide-section
 				title="Modals"
-				initially-active
 			>
 				<style-guide-subsection>
 					<div class="buttons">
@@ -193,94 +377,6 @@
 
 				</style-guide-subsection>
 
-			</style-guide-section>
-			<style-guide-section
-				title="Inputs"
-			>
-				<style-guide-subsection>
-					<o-field
-						label="Standard Input"
-						message="This is the optional help text for the standard input"
-					>
-						<o-input
-							v-model="exampleInput"
-						/>
-					</o-field>
-					<o-field
-						label="Standard Input Placeholder"
-						message="This is the optional help text for the standard input"
-					>
-						<o-input
-							placeholder="Enter input..."
-						/>
-					</o-field>
-					<o-field
-						label="Error Input"
-						variant="danger"
-						message="This is the optional help text for the standard input"
-					>
-						<o-input
-							v-model="exampleInput"
-						/>
-					</o-field>
-				</style-guide-subsection>
-
-				<style-guide-subsection title="Switches">
-
-					<o-field>
-						<o-switch v-model="switches[0]">On</o-switch>
-					</o-field>
-
-					<o-field>
-						<o-switch>Off</o-switch>
-					</o-field>
-
-					<o-field>
-						<o-switch v-model="switches[1]" disabled>On Disabled</o-switch>
-					</o-field>
-
-					<o-field>
-						<o-switch disabled>Off Disabled</o-switch>
-					</o-field>
-
-				</style-guide-subsection>
-
-				<style-guide-subsection title="Checkboxes">
-					<div class="field">
-						<o-checkbox v-model="checks[0]">
-							Checked
-						</o-checkbox>
-					</div>
-					<div class="field">
-						<o-checkbox v-model="checks[1]">
-							Unchecked
-						</o-checkbox>
-					</div>
-					<div class="field">
-						<o-checkbox v-model="checks[2]" disabled>
-							Checked and Disabled
-						</o-checkbox>
-					</div>
-					<div class="field">
-						<o-checkbox v-model="checks[3]" disabled>
-							Unchecked and Disabled
-						</o-checkbox>
-					</div>
-				</style-guide-subsection>
-
-				<style-guide-subsection title="Radios">
-					<div class="block">
-						<o-radio v-model="radio" name="name" native-value="Foo">
-							Foo
-						</o-radio>
-						<o-radio v-model="radio" name="name" native-value="Bar">
-							Bar
-						</o-radio>
-						<o-radio v-model="radio" name="name" native-value="Fiz" disabled>
-							Fiz
-						</o-radio>
-					</div>
-				</style-guide-subsection>
 			</style-guide-section>
 			<style-guide-section
 				title="Regular Buttons"
