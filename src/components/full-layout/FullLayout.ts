@@ -10,7 +10,6 @@ import type { PropType } from 'vue';
 import DesktopNav from '@/components/desktop-nav/DesktopNav.vue';
 import MobileNav from '@/components/mobile-nav/MobileNav.vue';
 import MobileSearch from '@/components/mobile-search/MobileSearch.vue';
-import NavDrawer from '@/components/nav-drawer/NavDrawer.vue';
 import NavMenu from '@/components/NavMenu/NavMenu.vue';
 import UserAccordion from '@/components/user-accordion/UserAccordion.vue';
 import type { NavData } from '@/types';
@@ -48,7 +47,6 @@ export default defineComponent({
 	components: {
 		DesktopNav,
 		MobileNav,
-		NavDrawer,
 		NavMenu,
 		MobileSearch,
 		UserAccordion,
