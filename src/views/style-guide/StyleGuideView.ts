@@ -149,6 +149,13 @@ export default defineComponent({
 			autocompleteQuery: '',
 			inlineAutocompleteQuery: '',
 			autocompleteOptions: ['Antarctic', 'shackleton', 'equipment', 'redoubled', 'surmounted', 'obliterated', 'scientific', 'otherwise', 'experimentation', 'Antarctic', 'biological', 'consciousness', 'cryptical', 'beginning', 'differentiated', 'everything', 'hideously', 'refrained', 'Spontaneously', 'incredible', 'lightened', 'forbidden', 'afternoon', 'mountains', 'thirty-five', 'expedition', 'mountains', 'Miskatonic', 'undulations', 'regularities', 'formations', 'forbidden', 'five-pointed', 'ineluctable', 'provision', 'iridescent', 'Machinery', 'antarctic', 'unbelievable', 'elevation', 'specimens', 'interstitial', 'regularities', 'discovered', 'uninjured', 'Reminiscent', 'explained', 'mountains', 'fantastically', 'destroyed', 'altogether', 'overwrought', 'psychological', 'lightened', 'Survivors', 'rationale', 'illustrated', 'overshadowing', 'transportation', 'crevasse-riven', 'geologists', 'paintings', 'anomalous'],
+			carouselImages: [
+				'https://picsum.photos/seed/picsum1/640/360',
+				'https://picsum.photos/seed/picsum2/640/360',
+				'https://picsum.photos/seed/picsum3/640/360',
+				'https://picsum.photos/seed/picsum4/640/360',
+				'https://picsum.photos/seed/picsum5/640/360',
+			],
 		};
 	},
 	computed: {

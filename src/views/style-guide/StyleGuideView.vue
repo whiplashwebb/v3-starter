@@ -28,7 +28,6 @@
 				</div>
 			</div>
 
-
 			<style-guide-section title="Autocomplete">
 				<style-guide-subsection>
 					<o-autocomplete
@@ -512,6 +511,22 @@
 							<div class="content" v-html="cardIpsum" />
 						</div>
 					</div>
+				</style-guide-subsection>
+
+			</style-guide-section>
+			<style-guide-section title="Carousel">
+				<style-guide-subsection>
+					<o-carousel>
+						<o-carousel-item
+							v-for="(image, i) in carouselImages"
+							:key="`car-${i}`"
+						>
+							<figure class="image is-16by9">
+								<img :src="image" />
+							</figure>
+						</o-carousel-item>
+					</o-carousel>
+
 				</style-guide-subsection>
 
 			</style-guide-section>
