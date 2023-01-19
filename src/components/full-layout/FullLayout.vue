@@ -22,7 +22,7 @@
 		>
 			<mobile-search :nav-data="navData" />
 			<hr>
-			<nav-menu :nav-data="navData" />
+			<mobile-main-menu :nav-data="navData" />
 		</o-sidebar>
 		<o-sidebar
 			class="full-layout__sidebar"
