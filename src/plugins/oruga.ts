@@ -24,6 +24,7 @@ import {
 	Tabs,
 	Tooltip,
 	Carousel,
+	Table,
 } from '@oruga-ui/oruga-next';
 import { bulmaConfig } from '@oruga-ui/theme-bulma';
 import type { Plugin } from 'vue';
@@ -70,5 +71,6 @@ export const addOruga: Plugin = {
 		app.use(Tabs);
 		app.use(Tooltip);
 		app.use(Carousel);
+		app.use(Table);
 	},
 };

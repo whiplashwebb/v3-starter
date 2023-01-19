@@ -87,26 +87,6 @@
 				</style-guide-subsection>
 
 			</style-guide-section>
-			<style-guide-section title="Dropdowns">
-				<style-guide-subsection>
-					<o-dropdown v-model="dropdownOpen">
-						<template #trigger="{ active }">
-							<o-button
-								variant="primary"
-								:icon-right="active ? 'caret-up' : 'caret-down'"
-							>
-								Click Me!
-							</o-button>
-						</template>
-
-						<o-dropdown-item>Action</o-dropdown-item>
-						<o-dropdown-item>Another action</o-dropdown-item>
-						<o-dropdown-item>Something else</o-dropdown-item>
-					</o-dropdown>
-
-				</style-guide-subsection>
-
-			</style-guide-section>
 			<style-guide-section title="Buttons">
 				<style-guide-subsection>
 					<div class="buttons">
@@ -546,6 +526,26 @@
 							</figure>
 						</o-carousel-item>
 					</o-carousel>
+
+				</style-guide-subsection>
+
+			</style-guide-section>
+			<style-guide-section title="Dropdowns">
+				<style-guide-subsection>
+					<o-dropdown>
+						<template #trigger="{ active }">
+							<o-button
+								variant="primary"
+								:icon-right="active ? 'caret-up' : 'caret-down'"
+							>
+								Click Me!
+							</o-button>
+						</template>
+
+						<o-dropdown-item>Action</o-dropdown-item>
+						<o-dropdown-item>Another action</o-dropdown-item>
+						<o-dropdown-item>Something else</o-dropdown-item>
+					</o-dropdown>
 
 				</style-guide-subsection>
 
@@ -1001,6 +1001,34 @@
 						/>
 					</o-field>
 				</style-guide-subsection>
+			</style-guide-section>
+			<style-guide-section title="Tables">
+				<style-guide-subsection>
+					<div class="content">
+						<blockquote>
+							<p>The table component has a crazy number of options and variations, which I'm not going to attempt to capture here. <strong>Please</strong> consult the Oruga and Bulma docs for details.</p>
+						</blockquote>
+					</div>
+
+				</style-guide-subsection>
+				<style-guide-subsection>
+					<o-table
+						:data="tableData"
+						striped
+					>
+						<o-table-column
+							v-for="(column, i) in tableColumns"
+							v-bind="column"
+							:key="`column-${i}`"
+							#default="{ row }"
+							sortable
+						>
+							{{ row[column.field]}}
+						</o-table-column>
+					</o-table>
+
+				</style-guide-subsection>
+
 			</style-guide-section>
 			<style-guide-section title="Tabs">
 				<style-guide-subsection>
