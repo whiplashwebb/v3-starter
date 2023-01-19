@@ -1,0 +1,10 @@
+.autocomplete {
+	&.has-inline-results {
+		.dropdown-content {
+			position:static;
+			max-height:initial;
+			box-shadow:none;
+			min-width: initial;
+		}
+	}
+}

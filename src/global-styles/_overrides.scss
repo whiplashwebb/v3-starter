@@ -35,7 +35,7 @@ $button-size-normal: 13px;
 }
 
 .button {
-	text-transform: uppercase;
+	/*text-transform: uppercase;
 	font-size: 13px;
 	letter-spacing: 0.098em;
 	height: auto;
@@ -46,7 +46,7 @@ $button-size-normal: 13px;
 		padding-top: $button-padding-vertical-small;
 		padding-bottom: $button-padding-vertical-small;
 		font-size: 12px;
-	}
+	}*/
 
 	&.has-min-width {
 		min-width: 11.9375rem;

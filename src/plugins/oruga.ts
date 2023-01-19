@@ -14,6 +14,17 @@ import {
 	Menu,
 	Select,
 	Autocomplete,
+	Modal,
+	Datepicker,
+	Timepicker,
+	Datetimepicker,
+	Sidebar,
+	Slider,
+	Pagination,
+	Tabs,
+	Tooltip,
+	Carousel,
+	Table,
 } from '@oruga-ui/oruga-next';
 import { bulmaConfig } from '@oruga-ui/theme-bulma';
 import type { Plugin } from 'vue';
@@ -25,7 +36,8 @@ export const overrideConfig = {
 	statusIcon: false,
 	notification: {
 		...bulmaConfig.notification,
-		duration: 5000,
+		duration: 10000,
+		position: 'bottom-right',
 	},
 };
 
@@ -34,6 +46,7 @@ export const addOruga: Plugin = {
 		// Global oruga config
 		app.use(Config, overrideConfig);
 		app.use(Notification);
+		app.use(Modal);
 
 		// Add individual components here
 		app.use(Input);
@@ -49,5 +62,15 @@ export const addOruga: Plugin = {
 		app.use(Menu);
 		app.use(Select);
 		app.use(Autocomplete);
+		app.use(Datepicker);
+		app.use(Timepicker);
+		app.use(Datetimepicker);
+		app.use(Sidebar);
+		app.use(Slider);
+		app.use(Pagination);
+		app.use(Tabs);
+		app.use(Tooltip);
+		app.use(Carousel);
+		app.use(Table);
 	},
 };

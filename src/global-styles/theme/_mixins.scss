@@ -1,11 +1,4 @@
-@mixin inline-autocomplete {
-	.dropdown-content {
-		position:static;
-		max-height:initial;
-		box-shadow:none;
-		min-width: initial;
-	}
-
+@mixin nav-autocomplete {
 	// Media queries distinguish between styles for usage in desktop nav vs mobile nav
 	@include from($desktop) {
 		.dropdown-item {

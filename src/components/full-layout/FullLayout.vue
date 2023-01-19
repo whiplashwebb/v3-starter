@@ -14,15 +14,20 @@
 			v-model:main-active="mainDrawerActive"
 		/>
 		<slot class="full-layout_content" />
-		<nav-drawer
-			:active="mainDrawerActive"
+
+		<o-sidebar
+			class="full-layout__sidebar"
+			v-model:open="mainDrawerActive"
+			fullheight
 		>
 			<mobile-search :nav-data="navData" />
 			<hr>
 			<nav-menu :nav-data="navData" />
-		</nav-drawer>
-		<nav-drawer
-			:active="userDrawerActive"
+		</o-sidebar>
+		<o-sidebar
+			class="full-layout__sidebar"
+			v-model:open="userDrawerActive"
+			fullheight
 			right
 		>
 			<user-accordion
@@ -32,7 +37,7 @@
 				:current-customer="currentCustomer"
 				:http-client="httpClient"
 			/>
-		</nav-drawer>
+		</o-sidebar>
 	</div>
 </template>
 
@@ -47,6 +52,17 @@
 
 	&__content {
 		flex:1 1 auto;
+	}
+
+	&__sidebar {
+		.sidebar-content {
+			padding:1rem;
+			padding-top:$navbar-height + 1rem;
+			background:$white;
+			z-index:$navbar-z - 1;
+			box-shadow: $wl-box-shadow;
+			min-width:20rem;
+		}
 	}
 }
 </style>
