@@ -1,0 +1,155 @@
+.button {
+	&.has-min-width {
+		min-width: 11.9375rem;
+	}
+
+	&.is-wide {
+		$button-padding-horizontal-wide: $button-padding-horizontal * 2.5;
+		padding-left: $button-padding-horizontal-wide;
+		padding-right: $button-padding-horizontal-wide;
+	}
+
+	&.is-primary {
+		$color: $primary;
+		$color-invert: findColorInvert($color);
+		$hover-bg: $black-ter;
+		$hover-text: $text-invert;
+
+		background-color: $color;
+		border-color: transparent;
+		color: $color-invert;
+
+		&:hover,
+		&.is-hovered {
+			background-color: $hover-bg;
+			border-color: transparent;
+			color: $hover-text;
+		}
+
+		&:focus,
+		&.is-focused {
+			border-color: transparent;
+			color: $color-invert;
+
+			&:not(:active) {
+				box-shadow: $button-focus-box-shadow-size bulmaRgba($color, 0.25);
+			}
+		}
+
+		&:active,
+		&.is-active {
+			background-color: $black;
+			border-color: transparent;
+			color: $color-invert;
+		}
+
+		&[disabled],
+		fieldset[disabled] & {
+			background-color: transparent;
+			border-color: $grey-light;
+			color: $grey-light;
+			box-shadow: none;
+		}
+
+		&.is-inverted {
+			background-color: $color-invert;
+			color: $color;
+
+			&:hover,
+			&.is-hovered {
+				background-color: bulmaDarken($color-invert, 5%);
+			}
+
+			&[disabled],
+			fieldset[disabled] & {
+				background-color: $color-invert;
+				border-color: transparent;
+				box-shadow: none;
+				color: $color;
+			}
+		}
+
+		&.is-loading {
+			&::after {
+				border-color: transparent transparent $color-invert $color-invert !important;
+			}
+		}
+
+		&.is-outlined {
+			background-color: transparent;
+			border-color: $color;
+			color: $color;
+
+			&:hover,
+			&.is-hovered,
+			&:focus,
+			&.is-focused {
+				background-color: transparent;
+				border-color: $hover-bg;
+				color: $hover-bg;
+			}
+
+			&:active,
+			&.is-active {
+				border-color: $black;
+				color: $black;
+			}
+
+			&.is-loading {
+				&::after {
+					border-color: transparent transparent $color $color !important;
+				}
+
+				&:hover,
+				&.is-hovered,
+				&:focus,
+				&.is-focused {
+					&::after {
+						border-color: transparent transparent $color-invert $color-invert !important;
+					}
+				}
+			}
+
+			&[disabled],
+			fieldset[disabled] & {
+				background-color: transparent;
+				border-color: $color;
+				box-shadow: none;
+				color: $color;
+			}
+		}
+
+		&.is-inverted.is-outlined {
+			background-color: transparent;
+			border-color: $color-invert;
+			color: $color-invert;
+
+			&:hover,
+			&.is-hovered,
+			&:focus,
+			&.is-focused {
+				background-color: $color-invert;
+				color: $color;
+			}
+
+			&.is-loading {
+				&:hover,
+				&.is-hovered,
+				&:focus,
+				&.is-focused {
+					&::after {
+						border-color: transparent transparent $color $color !important;
+					}
+				}
+			}
+
+			&[disabled],
+			fieldset[disabled] & {
+				background-color: transparent;
+				border-color: $color-invert;
+				box-shadow: none;
+				color: $color-invert;
+			}
+		}
+	}
+}

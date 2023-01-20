@@ -1597,5 +1597,9 @@
 	.menu {
 		max-width:400px;
 	}
+
+	.button {
+		text-transform: capitalize;
+	}
 }
 </style>

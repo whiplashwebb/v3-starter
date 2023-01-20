@@ -15,6 +15,8 @@ $white-ter:    hsl(0, 0%, 96%);
 $white-bis:    hsl(0, 0%, 98%);
 $white:        hsl(0, 0%, 100%);
 
+$some: #FBFBFB;
+
 // Overrides
 
 $black-ter: #1b1f1f;
@@ -55,3 +57,5 @@ $text-blue:$blue;
 $background-blue:$blue-light;
 
 $link:$blue-dark;
+
+$wl-box-shadow:0 0 15px rgb(132 131 161 / 50%);

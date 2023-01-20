@@ -3,7 +3,7 @@
 		<o-collapse v-model:open="active">
 			<template #trigger>
 				<div class="style-guide-section__header section">
-					<h2 class="style-guide-section__title title is-3">
+					<h2 class="style-guide-section__title title is-4">
 						{{ title }}
 					</h2>
 					<o-icon :icon="active ? 'caret-up' : 'caret-down'" />
@@ -47,10 +47,13 @@ export default defineComponent({
 	$sgs-border:1px solid $border;
 
 	&__header {
+		$header-padding:1.25rem;
 		display:flex;
 		flex-direction: row;
 		align-items: center;
 		cursor:pointer;
+		padding-top:$header-padding;
+		padding-bottom: $header-padding;
 	}
 
 	&__title {
