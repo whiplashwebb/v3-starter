@@ -2,7 +2,7 @@
 	<div class="style-guide-subsection">
 		<h3
 			v-if="title"
-			class="subtitle is-4"
+			class="subtitle is-5"
 		>
 			{{ title }}
 		</h3>
