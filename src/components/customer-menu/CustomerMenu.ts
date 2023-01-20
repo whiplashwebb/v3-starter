@@ -5,7 +5,7 @@ import { debounce } from 'lodash';
 import { defineComponent } from 'vue';
 import type { PropType } from 'vue';
 
-import type {AutocompleteResult, NavData} from '@/types';
+import type { AutocompleteResult, NavData } from '@/types';
 import { getAllCustomersUrl } from '@/utils';
 
 export default defineComponent({

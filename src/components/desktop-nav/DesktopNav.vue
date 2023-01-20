@@ -74,7 +74,7 @@
 							<div
 								class="navbar-item"
 							>
-								<mobile-search :nav-data="navData" />
+								<site-search :nav-data="navData" />
 							</div>
 						</div>
 					</div>

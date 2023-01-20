@@ -1,6 +1,6 @@
 <template>
 	<form
-		class="mobile-search"
+		class="site-search"
 		:action="searchAction"
 	>
 		<o-field>
@@ -20,6 +20,7 @@
 				<option
 					v-for="[value, label] in labeledSearchTypes"
 					:value="value"
+					:key="value"
 				>
 					{{label}}
 				</option>
@@ -64,8 +65,3 @@ export default defineComponent({
 	},
 });
 </script>
-
-<style lang="scss">
-.mobile-search {
-}
-</style>

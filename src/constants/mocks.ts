@@ -1,7 +1,7 @@
 import type {
 	APIV21EntitiesCustomer,
 	APIV21EntitiesUser,
-	APIV21EntitiesWarehouse
+	APIV21EntitiesWarehouse,
 } from '@whiplashmerch/whiplash-api-client-private';
 
 import type { NavData } from '@/types';

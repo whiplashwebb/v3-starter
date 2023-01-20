@@ -20,7 +20,7 @@
 			v-model:open="mainDrawerActive"
 			fullheight
 		>
-			<mobile-search :nav-data="navData" />
+			<site-search :nav-data="navData" />
 			<hr>
 			<mobile-main-menu :nav-data="navData" />
 		</o-sidebar>
