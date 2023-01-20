@@ -1,7 +1,9 @@
 <template>
 	<div class="modal-card">
 		<header class="modal-card-head">
-			<p class="modal-card-title">Example Modal</p>
+			<p class="modal-card-title">
+				Example Modal
+			</p>
 			<button
 				class="delete"
 				@click="$emit('close', {action: 'cancel', method: 'x'})"

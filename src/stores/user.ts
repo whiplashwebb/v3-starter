@@ -159,8 +159,13 @@ export const useUserStore = defineStore('user',  {
 					.catch(reject);
 			});
 		},
-		logout() {
-
+		logout(): void {
+			this.token = null;
+			this.navData = null;
+			this.currentUser = null;
+			this.currentCustomer = null;
+			this.currentWarehouse = null;
+			this.initComplete = false;
 		},
 	},
 });

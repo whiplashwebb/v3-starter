@@ -35,7 +35,7 @@ import type { PropType } from 'vue';
 import type { NavData } from '@/types';
 
 export default defineComponent({
-	name: 'NavMenu',
+	name: 'MobileMainMenu',
 	props: {
 		navData: {
 			type: Object as PropType<NavData>,

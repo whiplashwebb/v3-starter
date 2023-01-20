@@ -25,8 +25,8 @@
 		<o-menu>
 			<o-menu-list>
 				<o-menu-item
-					class="is-reversed"
 					v-if="currentCustomer"
+					class="is-reversed"
 					label="Unset Customer"
 					icon="arrow-right-from-bracket"
 				/>
