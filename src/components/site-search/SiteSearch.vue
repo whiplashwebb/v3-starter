@@ -19,10 +19,10 @@
 			>
 				<option
 					v-for="[value, label] in labeledSearchTypes"
-					:value="value"
 					:key="value"
+					:value="value"
 				>
-					{{label}}
+					{{ label }}
 				</option>
 			</o-select>
 			<o-button

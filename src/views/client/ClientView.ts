@@ -5,17 +5,20 @@ import type { NavData } from '@/types';
 
 export default defineComponent({
 	name: 'ClientView',
-	data() {
-		return {
-			output: null as null | NavData,
-		};
-	},
 	setup() {
 		const userStore = useUserStore();
 
 		return {
 			userStore,
 		};
+	},
+	data() {
+		return {
+			output: null as null | NavData,
+		};
+	},
+	mounted() {
+		this.loadData();
 	},
 	methods: {
 		loadData() {
@@ -27,8 +30,5 @@ export default defineComponent({
 					console.error(error);
 				});
 		},
-	},
-	mounted() {
-		this.loadData();
 	},
 });

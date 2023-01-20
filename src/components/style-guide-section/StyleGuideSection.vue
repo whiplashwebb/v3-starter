@@ -3,7 +3,9 @@
 		<o-collapse v-model:open="active">
 			<template #trigger>
 				<div class="style-guide-section__header section">
-					<h2 class="style-guide-section__title title is-3">{{ title }}</h2>
+					<h2 class="style-guide-section__title title is-3">
+						{{ title }}
+					</h2>
 					<o-icon :icon="active ? 'caret-up' : 'caret-down'" />
 				</div>
 			</template>

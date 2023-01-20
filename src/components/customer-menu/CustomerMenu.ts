@@ -49,6 +49,7 @@ export default defineComponent({
 				sort: 'name asc',
 				fields: 'id, name',
 				// TODO : remove this ignore once the client is fixed
+				// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 				// @ts-ignore
 				page: 1,
 				per_page: 5,
@@ -63,6 +64,7 @@ export default defineComponent({
 		},
 		getDebouncedResults: debounce(function(query: string) {
 			// TS gets confused about this here. It does work. Maybe don't use lodash?
+			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 			// @ts-ignore
 			this.getResults(query);
 		}, 500),

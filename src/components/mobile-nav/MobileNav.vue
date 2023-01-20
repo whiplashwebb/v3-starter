@@ -9,7 +9,10 @@
 				size="large"
 			/>
 		</a>
-		<a class="mobile-nav__item mobile-nav__logo-item" href="/">
+		<a
+			class="mobile-nav__item mobile-nav__logo-item"
+			href="/"
+		>
 			<img :src="logoUrl">
 		</a>
 		<a

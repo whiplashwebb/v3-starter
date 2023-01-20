@@ -25,13 +25,6 @@ export default defineComponent({
 			layouts,
 		};
 	},
-	mounted() {
-		this.userStore.init()
-			.catch((e) => {
-				console.error('Init error in app', e);
-				errorToast(e);
-			});
-	},
 	computed: {
 		layoutKey(): layouts {
 			const routeLayout = this.$route.meta?.layout as layouts;
@@ -42,5 +35,12 @@ export default defineComponent({
 				return layouts.full;
 			}
 		},
+	},
+	mounted() {
+		this.userStore.init()
+			.catch((e) => {
+				console.error('Init error in app', e);
+				errorToast(e);
+			});
 	},
 });

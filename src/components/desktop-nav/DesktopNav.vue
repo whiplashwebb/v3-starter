@@ -1,7 +1,14 @@
 <template>
-	<nav class="app-nav navbar" role="navigation" aria-label="main navigation">
+	<nav
+		class="app-nav navbar"
+		role="navigation"
+		aria-label="main navigation"
+	>
 		<div class="navbar-brand">
-			<a class="navbar-item app-nav__logo-item" href="/">
+			<a
+				class="navbar-item app-nav__logo-item"
+				href="/"
+			>
 				<img :src="logoUrl">
 			</a>
 		</div>
@@ -48,9 +55,7 @@
 							</a>
 						</div>
 					</div>
-
 				</template>
-
 			</div>
 
 			<div class="navbar-end">
@@ -116,11 +121,14 @@
 				</div>
 				<div class="app-nav-status">
 					<div class="app-nav-status__header">
-						<div class="app-nav-status__name">{{ currentUser.full_name }}</div>
-						<div class="app-nav-status__role">{{ currentUser.role }}</div>
+						<div class="app-nav-status__name">
+							{{ currentUser.full_name }}
+						</div>
+						<div class="app-nav-status__role">
+							{{ currentUser.role }}
+						</div>
 					</div>
 					<div class="app-nav-status__body">
-
 						<div
 							class="navbar-item has-dropdown"
 							:class="{ 'is-active' : activeKey === customerKey }"

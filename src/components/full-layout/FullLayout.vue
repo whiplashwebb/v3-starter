@@ -9,15 +9,15 @@
 			:http-client="httpClient"
 		/>
 		<mobile-nav
-			class="full-layout__mobile-nav is-hidden-desktop"
 			v-model:user-active="userDrawerActive"
 			v-model:main-active="mainDrawerActive"
+			class="full-layout__mobile-nav is-hidden-desktop"
 		/>
 		<slot class="full-layout_content" />
 
 		<o-sidebar
-			class="full-layout__sidebar"
 			v-model:open="mainDrawerActive"
+			class="full-layout__sidebar"
 			fullheight
 		>
 			<site-search :nav-data="navData" />
@@ -25,8 +25,8 @@
 			<mobile-main-menu :nav-data="navData" />
 		</o-sidebar>
 		<o-sidebar
-			class="full-layout__sidebar"
 			v-model:open="userDrawerActive"
+			class="full-layout__sidebar"
 			fullheight
 			right
 		>

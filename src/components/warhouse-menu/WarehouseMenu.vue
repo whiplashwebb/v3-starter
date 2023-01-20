@@ -39,7 +39,6 @@
 					v-if="currentWarehouse"
 					:label="`Edit ${currentWarehouse.name}`"
 				/>
-
 			</o-menu-list>
 		</o-menu>
 	</div>

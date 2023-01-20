@@ -16,6 +16,13 @@ import type { NavData } from '@/types';
 
 export default defineComponent({
 	name: 'FullLayout',
+	components: {
+		DesktopNav,
+		MobileNav,
+		SiteSearch,
+		UserAccordion,
+		MobileMainMenu,
+	},
 	props: {
 		navData: {
 			type: Object as PropType<NavData>,
@@ -43,12 +50,5 @@ export default defineComponent({
 			userDrawerActive: false,
 			mainDrawerActive: false,
 		};
-	},
-	components: {
-		DesktopNav,
-		MobileNav,
-		SiteSearch,
-		UserAccordion,
-		MobileMainMenu,
 	},
 });
