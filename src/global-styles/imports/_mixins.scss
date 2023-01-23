@@ -1,8 +1,0 @@
-@mixin nav-autocomplete {
-	// Media queries distinguish between styles for usage in desktop nav vs mobile nav
-	@include from($desktop) {
-		.dropdown-item {
-			font-size:$size-7;
-		}
-	}
-}

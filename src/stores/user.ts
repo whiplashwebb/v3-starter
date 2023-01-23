@@ -1,19 +1,23 @@
+import { AUTH_COOKIE_NAME } from '@whiplashmerch/design-system';
 import {
+	customerMock,
 	getApiV21CustomersId,
 	getApiV21Me,
 	getApiV21Nav, getApiV21WarehousesId,
-	HttpClient,
+	HttpClient, navMock, userMock, warehouseMock,
 } from '@whiplashmerch/whiplash-api-client-private';
 import type {
 	APIV21EntitiesUser,
 	APIV21EntitiesCustomer,
 	APIV21EntitiesWarehouse,
+	NavData,
 } from '@whiplashmerch/whiplash-api-client-private';
+import type { AxiosError } from 'axios';
 import Cookies from 'js-cookie';
 import { defineStore } from 'pinia';
 
-import { AUTH_COOKIE_NAME, customerMock, navMock, userMock, warehouseMock } from '@/constants';
-import type { NavData } from '@/types';
+import { routeNames } from '@/router/route-names';
+import router from '@/router/router';
 
 export const useUserStore = defineStore('user',  {
 	state: () => {
@@ -25,17 +29,34 @@ export const useUserStore = defineStore('user',  {
 			currentWarehouse: null as null | APIV21EntitiesWarehouse,
 			currentCustomer: null as null | APIV21EntitiesCustomer,
 			initComplete: false,
-			useMock: true,
+			useMock: false,
 		};
 	},
 	getters: {
 		httpClient(): HttpClient {
-			return new HttpClient({
+			const client = new HttpClient({
 				baseURL: this.baseUrl,
 				headers: {
 					Authorization: `Bearer ${ this.token }`,
 				},
 			});
+
+			// Detect if the token has expired and redirect to unauthorized, which will handle logout
+			client.instance.interceptors.response.use(
+				undefined,
+				(error: AxiosError) => {
+					if (error?.response?.status === 401) {
+						router.push({
+							name: routeNames.unauthorized,
+							replace: false,
+						});
+					}
+
+					return Promise.reject(error);
+				},
+			);
+
+			return client;
 		},
 	},
 	actions: {

@@ -1,11 +1,8 @@
+import { errorToast, FullLayout, layouts, MinimalLayout } from '@whiplashmerch/design-system';
 import { defineComponent } from 'vue';
 import { RouterView } from 'vue-router';
 
-import FullLayout from '@/components/full-layout/FullLayout.vue';
-import MinimalLayout from '@/components/minimal-layout/MinimalLayout.vue';
-import { layouts } from '@/constants';
 import { useUserStore } from '@/stores/user';
-import { errorToast } from '@/utils/notifications';
 
 
 export default defineComponent({

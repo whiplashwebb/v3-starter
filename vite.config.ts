@@ -18,7 +18,7 @@ export default defineConfig({
 	css: {
 		preprocessorOptions: {
 			scss: {
-				additionalData: '@import "./src/global-styles/global-imports.scss";',
+				additionalData: '@import "@whiplashmerch/design-system/src/scss/global-imports.scss";',
 			},
 		},
 	},

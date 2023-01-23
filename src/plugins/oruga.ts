@@ -1,3 +1,6 @@
+// The easy way requires a single import
+// import Oruga from '@oruga-ui/oruga-next';
+// Tree shaking requires importing individual plugins
 import {
 	Config,
 	Input,
@@ -7,44 +10,22 @@ import {
 	Dropdown,
 	Collapse,
 	Icon,
-	Switch,
 	Checkbox,
-	Radio,
 	Loading,
 	Menu,
 	Select,
 	Autocomplete,
 	Modal,
-	Datepicker,
-	Timepicker,
-	Datetimepicker,
 	Sidebar,
-	Slider,
-	Pagination,
-	Tabs,
-	Tooltip,
-	Carousel,
-	Table,
 } from '@oruga-ui/oruga-next';
-import { bulmaConfig } from '@oruga-ui/theme-bulma';
+import { orugaConfig } from '@whiplashmerch/design-system';
 import type { Plugin } from 'vue';
 
-export const overrideConfig = {
-	...bulmaConfig,
-	iconComponent: 'vue-fontawesome',
-	iconPack: 'fas',
-	statusIcon: false,
-	notification: {
-		...bulmaConfig.notification,
-		duration: 10000,
-		position: 'bottom-right',
-	},
-};
 
 export const addOruga: Plugin = {
 	install(app) {
 		// Global oruga config
-		app.use(Config, overrideConfig);
+		app.use(Config, orugaConfig);
 		app.use(Notification);
 		app.use(Modal);
 
@@ -55,22 +36,14 @@ export const addOruga: Plugin = {
 		app.use(Dropdown);
 		app.use(Collapse);
 		app.use(Icon);
-		app.use(Switch);
 		app.use(Checkbox);
-		app.use(Radio);
 		app.use(Loading);
 		app.use(Menu);
 		app.use(Select);
 		app.use(Autocomplete);
-		app.use(Datepicker);
-		app.use(Timepicker);
-		app.use(Datetimepicker);
 		app.use(Sidebar);
-		app.use(Slider);
-		app.use(Pagination);
-		app.use(Tabs);
-		app.use(Tooltip);
-		app.use(Carousel);
-		app.use(Table);
+
+		// Or the easy way (no tree shaking)
+		// app.use(Oruga, orugaConfig);
 	},
 };
