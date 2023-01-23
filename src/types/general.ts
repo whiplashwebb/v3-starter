@@ -1,30 +1,4 @@
-export interface StringMap<T> { [key: string]: T }
-
-export interface NavData {
-	app : {
-		orders?: NavItem[];
-		inventory?: NavItem[];
-		shipnotices?: NavItem[];
-		returns?: NavItem[];
-		batches?: NavItem[];
-		manage?: NavItem[];
-		support?: NavItem[];
-	}
-	customer?: NavItem[];
-	info?: NavItem[];
-	session?: NavItem[];
-	search?: NavItem[];
-	act_as?: NavItem[];
-	warehouse?: NavItem[];
-}
-
-export interface NavItem {
-	slug: string;
-	display: string;
-	url: string;
-}
-
-export interface AutocompleteResult {
-	id: number,
-	name: string,
+// General types go here, don't overthink classification at first. If you start to see groups of types break them out into a separate file.
+export interface Foo {
+	bar: string;
 }

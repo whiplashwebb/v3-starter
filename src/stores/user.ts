@@ -1,19 +1,19 @@
+import { AUTH_COOKIE_NAME } from '@whiplashmerch/design-system';
 import {
+	customerMock,
 	getApiV21CustomersId,
 	getApiV21Me,
 	getApiV21Nav, getApiV21WarehousesId,
-	HttpClient,
+	HttpClient, navMock, userMock, warehouseMock,
 } from '@whiplashmerch/whiplash-api-client-private';
 import type {
 	APIV21EntitiesUser,
 	APIV21EntitiesCustomer,
 	APIV21EntitiesWarehouse,
+	NavData,
 } from '@whiplashmerch/whiplash-api-client-private';
 import Cookies from 'js-cookie';
 import { defineStore } from 'pinia';
-
-import { AUTH_COOKIE_NAME, customerMock, navMock, userMock, warehouseMock } from '@/constants';
-import type { NavData } from '@/types';
 
 export const useUserStore = defineStore('user',  {
 	state: () => {

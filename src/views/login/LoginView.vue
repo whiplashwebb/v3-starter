@@ -45,9 +45,9 @@
 </template>
 
 <script lang="ts">
+import { RyderCard } from '@whiplashmerch/design-system';
 import { defineComponent } from 'vue';
 
-import RyderCard from '@/components/ryder-card/RyderCard.vue';
 
 export default defineComponent({
 	name: 'LoginView',
