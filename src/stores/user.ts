@@ -12,8 +12,12 @@ import type {
 	APIV21EntitiesWarehouse,
 	NavData,
 } from '@whiplashmerch/whiplash-api-client-private';
+import type { AxiosError } from 'axios';
 import Cookies from 'js-cookie';
 import { defineStore } from 'pinia';
+
+import { routeNames } from '@/router/route-names';
+import router from '@/router/router';
 
 export const useUserStore = defineStore('user',  {
 	state: () => {
@@ -25,17 +29,34 @@ export const useUserStore = defineStore('user',  {
 			currentWarehouse: null as null | APIV21EntitiesWarehouse,
 			currentCustomer: null as null | APIV21EntitiesCustomer,
 			initComplete: false,
-			useMock: true,
+			useMock: false,
 		};
 	},
 	getters: {
 		httpClient(): HttpClient {
-			return new HttpClient({
+			const client = new HttpClient({
 				baseURL: this.baseUrl,
 				headers: {
 					Authorization: `Bearer ${ this.token }`,
 				},
 			});
+
+			// Detect if the token has expired and redirect to unauthorized, which will handle logout
+			client.instance.interceptors.response.use(
+				undefined,
+				(error: AxiosError) => {
+					if (error?.response?.status === 401) {
+						router.push({
+							name: routeNames.unauthorized,
+							replace: false,
+						});
+					}
+
+					return Promise.reject(error);
+				},
+			);
+
+			return client;
 		},
 	},
 	actions: {
