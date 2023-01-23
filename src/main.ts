@@ -2,7 +2,7 @@ import { createPinia } from 'pinia';
 import { createApp } from 'vue';
 
 // Bundle must come before app to ensure the correct order
-import './global-styles/global-bundle.scss';
+import '@whiplashmerch/design-system/dist/style.css';
 import App from './App.vue';
 import { addDesignSystem, addFontawesome, addOruga } from './plugins';
 import router from './router/router';
